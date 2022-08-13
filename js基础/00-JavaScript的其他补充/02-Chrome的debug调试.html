@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // debug  打断点
+        function foo() {
+            console.log("foo被执行了");
+        }
+
+        function baz() {
+            console.log("baz被执行了");
+            foo()
+        }
+        // debugger 就是在代码中打断点的方式
+        function bar() {
+
+            console.log("bar函数被执行了");
+            var name = "why"
+
+            function hi() {
+                console.log("hi" + name);
+            }
+            hi()
+            return hi
+        }
+        bar()
+        debugger
+        baz()
+        for (var i = 0; i < 5; i++) {
+            console.log(i);
+        }
+    </script>
+</body>
+
+</html>

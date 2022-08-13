@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 class="counter">0</h2>
+    <button class="add">+</button>
+    <button class="sub">-</button>
+    <script>
+      const counterEl = document.querySelector(".counter");
+      const addEl = document.querySelector(".add");
+      const subEl = document.querySelector(".sub");
+      let counter = 0;
+      counterEl.innerHTML = counter;
+      addEl.onclick = function () {
+        counter += 1;
+        counterEl.textContent = counter;
+      };
+      subEl.onclick = function () {
+        counter -= 1;
+        counterEl.textContent = counter;
+      };
+    </script>
+  </body>
+</html>

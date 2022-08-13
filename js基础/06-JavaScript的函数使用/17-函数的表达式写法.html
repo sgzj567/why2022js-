@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 函数的声明
+        bar()
+
+        function bar() {
+            console.log("bar");
+        }
+        // 函数的表达式  函数的表达式会省略名字
+        // 在JavaScript中函数是头等公民
+        // 此时如果在foo上面调用就会报错
+        // foo()
+        var foo = function() {
+            console.log("foo");
+        }
+        foo()
+            // 函数声明与函数表达式 区别
+            // 执行时机不同  写法不同
+    </script>
+</body>
+
+</html>

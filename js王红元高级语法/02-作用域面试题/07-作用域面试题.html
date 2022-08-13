@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var a = '林一一'
+
+    function fn() {
+      // !a=>!undefined=>true
+      // 切不管条件是否成立都会将变量提升
+      if (!a) {
+        var a = 12
+      }
+      console.log(a)
+    }
+    fn()
+    /* 输出
+     * 12
+     */
+  </script>
+</body>
+
+</html>

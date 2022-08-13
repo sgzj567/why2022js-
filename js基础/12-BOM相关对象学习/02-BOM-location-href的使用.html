@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>打开新的网页</button>
+  <button>替换新的网页</button>
+  <button>网页重新加载</button>
+  <script>
+    // 获取完整的url
+    console.log(location.href);
+    // 获取url信息
+    console.log(location.hostname); //对应的主机  不带端口
+    console.log(location.host); //带端口
+    // 获取端口
+    console.log(location.port);
+    // 获取协议
+    console.log(location.protocol);
+    // 获取路径
+    console.log(location.path);
+    // 查询字符串
+    console.log(location.search);
+    // 获取hash
+    console.log(location.hash);
+
+    // 3.location方法
+    var btns = document.querySelectorAll("button")
+    btns[0].onclick = function () {
+      location.assign("http://www.baidu.com")
+    }
+    btns[1].onclick = function () {
+      location.replace("http://www.baidu.com")
+    }
+    btns[2].onclick = function () {
+      location.reload()
+    }
+    // 4.URLlSearchStringParams
+    var urlSearchString = "?name=why&age=18&height=1.88"
+    console.log(urlSearchString.split("&"));
+    var searchParams = new URLSearchParams(urlSearchString)
+    console.log(searchParams.get("name"));
+    console.log(searchParams.get("age"));
+    console.log(searchParams.get("height"));
+    // 追加
+    searchParams.append("address", "广州市")
+    console.log(searchParams.get('address'));
+    console.log(searchParams.toString());
+    // 编码
+    console.log(encodeURIComponent("广州市"));
+    // 解码  每一个中文对应三个字符
+    console.log(decodeURIComponent("%E5%B9%BF%E5%B7%9E%E5%B8%82"));
+  </script>
+</body>
+
+</html>

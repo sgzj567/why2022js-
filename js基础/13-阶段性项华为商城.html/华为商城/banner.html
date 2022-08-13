@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/rest.css">
+  <style>
+    .banner .images {
+      position: relative;
+    }
+
+    .banner .images .item {
+      position: absolute;
+      overflow: hidden;
+      left: 0;
+      top: 0;
+      width: 100%;
+      opacity: 0;
+    }
+
+    .banner .images .item.active {
+      opacity: 1;
+    }
+
+    .banner .images .item img {
+      position: relative;
+      /* 相对自身 */
+      transform: translate(-50%);
+      /* 相对父元素 */
+      left: 50%;
+      width: 1920px;
+      height: 550px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="banner">
+    <ul class="images">
+      <!-- <li class="item active">
+        <img src="./images/banner_01webp.webp" alt="">
+      </li> -->
+
+    </ul>
+    <div class="control"></div>
+    <button>上一个</button>
+    <button>下一个</button>
+  </div>
+  <div class="indcitor"></div>
+
+
+  <script src="./json/banner.js"></script>
+  <script>
+    // 0 banner中的url地址
+    var bannerServerURL = "http://res.vmallres.com"
+    var imagesEl = document.querySelector(".images")
+    for (var i = 0; i < banners.length; i++) {
+      var itemEl = document.createElement("li")
+      var banner = banners[i]
+      if (i === 0) {
+        itemEl.classList.add("active")
+      }
+      itemEl.classList.add("item")
+      imagesEl.append(itemEl)
+
+      // 创建img元素
+      var imgEl = document.createElement("img")
+      imgEl.src = `${bannerServerURL}${banner.imgUrl}`
+      itemEl.append(imgEl)
+    }
+  </script>
+</body>
+
+</html>

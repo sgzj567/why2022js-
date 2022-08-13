@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.创建对象
+    const xhr = new XMLHttpRequest();
+    // 2.监听对象状态
+    xhr.onload = function () {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        console.log(xhr.response);
+      } else {
+        console.log(xhr.status, xhr.statusText);
+      }
+    };
+    xhr.error = function () {
+      console.log("xhr:", xhr.status, xhr.statusText);
+    };
+    // 2.告知xhr 获得的数据类型
+    xhr.responseType = "json";
+    // 3.获取对象数据
+    // async false  为同步请求
+    // xhr.open("get", "http://123.207.32.32:8000/home/multidata");
+    xhr.open("get", "http://123.207.32.32:1888/01_basic/hello_json");
+    // 4.发送请求
+    xhr.send();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function sum(num1, num2) {
+      if (typeof num1 !== Number && typeof num1 !== Number) {
+        throw "error num1传入的不是number类型"
+      }
+      console.log(num1 + num2);
+    }
+    sum()
+    //代码遇到throw 后面的代码就不会执行了  后面可以跟Boolean number  string
+    // 2.也可以抛出对象
+    // throw {
+    //   erroMessage: "我是错误信息"
+    // }
+    // 3.error 类
+    throw new Error("我是错误信息")
+  </script>
+</body>
+
+</html>

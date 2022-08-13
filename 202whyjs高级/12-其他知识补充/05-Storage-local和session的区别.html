@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <a href="./staic/01-about.html" target="_blank">关于</a>
+  <script>
+    // 验证一 localStorage即使关闭网页也会存储到本地的 永久性存储 关闭之后打开还存在
+    // sessionStorage 回话存储 提供本次回话存储 在关闭会话的时候 存储内容会清除
+    // localStorage.setItem("local", "localStorage")
+    // sessionStorage.setItem("session", "sessionStorage")
+
+    // 验证二  在页面内实现跳转  localStorage会保留  sessionLocal也会保留
+    // localStorage.setItem("info", "local")
+    // sessionStorage.setItem("info", "session")
+
+    // 验证三 打开新的页面 并且是在新的标签中打开  localStorage还存在  sessionStorage不存在(从侧面验证了只提供本次回话存储)
+    localStorage.setItem("info", "local")
+    sessionStorage.setItem("info", "session")
+  </script>
+</body>
+
+</html>

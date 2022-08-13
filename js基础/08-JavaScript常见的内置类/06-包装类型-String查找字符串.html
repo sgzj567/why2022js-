@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var message = "my name is why"
+    var name = "why"
+    // 判断字符串是否有另一个字符串
+    // indexOf(searchString,formIndex)
+    // 返回的是一个索引  如果搜索不到返回的是-1
+    var index = message.indexOf('why')
+    console.log(message.indexOf(name));
+    console.log(index);
+    // 在ES6中新增一个方法  就是用来判断包含关系的 include
+    if (message.includes(name)) {
+      console.log("包含name");
+    } else {
+      console.log(`不包含${name}`);
+    }
+    // 是否以什么开头 startsWith
+    // 是否以什么结尾 endsWith
+
+    // 5.replace替换字符串
+    var newMessage = message.replace("why", "kobe")
+    console.log(newMessage);
+        // 6.获取子字符串 slice(start,end) 从start开始 不包含end  end也可以是负值
+  </script>
+</body>
+
+</html>

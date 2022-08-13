@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+      // console.log(name; age);
+    }
+
+    function Student() {}
+    // 创建Student对象  调用的是Person的方法
+    const stu = Reflect.construct(Person, ["why", 19], Student);
+    console.log(stu.name);
+    console.log(stu.__proto__ === Student.prototype);
+  </script>
+</body>
+
+</html>

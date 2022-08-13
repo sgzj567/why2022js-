@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // function foo() {
+    //     console.log(this);
+    // }
+    // foo();
+
+    function foo1() {
+      console.log(this);
+    }
+
+    function foo2() {
+      console.log(this);
+      foo1()
+    }
+
+    function foo3() {
+      console.log(this);
+      foo2()
+    }
+    foo3(); // window *3
+    // 2.创建一个对象 
+    // 案例3
+    var obj = {
+      name: "why",
+      foo: function () {
+        console.log(this);
+      }
+    }
+    var bar = obj.foo;
+    bar(); //window
+    // bar 就相当于:
+    // function bar() {
+    //     console.log(this);
+    // }
+    // 案例4:
+    function foo() {
+      console.log(this);
+    }
+    var obj = {
+      name: "why",
+      foo: foo,
+    }
+    var bar = obj.foo
+    bar() //window  相当于单独调用函数
+    // 案例5:
+    function foo() {
+      function bar() {
+        console.log(this);
+      }
+      return bar
+    }
+    var fn = foo();
+    fn();
+    var obj = {
+      name: "why",
+      eating: fn,
+    }
+    obj.eating() //隐式绑定
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const message1 = "My aaname is WHY"
+    const message2 = "My name is ZXK"
+    const re1 = /name/
+    console.log(re1.test(message1));
+    // 需求:name 匹配name 必须是一个单独的词
+    // 词边界 \b检测一侧位置是否匹配 \w 而另一侧不匹配\w
+    const re2 = /\bname\b/
+    console.log(re2.test(message1));
+    console.log(re2.test(message2));
+    // 词边界的应用
+    const time = "now is 22:32,for a while 23:30 go to sleep 123:234"
+    const re3 = /\b\d\d:\d\d\b/ig
+    console.log(time.match(re3));
+    // matchAll返回的是一个迭代器
+  </script>
+</body>
+
+</html>

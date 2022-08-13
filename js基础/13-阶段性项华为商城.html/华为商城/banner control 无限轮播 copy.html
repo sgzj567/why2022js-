@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/rest.css">
+  <style>
+    .banner {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner .images {
+      position: relative;
+      height: 550px;
+      transition: all 300ms ease;
+    }
+
+    .banner .images .item {
+      position: absolute;
+      overflow: hidden;
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* opacity: 0; */
+      transition: opacity 1s;
+    }
+
+    .banner .images .item.active {
+      opacity: 1;
+    }
+
+    .banner .images .item img {
+      position: relative;
+      /* 相对自身 */
+      transform: translate(-50%);
+      /* 相对父元素 */
+      left: 50%;
+      width: 1920px;
+      height: 550px;
+    }
+
+    .indictor {
+      display: flex;
+      position: absolute;
+      justify-content: center;
+      left: 0;
+      right: 0;
+      top: 520px;
+    }
+
+    .indictor .item {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin: 0 5px;
+      background-color: #aaa;
+      cursor: pointer;
+    }
+
+    .indictor .item.active {
+      background-color: red;
+    }
+
+    .indictor div {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="banner">
+    <ul class="images">
+      <!-- <li class="item active">
+        <img src="./images/banner_01webp.webp" alt="">
+      </li> -->
+
+    </ul>
+
+
+  </div>
+  <div class="control">
+    <button class="pre">上一个</button>
+    <button class="next">下一个</button>
+  </div>
+  <div class="indictor"></div>
+
+
+  <script src="./json/banner.js"></script>
+  <script>
+    // 修改布局(css中)
+    // 需要让轮播结构 最后一个位置添加一个元素  最前面一添加一个元素
+    //  调整left值
+    // 3.对currentIndex判断条件 放到transform后
+    // 4.如果滚动了添加的第一个元素
+
+    // 0 banner中的url地址
+    var bannerServerURL = "http://res.vmallres.com"
+    var bannersCount = banners.length
+    const animationDuration = 500
+    // 1.动态轮播图
+    var activeItemEl = null
+    var indictorEl = document.querySelector(".indictor")
+    var imagesEl = document.querySelector(".images")
+    for (var i = 0; i < bannersCount; i++) {
+      // 创建li元素
+      var itemEl = document.createElement("li")
+      var banner = banners[i]
+      if (i === 0) {
+        itemEl.classList.add("active")
+        activeItemEl = itemEl
+      }
+      itemEl.classList.add("item")
+      imagesEl.append(itemEl);
+
+      // 设置 itemEl的style样式
+      itemEl.style.left = `${i * 100}%`;
+
+      // 创建img元素
+      var imgEl = document.createElement("img")
+      imgEl.src = `${bannerServerURL}${banner.imgUrl}`
+      itemEl.append(imgEl)
+    }
+
+    for (var i = 0; i < bannersCount; i++) {
+      //创建指示器元素
+      var divEl = document.createElement("div")
+      divEl.classList.add("item");
+      if (i === 0) {
+        divEl.classList.add("active")
+      }
+      indictorEl.append(divEl)
+
+      // 监听指示器divEl点击
+      divEl.index = i;
+      divEl.onclick = function () {
+        // console.log(this);
+        preElCount = currentElCount;
+        currentElCount = this.index
+        switchBannerItem()
+      }
+    }
+
+    // 添加首尾轮播图
+    var firstItem = imagesEl.children[0].cloneNode(true);
+    var lastItem = imagesEl.children[bannersCount - 1].cloneNode(true);
+    imagesEl.append(firstItem)
+    imagesEl.prepend(lastItem)
+    // 修改首尾位置
+    firstItem.style.left = `${bannersCount*100}%`
+    lastItem.style.left = "-100%"
+
+    // 绑定监听按钮
+    var controlEl = document.querySelector(".control")
+    var preEl = document.querySelector(".pre")
+    var nextEl = document.querySelector(".next")
+    var preElCount = 0
+    var currentElCount = 0
+    // 点击下一个按钮
+    nextEl.onclick = function () {
+      stopTimer()
+      preElCount = currentElCount
+      currentElCount++
+      switchBannerItem()
+      startTimer()
+
+    }
+    // 点击前一个按钮
+    preEl.onclick = function () {
+      // 点击的时候  停掉定时器
+      stopTimer()
+      preElCount = currentElCount
+      currentElCount--
+      // 让pre变为active状态 让current变为普通状态
+      switchBannerItem()
+      startTimer()
+    }
+
+
+    // 自动轮播
+    var timer = null
+    startTimer()
+    // 4.暂停自动轮播
+    itemEl.onmouseenter = function () {
+      stopTimer()
+
+    }
+
+    // 5.开启定时器
+    itemEl.onmouseleave = function () {
+      startTimer()
+    }
+    // 绑定监听事件 给indictor
+
+
+    // 封装函数 切换效果 Switch
+    function switchBannerItem() {
+      // 再次添加动画
+      imagesEl.style.transition = `all ${animationDuration}ms ease`
+      imagesEl.style.transform = `translateX(${-currentElCount*100}%)`
+      // 先滚过去 再赋值
+      if (currentElCount === bannersCount) {
+        currentElCount = 0
+        // 等动画执行完后在  位移
+        setTimeout(function () {
+          // 在移动过程取消动画  但是  最后第二轮之后  也会没有动画
+          imagesEl.style.transition = "none"
+          imagesEl.style.transform = `translateX(${0})`
+        }, animationDuration)
+      } else if (currentElCount === -1) {
+        currentElCount = bannersCount - 1;
+        setTimeout(function () {
+          // 在移动过程取消动画 但是 最后第二轮之后 也会没有动画
+          imagesEl.style.transition = "none"
+          imagesEl.style.transform = `translateX(${-(bannersCount - 1)*100}%)`
+        }, animationDuration)
+      }
+      // 1.让pre变为active状态 让current变为普通状态  切换的是图片的
+      // var preItemEl = imagesEl.children[preElCount]
+      // var currentItemEl = imagesEl.children[currentElCount]
+      // preItemEl.classList.remove("active")
+      // currentItemEl.classList.add("active")
+      // 2.切换指示器item
+      var divPreItemEl = indictorEl.children[preElCount]
+      var divCurrentItemEl = indictorEl.children[currentElCount]
+      divPreItemEl.classList.remove("active")
+      divCurrentItemEl.classList.add("active")
+    }
+
+    // 开启定时器函数
+    function startTimer() {
+      // 如果开启定时器  就取消
+      if (timer) return
+      timer = setInterval(() => nextEl.onclick(), 3000)
+    }
+
+    // 暂停自动轮播
+    function stopTimer() {
+      if (timer) {
+        clearInterval(timer)
+        // 清除定时器之后一定要给timer赋值为null  否则之前的timer会保存值
+        timer = null
+      }
+      return
+    }
+    // 窗口改变  就停止定时器  否则不
+    document.onvisibilitychange = function () {
+      if (document.visibilityState === "visible") {
+        startTimer()
+      } else if (document.visibilityState === "hidden") {
+        stopTimer()
+      }
+    }
+  </script>
+</body>
+
+</html>

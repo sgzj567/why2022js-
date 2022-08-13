@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/rest.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/product.css">
+</head>
+
+<body>
+  <!-- 商品展示的部分 -->
+  <div class="wrapper">
+    <!-- 面包屑的导航 -->
+    <div class="crumbs">
+      <span class="item">首页</span>
+      <span>&gt;</span>
+      <span class="item">笔记本</span>
+    </div>
+    <!-- 对内容进行操作 -->
+    <div class="operation">
+      <ul class="category row">
+        <li class="item">分类:</li>
+        <li class="item">笔记本</li>
+        <li class="item">台式机</li>
+        <li class="item">智慧屏</li>
+      </ul>
+      <div class="service row">
+        <li class="item">服务优惠:</li>
+        <li class="item ">
+          仅看有货
+        </li>
+        <li class="item">分期免息</li>
+        <li class="item">优惠商品</li>
+      </div>
+      <div class="sort row">
+        <li class="item">排序:</li>
+        <li class="item active">
+          综合
+        </li>
+        <li class="item">最新</li>
+        <li class="item">评论数</li>
+        <li class="item">价格</li>
+      </div>
+    </div>
+    <!-- 商品列表部分 -->
+    <ul class="products">
+      <li class="item">
+        <a href="#">
+          <img class="album" src="./images/product_01.webp" alt="">
+          <div class="name">HUAWEI MateBook E 12.6英寸</div>
+          <div class="discount">预订立省300元|12期免息</div>
+          <div class="price active">¥6499</div>
+          <div class="service">
+            <span class="tip">分期免息</span>
+            <span class="tip">赠送积分</span>
+
+          </div>
+          <div class="comment">
+            <span class="discuss">3190人评论</span>
+            <span class="discuss">96%好评</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <script src="./json/products_data.js"></script>
+  <script>
+    // 0 服务器资源地址
+    var serverURL = "http://res.vmallres.com/pimages"
+
+    // 1.动态列表创建
+    var productEl = document.querySelector(".products")
+    for (var i = 1; i < resultList.length; i++) {
+      // console.log(resultList[i]);
+      // 获取一条数据
+      var resultItem = resultList[i]
+      // 将每一条数据转换为一个item
+      // 1.1最外层的item
+      var itemEl = document.createElement('li');
+
+      // item里面的内容 
+      var serviceString = ""
+      for (var label of resultItem.promoLabels) {
+        serviceString += `<span class="tip">${label}</span>`
+      }
+      itemEl.classList.add('item');
+      itemEl.innerHTML = ` <a href="#">
+      <img class="album" src=${serverURL}${resultItem.photoPath}428_428_${resultItem.photoName} alt="">
+      <div class="name">${resultItem.name}</div>
+      <div class="discount">${resultItem.promotionInfo}</div>
+      <div class="price active">¥${resultItem.price}</div>
+      <div class="service">
+       ${serviceString}
+      </div>
+      <div class="comment">
+        <span class="discuss">${resultItem.rateCount}人评论</span>
+        <span class="discuss">${resultItem.goodRate}%好评</span>
+      </div>
+    </a>`
+      productEl.append(itemEl);
+
+    }
+
+    // 2.服务优惠筛选
+    var operationEl = document.querySelector(".operation")
+    var serviceEl = operationEl.querySelector(".service")
+    // 定义变量选中的服务
+    var serviceFilters = []
+
+    for (var i = 1; i < serviceEl.children.length; i++) {
+      // 获取对应的点击事件
+      var serviceItem = serviceEl.children[i]
+      // 给相应元素绑定点击事件
+      serviceItem.onclick = function () {
+        // console.log(this);
+        // toggle 有的话添加  没有的话删除
+        this.classList.toggle("active")
+
+        // 判断是否点击事件中是否有关键字(active)  如果有添加到serviceFilters中  没有移除
+        if (this.classList.contains("active")) {
+          serviceFilters.push(this.textContent.trim())
+        } else {
+          var filterItem = this.textContent.trim()
+          var filterIndex = serviceFilters.findIndex(function (item) {
+            return item = filterItem
+          })
+          serviceFilters.splice(filterIndex, 1)
+        }
+        console.log(serviceFilters);
+      }
+    }
+  </script>
+
+</body>
+
+</html>

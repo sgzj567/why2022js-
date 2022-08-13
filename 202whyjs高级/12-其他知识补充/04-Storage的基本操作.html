@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // localStorage即使关闭网页也会存储到本地的  永久性存储  关闭之后打开还存在
+    // sessionStorage 回话存储  提供本次回话存储  在关闭会话的时候  存储内容会清除
+    // const message = "hello storage"
+    // localStorage.setItem("message", message)
+    // console.log(message);
+    let message = localStorage.getItem('message')
+    if (!message) {
+      console.log("从服务器获取");
+      message = "hello zxk"
+      localStorage.setItem("message", message)
+    }
+    let username = localStorage.getItem("username")
+    let password = localStorage.getItem("password")
+    if (!username || !password) {
+      console.log("用户输入密码");
+      username = "zxk"
+      password = "123456"
+      localStorage.setItem("username", username)
+      localStorage.setItem("password", password)
+    }
+    let address = localStorage.getItem("address")
+    if (!address) {
+      console.log("从服务器获取数据");
+      address = "广东市"
+      localStorage.getItem("address")
+    }
+    console.log(address);
+    console.log(username, password);
+    console.log(message);
+  </script>
+</body>
+
+</html>

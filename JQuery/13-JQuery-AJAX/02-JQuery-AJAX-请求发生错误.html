@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./jquery/jquery.min.js"></script>
+  <script>
+    $(function () {
+      $.ajax({
+        // 500  503后台机接口有问题  403没有权限  问后台  有可能没有登录 或者没有权限  404自己的问题或者后台给的路劲错误
+        url: "http://httpbin.org/status/503",
+        method: "post",
+        dataType: 'json',
+        error: function (err) {
+          console.log("err", err.status);
+        }
+      })
+
+    })
+  </script>
+</body>
+
+</html>

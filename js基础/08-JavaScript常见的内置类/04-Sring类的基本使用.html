@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 目前可迭代的 只有数组  字符串
+    // 也有自己对应的包装类型
+    // 常见的属性
+    // length
+    var message = "hello world"
+    console.log(message.length);
+    // 访问第几个字符
+    console.log(message[4]); // 返回的是第五个字符 o
+    // 3.字符串遍历
+    // for of  对象是不支持的  这个支持可迭代的
+    for (var char of message) {
+      console.log(char);
+    }
+  </script>
+</body>
+
+</html>

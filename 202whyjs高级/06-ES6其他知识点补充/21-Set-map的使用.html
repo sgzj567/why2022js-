@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // map 可以用几乎任何类型作为键
+    const info1 = {
+      name: "why"
+    }
+    const info2 = {
+      name: "zxk"
+    }
+    // const info3 = {
+    //   age: "19",
+    //   [info1]: "ldh",
+    //   [info2]: "kobe",
+    // }
+    // console.log(info3); //不会出现info1 因为它会把所有的键转换为相同的字符串  就会覆上面的
+    // 2.Map
+    const map = new Map()
+    map.set(info1, "aaa")
+    map.set(info2, "xk")
+    console.log(map);
+    // 获取内容
+    console.log(map.get(info1));
+    // console.log(map.delete("info1")); //返回的是布尔类型
+    console.log(map.size);
+    // foreach 获取每个值
+    map.forEach(item => {
+      console.log(item);
+    })
+    for (const item of map) {
+      const [key, value] = item
+      console.log(item);
+    }
+  </script>
+</body>
+
+</html>

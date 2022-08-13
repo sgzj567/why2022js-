@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text">
+  <script>
+    function HyDebounce(fn, delay) {
+      // 用于记录上次的timer
+      let timer = null
+      const _debounce = function (...args) {
+        if (timer) {
+          clearTimeout(timer)
+        }
+        timer = setTimeout(() => {
+          fn.apply(this, args)
+          // 执行过函数之后timer重新赋值为null
+          timer = null
+        }, delay)
+      }
+      return _debounce
+    }
+    // 防抖防止过于频繁请求数据
+    // _.debounce(fn, 3000)
+    // 1.获取input 元素
+    const inputEl = document.querySelector("input")
+    // 2.监听input元素的输入
+    let counter = 1;
+    inputEl.oninput = HyDebounce(function (event) {
+      console.log(`发送网络请求${counter++}`, this.value, event);
+    }, 800)
+  </script>
+  </script>
+</body>
+
+</html>

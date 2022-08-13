@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./lib/loadsh.js"></script>
+  <script>
+    const arr = [12, 23, 55, 65, 33, 23, 65]
+    const arr1 = ["red", "orange", "blue", "orange", ["red", "blue", ["black", "yellow"], "red"]]
+    const arr2 = [false, null, NaN, "123", 234, "red"]
+    console.log(arr);
+    console.log(_.uniq(arr));
+    // 1.数组去重  并且返回一个副本
+    console.log(arr1);
+    console.log(_.uniq(arr1));
+    // 2.数组扁平化  只能扁平化一层
+    console.log(_.flatten(arr1));
+    // 3.去掉数组中的假值  并返回新的数组  不包含假值的数组  假值(false null NaN,"",0,undefined)
+    console.log(_.compact(arr2));
+  </script>
+</body>
+
+</html>

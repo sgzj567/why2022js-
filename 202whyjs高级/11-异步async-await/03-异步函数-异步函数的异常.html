@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 在执行过程中如果有错误 就会执行catch
+    async function foo() {
+      console.log("_____________1");
+      console.log("_____________2");
+      "ABC".filter()
+      console.log("_____________3");
+      console.log("_____________4");
+      return 123
+    }
+    foo().then(res => {
+      console.log("res:", res)
+    }).catch(err => {
+      console.log(
+        err)
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 在es5之前是没有块级作用域的概念(var 定义的变量是没有作用域的概念)
+    {
+      var count = 100
+      console.log(count);
+    }
+    console.log(count);
+    //2. for循环的也是没有自己的作用域
+    for (var i = 0; i < 3; i++) {
+      var foo = "foo"
+    }
+    console.log(foo); //可以访问到foo
+    // 3.ES5之前函数代码块值会形成自己的作用域
+    // 意味着 外面的作用域是访问不了函数内部的作用域
+    function test() {
+      var bar = "bar"
+    }
+    // console.log(bar);
+
+    function sayHello() {
+      var nickname = "kobe"
+      console.log("sayHello函数内容:", nickname);
+
+      function hi() {
+        console.log("hi function");
+        console.log("hi:", nickname);
+      }
+      hi()
+    }
+    // console.log(nickname);
+    sayHello()
+  </script>
+</body>
+
+</html>

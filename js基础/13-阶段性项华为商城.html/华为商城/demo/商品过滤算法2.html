@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box button.active {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <button>red</button>
+    <button>yellow</button>
+    <button>blue</button>
+  </div>
+  <div class="list">
+
+  </div>
+  <script>
+    var students = [{
+        name: "小明",
+        colors: [
+          "red",
+          "blue",
+          "green",
+        ]
+      },
+      {
+        name: "小王",
+        colors: [
+          "orange",
+          "yellow",
+          "red",
+        ]
+      },
+      {
+        name: "小龙",
+        colors: [
+          "purple",
+          "yellow",
+          "black",
+        ]
+      },
+      {
+        name: "小李",
+        colors: [
+          "red",
+          "orange",
+          "blue",
+        ]
+      },
+    ]
+    var boxEl = document.querySelector(".box")
+    var btns = document.querySelectorAll("button")
+    var filters = []
+    var newStudents = students
+
+    // 点击事件
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].onclick = function () {
+        this.classList.toggle("active")
+        if (this.classList.contains("active")) {
+          filters.push(this.textContent.trim())
+        } else {
+          var filterItem = this.textContent.trim()
+          var index = filters.indexOf(filterItem)
+          filters.splice(index, 1)
+        }
+        // console.log(filters);
+        filterItemEl()
+      }
+    }
+
+    // 过滤
+
+
+    function filterItemEl() {
+      newStudents = students.filter(function (item) {
+        var isFlag = true;
+        for (var label of filters) {
+          if (!item.colors.includes(label))
+            isFlag = false
+          break
+        }
+        return isFlag
+      })
+      create()
+    }
+    // 渲染
+    var listEl = document.querySelector(".list")
+    create();
+
+    function create() {
+      listEl.innerHTML = ""
+      for (var i = 0; i < newStudents.length; i++) {
+        var divEl = document.createElement("div")
+        divEl.textContent = newStudents[i].name
+        listEl.append(divEl)
+      }
+    }
+  </script>
+</body>
+
+</html>

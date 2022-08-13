@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = {
+      name: 'why',
+      age: "23"
+    }
+    // 判断是否删除成功
+    // 设置为了不可操作 不可删除
+    Object.defineProperty(obj, "name", {
+      configurable: false
+    })
+    // 1.用以前的方法删除
+    // delete obj.name
+    // if (obj.name) {
+    //   console.log("没有删除成功");
+    // } else {
+    //   console.log("删除成功");
+    // }
+
+    // 2.用Reflect删除  返回的是Boolean
+    if (Reflect.deleteProperty(obj, "name")) {
+      console.log("删除成功");
+    } else {
+      console.log("没有删除成功");
+    }
+    console.log(obj.name);
+  </script>
+</body>
+
+</html>

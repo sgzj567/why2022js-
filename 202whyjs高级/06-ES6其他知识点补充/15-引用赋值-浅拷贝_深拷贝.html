@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 引用赋值  把保存的地址进行了赋值
+    const obj = {
+      name: 'why',
+      age: 19,
+      height: 1.88,
+      friend: {
+        name: "zxk"
+      }
+    }
+    // const info1 = obj;
+    // info1.name = "zxk"
+    // console.log(obj.name); //zxk
+    // 2.浅拷贝  只能拷贝第一层对象里的值  如果第二层有值 就还是引用的是地址
+    // const info2 = {
+    //   ...obj
+    // }
+    // info2.name = "kobe"
+    // console.log(obj.friend.name);
+    // info2.friend.name = "ldh"
+    // console.log(info2.friend.name);
+    // 只能拷贝第一层对象里的值 如果第二层有值 就还是引用的是地址  数组也是这样
+    // console.log(obj.friend.name); //ldh
+    // console.log(obj.name);
+    // console.log(info2.name);
+    // 3.深拷贝
+    // 方式1:第三方
+    // 方式2:自己写
+    // 方式3:利用现在js机制  弊端  对于某些函数不能拷贝  利用JSON
+    const info3 = JSON.parse(JSON.stringify(obj))
+    console.log(info3.friend.name);
+    info3.friend.name = "kobe"
+    console.log(obj.friend.name);
+    console.log(info3.friend.name);
+  </script>
+</body>
+
+</html>

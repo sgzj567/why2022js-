@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = {
+      name: "why",
+      age: 19,
+      height: 1.88,
+    }
+    //1.创建Proxy对象
+    // target 代理函数 key监听到的键
+    const p = new Proxy(obj, {
+      set: function (target, key, newValue) {
+        console.log(`监听到了${key}的设置`, newValue);
+        target[key] = newValue
+      },
+      get: function (target, key) {
+        console.log(`监听到了获取${key}`);
+        return target[key]
+      },
+      deleteProperty: function (target, key) {
+        console.log(`监听到了${key}的删除`);
+        delete obj[key]
+      },
+    })
+    delete p.name
+    console.log(p);
+  </script>
+</body>
+
+</html>

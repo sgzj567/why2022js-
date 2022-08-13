@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // function foo() {
+    //     var m = 100;
+    // }
+    // foo()
+    // console.log(m); //m为被定义  因为函数在执行完成后就会销毁
+    function foo2() {
+      m = 100; //此时m是被定义为全局的
+    }
+    foo2()
+    console.log(m); //100
+  </script>
+</body>
+
+</html>

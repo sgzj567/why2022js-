@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Reflect操作的是代理对象  不在直接操作原对象 Reflect.set返回的是Boolean值 可以判断操作是否成功
+    const obj = {
+      name: "why",
+      age: 19,
+      address: "广州市"
+    }
+    Object.defineProperty(obj, "name", {
+      configurable: false
+    })
+    const objPro = new Proxy(obj, {
+      set: function (target, key, newValue, receiver) {
+        console.log(`${key}的值被改变`);
+        // target[key] = newValue(如果对象不可以写  就无法知道) 此时这里操作的是原对象  利用Reflect 改为间接操作
+        const isSuccess = Reflect.set(target, key, newValue)
+        if (!isSuccess)
+          throw new Error(`set${key} failure`)
+      },
+      get: function (target, key, receiver) {
+        console.log(`获取了${key的值}`);
+      }
+    })
+    objPro.name = "kobe"
+    console.log(obj);
+  </script>
+</body>
+
+</html>

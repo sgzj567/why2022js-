@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>取消</button>
+  <script>
+    const xhr = new XMLHttpRequest()
+    xhr.onload = function () {
+      console.log(xhr.response);
+    }
+    xhr.responseType = "json"
+    // 监听过期事件
+    xhr.ontimeout = function () {
+      console.log("请求过期", xhr.timeout);
+    }
+    // 代表浏览器超过3秒  就取消浏览器请求功能  如果没有设置 就是0
+    xhr.timeout = 3000
+    xhr.open("get", "http://123.207.32.32:1888/01_basic/timeout")
+    xhr.send()
+    // 手动取消请求
+    const buttonEl = document.querySelector("button")
+    buttonEl.onclick = function () {
+      xhr.abort()
+    }
+  </script>
+</body>
+
+</html>

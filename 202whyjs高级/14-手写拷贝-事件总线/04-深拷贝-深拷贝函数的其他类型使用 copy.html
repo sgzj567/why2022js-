@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./js/is_object.js"></script>
+  <script>
+    function deepCopy(originValue) {
+      if (!isObject(originValue)) {
+        return originValue
+      }
+      // 1.如果是set类型的
+      if (originValue instanceof Set) {
+        const newSet = new Set()
+        for (const setItem in originValue) {
+          newSet.add(deepCopy(setItem))
+
+        }
+      }
+
+
+      // 3. 函数一般不深拷贝 如果是函数
+      if (typeof originValue === "function") {
+        return originValue
+      }
+      // 2.如果是对象类型才需要创建对象
+      const newObj = Array.isArray ? [] : {}
+      for (const key in originValue) {
+        newObj[key] = deepCopy(originValue[key])
+      }
+
+      return newObj
+    }
+    const arr = [{
+        name: ["kobe", "zxk"]
+      },
+      {
+        address: ["广东市", "宝鸡市"]
+      }
+    ]
+
+    const newArr = deepCopy(arr)
+    newArr[0].name = ["ldh"]
+    console.log(newArr[0].name);
+    console.log(arr[0]);
+  </script>
+</body>
+
+</html>

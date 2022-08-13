@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // WeakMap的键只能是对象类型  不能使用foreach  也不能使用for of   weakMap的对象的key引用是弱引用 如果没有其他引用引用这个对象的话 就会被gc回收
+    const obj1 = {
+      name: "why"
+    }
+    const obj2 = {
+      name: "kobe"
+    }
+    const weakMap = new WeakMap()
+    weakMap.set(obj1, "ldh")
+    console.log(weakMap);
+  </script>
+</body>
+
+</html>

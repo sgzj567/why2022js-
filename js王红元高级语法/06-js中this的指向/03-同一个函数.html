@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function foo() {
+            console.log(this);
+        }
+        // 直接调用这个函数
+        foo();
+        // 在对象中调用
+        var obj = {
+            name: "why",
+            foo: foo,
+        }
+        obj.foo();
+        // 3.apply调用
+        foo.apply("abc")
+    </script>
+</body>
+
+</html>

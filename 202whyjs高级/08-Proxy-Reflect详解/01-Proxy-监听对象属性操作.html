@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2 class="name"></h2>
+  <script>
+    // 监听对象中的所有操作
+    const obj = {
+      name: "why",
+      age: "19",
+      height: 1.88
+    }
+    // 什么是响应式
+    const nameEl = document.querySelector(".name")
+    nameEl.textContent = obj.name
+    // 响应式 自动监听到元素的改变 就会改变响应的内容或者操作 在此例子中就不用重复写24行
+    obj.name = "zxk"
+    nameEl.textContent = obj.name
+    const keys = Object.keys(obj)
+    for (const key of keys) {
+      Object.defineProperty(obj, key, {
+        set: function (newValue) {
+          console.log(`监听,给${key}设置了新值,${newValue}`);
+        },
+        get: function () {
+          console.log(`获取了${key}值`);
+        }
+      })
+    }
+    obj.name = "kobe"
+    console.log(obj.name);
+  </script>
+</body>
+
+</html>

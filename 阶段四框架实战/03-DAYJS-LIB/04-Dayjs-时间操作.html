@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./libs/dayjs.js"></script>
+  <script>
+    // 增加一天
+    const day = dayjs()
+    // .add(1, 'year')
+    // .subtract(1, 'day')//减去一天
+    // .startOf('year')// 一年的开始
+    // .startOf('month')// 拿到现在月份的开始时间
+    // 时间格式化
+    console.log(day.format("YYYY-MM-DD HH:mm:ss"));
+  </script>
+</body>
+
+</html>

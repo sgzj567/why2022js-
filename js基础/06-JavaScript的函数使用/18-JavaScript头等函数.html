@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 函数作为头等公民
+    // 1.函数可以赋值给变量(函数表达式写法)
+    var foo1 = function () {
+      console.log("foo1函数被执行");
+    }
+    foo1()
+    // 2.让函数在变量之间传递
+    var foo2 = foo1
+    foo2()
+    // 3.函数可以作为另一个函数的参数
+    function bar(fn) {
+      console.log(fn);
+    }
+    bar(foo1)
+            // 4.函数作为另外一个函数的返回值
+            // 5.函数存在另外一个数据结构中  对象中 数组中
+  </script>
+</body>
+
+</html>

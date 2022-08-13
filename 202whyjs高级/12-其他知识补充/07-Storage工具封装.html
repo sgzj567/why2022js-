@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./js/cache.js"></script>
+  <script>
+    localStor.setCache("address", "广西市")
+    const localAddress = localStor.getCache("address")
+    console.log(localAddress);
+    // localStor.removeCache("address")
+    console.log(localStorage.length);
+    // Storage本省是不能存储对象类型的
+    const userInfo = {
+      name: 'why',
+      address: "广东市",
+      age: 19,
+    }
+    // 对象存储进去的是  是将object转换为了字符串
+    // localStorage.setItem("userInfo", userInfo)
+    // 存储对象时需要将对应的字符串转换为字符串JSON形式
+    localStor.setCache("userInfo", userInfo)
+    console.log(localStor.getCache("userInfo"));
+  </script>
+</body>
+
+</html>

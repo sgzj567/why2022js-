@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="../JS/vue.js"></script>
+    <script type="x-template"id="why">
+      <div>
+<h2>{{counter}}</h2>
+        <button @click='add'>+</button>
+        <button @click='sub'>-</button>
+      </div>
+    </script>
+    <script>
+      Vue.createApp({
+        template: '#why',
+        data: function () {
+          return {
+            message: "Hello World",
+            counter: 0,
+          };
+        },
+        methods: {
+          add() {
+            this.counter++;
+          },
+          sub() {
+            this.counter--;
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

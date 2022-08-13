@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 量词 +  一个或多个{1,}
+    // ? 零个 或者一个{0,1}
+    // * {0,} 0个或者多个
+    const re = /a{3,6}/ig
+    const message = "abnk aaljs aaaa sjklaaaaaaj"
+    console.log(re.test(message));
+    console.log(message.match(re));
+    // 案例三  匹配标签
+    const htmlEl = "<div><span>hahaha</span><h2>我是标题</h2></div>"
+    const htmlRe = /<\/?[a-z][a-z0-9]+>/ig
+    console.log(htmlEl.match(htmlRe));
+  </script>
+</body>
+
+</html>

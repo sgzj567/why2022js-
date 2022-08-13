@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.理解函数的返回值
+        // function sayHello(name) {
+        //     console.log(`Hi ${name}`);
+        // }
+        // sayHello("kobe")
+        // var foo = sayHello("kobe")
+        // console.log(foo);
+
+        // 2.函数返回值注意事项
+        // 所有函数 如果没有返回值 默认返回undefined
+        function foo() {
+            console.log(foo);
+        }
+        // console.log(foo());
+        var result = foo()
+        console.log(result);
+
+        // 注意事项二 
+
+        function bar() {
+            console.log("bar");
+
+        }
+        // 注意事项三  遇到return 立即退出函数执行
+        function baz() {
+            console.log(2);
+            console.log(1);
+            console.log(3);
+            return
+            console.log(2); //不会执行
+
+        }
+        baz()
+    </script>
+</body>
+
+</html>

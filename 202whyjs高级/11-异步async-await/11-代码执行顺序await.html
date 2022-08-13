@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function requesData(url) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log("setTimeOut");
+          resolve(url)
+        }, 2000)
+      })
+    }
+
+    // function getData() {
+    //   console.log("getData");
+    //   // 此时这个微任务拿到结果后才会执行  所以前面的 "setTimeOut"的这个宏任务会在这个微任务之前执行
+    //   requesData("why").then(res => {
+    //     console.log("res", res);
+    //   })
+    //   console.log("getData end");
+    // }
+    // await
+    async function getData() {
+      console.log("getData start");
+      const res = await requesData("why")
+      // 含有await的代码之后的 代码必须在await代码执行完了之后才执行
+      console.log("then-1", res);
+      console.log("getData end");
+    }
+    getData()
+    console.log("script end");
+  </script>
+</body>
+
+</html>

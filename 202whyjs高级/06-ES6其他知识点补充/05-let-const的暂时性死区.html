@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 暂时性死区和位置无关 与执行顺序有关
+    function foo() {
+      console.log(name);
+    }
+    let name = "zxk"
+    foo()
+    // 暂时性死区形成之后 不被访问该标识符
+
+    let message = "ha"
+    // 优先访问自己的  但是自己的不能访问  也从侧面说明了let 这个一开始就创建了  但是不能被访问
+    function bar() {
+      console.log(message);
+      let message = "Hello"
+    }
+    bar()
+  </script>
+</body>
+
+</html>

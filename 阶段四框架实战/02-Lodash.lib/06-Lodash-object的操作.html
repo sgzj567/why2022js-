@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./lib/loadsh.js"></script>
+  <script>
+    let users = {
+      name: 'zxk',
+      age: 19,
+      friends: [
+        "kobe", "ldh", "sg"
+      ]
+    }
+    // 提取出指定对象的属性
+    const usersP = _.pick(users, ["name", "age"])
+    console.log(usersP);
+    usersP.name = "kobe"
+    console.log(users);
+    // omit 与pick相反  
+    console.log(_.omit(users, ["name", "age"]));
+  </script>
+</body>
+
+</html>

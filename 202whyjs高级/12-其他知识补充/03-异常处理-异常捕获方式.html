@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function foo() {
+      console.log("我是错误信息");
+      console.log("我是错误信息");
+      console.log("我是错误信息");
+      throw new Error("我是错误信息")
+      console.log("我是错误信息");
+    }
+
+    function test() {
+      // 自己捕获异常的话  就不会影响后续代码
+      try {
+        foo()
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    function bar() {
+      test()
+    }
+    bar()
+    console.log("-------");
+  </script>
+</body>
+
+</html>

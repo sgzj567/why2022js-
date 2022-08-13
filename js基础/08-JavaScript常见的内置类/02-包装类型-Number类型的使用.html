@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 对象的方法
+    var num = 1000
+    console.log(num.toString()); //默认转换为十进制
+    console.log(num.toString(2)); //转换为二进制
+    console.log(num.toString(8)); //转换为八进制
+    // 如果直接对一个数字进行操作  需要使用.. 运算符
+    console.log(1000..toString(2));
+    // 类的方法
+    var num1 = "123.123"
+    console.log(Number(num1));
+    console.log(Number.parseInt(num1));
+    console.log(Number.parseFloat(num1));
+    // toFixed(digits) 方法  格式化一个数字  保留digits位小数
+    var num2 = 123.123
+    console.log(num2.toFixed(2)); //返回的是字符串类型
+    console.log(typeof num2.toFixed(2));
+    // 上面两行也可以写成这样  因为window中也有这两个方法
+    console.log(parseInt(num1));
+    console.log(parseFloat(num1));
+  </script>
+</body>
+
+</html>

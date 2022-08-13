@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const promise = new Promise((resolve, reject) => {
+      resolve("aaa")
+    })
+    // promise的方法返回值就是Promise
+    // 只执行第一个Promise的then方法和第二个Promise的then方法(因为第一个then方法后的是接受前一个的promise不是所定义的函数promise)  但是第一个promise的then方法也会打印(这里的决议并不是最初的promise的决议 也就是resolve)
+    // then返回的promise也就是相当于重新建了一个promise  调用resolve方法
+    // promise支持链式调用
+    promise.then(res => {
+      console.log("第一个Then方法", res);
+    }).then(res => {
+      console.log("第二个Then方法", res);
+    }).then(res => {
+      console.log("第三个Then方法", res);
+    }).then(res => {
+      console.log("第四个Then方法", res);
+    })
+    promise.then(res => {
+      console.log("添加第二个方法", res);
+    })
+    // then方法可以返回 一个普通的值
+    // 2:返回一个promise
+    // 3.可返回一个thenable值
+  </script>
+</body>
+
+</html>

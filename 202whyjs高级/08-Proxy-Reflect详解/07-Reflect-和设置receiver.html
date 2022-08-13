@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = {
+      _name: "why",
+      set name(newValue) {
+        console.log("this", this);
+        this._name = newValue
+
+      },
+      get name() {
+        return this._name
+      }
+    }
+
+    const objPro = new Proxy(obj, {
+      set: function (target, key, newValue, receiver) {
+        console.log(`${key}的值被改变`);
+        // console.log(receiver);
+        // receiver指向Proxy  可以决定对象this的指向
+        // console.log(target === obj); true
+        // target[key] = newValue(如果对象不可以写  就无法知道) 此时这里操作的是原对象  利用Reflect 改为间接操作
+        const isSuccess = Reflect.set(target, key, newValue, receiver)
+        if (!isSuccess)
+          throw new Error(`set${key} failure`)
+      },
+      get: function (target, key, receiver) {
+        console.log(`获取了${key}`);
+        return Reflect.get(target, key, receiver)
+      }
+    })
+    objPro.name = "kobe"
+    console.log(objPro.name);
+    console.log(obj);
+  </script>
+</body>
+
+</html>

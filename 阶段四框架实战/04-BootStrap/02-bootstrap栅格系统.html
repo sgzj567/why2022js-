@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/css/bootstrap.min.css">
+  <style>
+    .bg {
+      background-color: red;
+    }
+
+    .bg1 {
+      background-color: black;
+    }
+
+    .bg2 {
+      background-color: skyblue;
+    }
+
+    .bg3 {
+      background-color: pink;
+    }
+
+    .leo {
+      height: 800px;
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <!--栅格系统  布局  核心 -->
+  <div class="container">
+    <div class="row">
+      <!-- 等分一行  如果没有内容就会不显示 -->
+      <div class="col bg">111</div>
+      <div class="col bg2">222</div>
+    </div>
+  </div>
+  <div class="contanier-md md">
+    <div class="row">
+      <div class="col bg3">
+        <div class="row leo">
+          <div class="col bg h-25">123</div>
+          <div class="col bg1 h-50">123</div>
+        </div>
+      </div>
+      <div class="col bg ">222</div>
+    </div>
+  </div>
+  <script src="./js/jquery-3.6.0.js"></script>
+  <script src="./js/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function foo() {
+      console.log(this);
+    }
+    foo.call("aaa")
+    // 默认绑定和显示绑定bind冲突 优先级显示(显示绑定
+    // bind绑定完之后会生成一个新的函数  要调用新的函数
+    var newFoo = foo.bind("aaa")
+    newFoo()
+  </script>
+</body>
+
+</html>

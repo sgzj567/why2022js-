@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 生成器函数  在function前加上*
+    // 控制函数的停止  操作
+    // 代码执行可以通过yield来控制
+    // 调用生成器函数时默认返回一个生成器对象  它是特殊的迭代器
+    // 要想执行函数 要拿到生成器对象  调用next方法  遇到yield  暂停操作  再次操作 就再次调用next方法
+    function* foo() {
+      console.log("我是生成器");
+      yield "aaa"
+      console.log("我是生成器");
+      console.log("我是生成器");
+      yield
+      console.log("我是生成器");
+      return undefined
+      console.log("我是生成器");
+    }
+    // 调用生成器函数时默认返回一个生成器对象
+    const generator = foo()
+    console.log(generator.next());
+    console.log(generator.next());
+    console.log(generator.next());
+    // 出现return  
+    console.log(generator.next()); // {
+    // "done": true
+    // }
+  </script>
+</body>
+
+</html>

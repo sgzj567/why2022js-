@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 如果想要实际匹配点.就需要加转义字符.\
+    const message = "my name is why"
+    if (message.startsWith("my")) {
+      console.log("以my开头");
+    }
+    if (message.endsWith("why")) {
+      console.log("以why结尾");
+    }
+    const message1 = "My name is WHY"
+    if (/^my/ig.test(message)) {
+      console.log("以my开头");
+    }
+    if (/why$/ig.test(message)) {
+      console.log("以WHy结尾");
+    }
+    const re2 = /^coder$/ //匹配coder 严格匹配
+    const re3 = /^cod\w+er$/
+    console.log(re3.test("coderadher"));
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "yarn_demo",
+  "version": "1.0.0",
+  "description": "a yarn test ",
+  "scripts": {
+    "zxk": "webpack --version"
+  },
+  "main": "index.js",
+  "author": "ZXK <zhangxiaokang5389@163.com>",
+  "license": "MIT",
+  "private": true
+}

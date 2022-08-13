@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    class Person {
+      running() {
+        console.log("running");
+      }
+    }
+    class Dog extends Person {
+      // 如果子类对继承的方法不满意  重新写 就是重写
+      running() {
+        console.log("我是四条腿再跑");
+        // 调用父类的方法
+        super.running()
+      }
+    }
+    var D1 = new Dog()
+    D1.running()
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 在任何范围内能访问到的就是全局变量
+    var message = "hello word"
+    // 全局变量声明的时候会在window中加进去
+    console.log(window.message);
+
+    // 函数中访问message
+    function sayHello() {
+      console.log("sayHello中访问message:", message);
+
+      // 局部变量 函数内部定义的变量只有在函数内部才能访问,称之为局部变量
+      var name = "why"
+      var nickname = "coderwhy"
+
+      function hi() {
+        console.log("在hi中访问:", message);
+        console.log(nickname); //相对于hi来说  nickname访问的是外部变量
+      }
+      hi()
+    }
+    sayHello()
+  </script>
+</body>
+
+</html>

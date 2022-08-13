@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="./build/bundle.js"></script>
+    <!-- webpack 打包之后的是dist文件  使用npx webpack打包 -->
+    <!-- 一般入口文件是src里面的index.js 这个名字是固定的 但是 也可以自己定义 修改 -->
+    <!-- 自己修改 npx webpack --entry ./src/main.js -->
+    <!-- 指定输出里面的dist文件中的名字 eg:
+    npx webpack  --output-filename -->
+    <!-- 指定输出dist的文件夹名字 
+    npx webpack --output-path ./build -->
+    <!-- 简上述方法  创建一个webpack.config.js(这个名字固定的)配置文件  在与src同等级的文件目录下 -->
+    <!-- 如果想改webpack.config.js名字  就需要在package.json中的scripts中添加脚本 -->
+    <!-- 脚本:脚本名字:webpack --config wk.config.js -->
+  </body>
+</html>

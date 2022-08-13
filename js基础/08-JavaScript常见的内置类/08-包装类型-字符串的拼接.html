@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var str1 = "why"
+    var str2 = "hello"
+    var newStr = str2 + str1
+    console.log(newStr);
+    // 1.字符串拼接 concat  也可以用于数组  这个返回一个新的数组  或者对象
+    var newStr2 = str1.concat(str2)
+    console.log(newStr2);
+    // 2.删除收尾空格
+    // str.trim
+    // 3.字符串的切割 split
+    var message = "abc-cba-nba"
+    var items = message.split('-') // 返回的是数组
+    console.log(items);
+    // 转换字符串拼接方式  join 前面必须是数组
+    var newMessage = items.join('*')
+    console.log(newMessage);
+  </script>
+
+</body>
+
+</html>

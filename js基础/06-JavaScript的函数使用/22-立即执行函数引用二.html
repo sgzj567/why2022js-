@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button class="btn">按钮1</button>
+  <button class="btn">按钮2</button>
+  <button class="btn">按钮3</button>
+  <button class="btn">按钮4</button>
+  <button class="btn">按钮5</button>
+  <script>
+    // 1.拿到html元素
+    // var btn1 = document.querySelector(".btn")
+    // 2.监听按钮点击
+    // btn1.addEventListener('click', function() {
+    // console.log("点击了按钮1");
+    // })
+    // 2.获取所有按钮
+    var btnEls = document.querySelectorAll(".btn")
+    //拿到每个按钮 并绑定事件  
+    // 出现的bug 拿到的i是5  因为点击事件最后执行的  for执行完了之后执行的是5  
+    // for (var i = 0; i < btnEls.length; i++) {
+    //     btnEls[i].addEventListener('click', function() {
+    //         console.log(`点击了第${i+1}个按钮`);
+    //     })
+    // }
+    // 解决办法一
+    // 出现的bug 拿到的i是5  因为点击事件最后执行的  for执行完了之后执行的是5  
+    //             点击事件是在javascript代码执行完毕后
+    // 执行顺序从上到下，遇到for循环，它是同步任务先执行，遇到绑定点击事件也是同步任务对其一一进行绑定，再执行遇到function函数，这是一个异步任务，当点击时将会进入队列进行等待同步任务执行完毕再执行，因此同步任务执行完毕也就是for循环完成，此时的i=6，再执行function函数体内的console.log()打印都是i=5。
+    // for中也没有块级作用域 所以var声明的是全局变量
+
+    for (var i = 0; i < btnEls.length; i++) {
+      (function (m) {
+        btnEls[m].addEventListener('click', function () {
+          console.log(`点击了第${m + 1}个按钮`);
+        })
+      })(i)
+    }
+    console.log(i);
+        // 解决办法二
+        // for (let i = 0; i < btnEls.length; i++) {
+        //     btnEls[i].addEventListener('click', function() {
+        //         console.log(`点击了第${i+1}个按钮`);
+        //     })
+        // }
+  </script>
+</body>
+
+</html>

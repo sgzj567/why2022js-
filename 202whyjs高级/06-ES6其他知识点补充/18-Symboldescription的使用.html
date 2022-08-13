@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const s1 = Symbol()
+    const s2 = Symbol()
+    const obj = {
+      name: "why",
+      age: 18,
+      [s1]: 1.88,
+      [s2]: "广州市"
+    }
+    // 获取键值  但是Symbol的键值获取不到
+    // console.log(Object.keys(obj));  
+    const symbolKeys = Object.getOwnPropertySymbols(obj)
+    console.log(symbolKeys);
+    for (const key of symbolKeys) {
+      console.log(obj[key]);
+    }
+    // description
+    const s3 = Symbol("ccc")
+    console.log(s3.description);
+  </script>
+</body>
+
+</html>

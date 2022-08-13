@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.在ES5之前只有函数和全局会形成自己的作用域
+    // 代码块{}
+    function foo() {
+      var message = "hello"
+      console.log(message);
+    }
+    // 2.从ES6开始使用let const function class声明的变量会有块级作用域
+    {
+      let age = 19
+      const height = 1.88
+
+      function foo() {
+        console.log("foo function");
+      }
+    }
+    // foo()  浏览器可以访问  允许象var 可以在下面访问 但是不能提前访问
+    // console.log(age);访问不到  没有定义  外界不能访问
+  </script>
+</body>
+
+</html>

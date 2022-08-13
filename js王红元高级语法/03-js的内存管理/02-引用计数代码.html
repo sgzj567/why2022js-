@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 引用计数的弊端  循环引用
+    var obj1 = {
+      friend: obj2
+    }
+    var obj2 = {
+      friend: obj1
+    }
+    // 解决办法
+    obj1.friend = null;
+    var obj = {
+      name: "why"
+    } //这个里面含有retain count 计数被引用的次数 每引用一次就+1
+    var info = {
+      name: "lobe",
+      friend: obj
+    }
+    var p = {
+      name: "james",
+      friend: obj
+    }
+  </script>
+</body>
+
+</html>

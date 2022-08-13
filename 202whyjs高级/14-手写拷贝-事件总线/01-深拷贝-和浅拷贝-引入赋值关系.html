@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = {
+      name: "zxk",
+      height: 1.88,
+      friends: {
+        name: "why",
+        address: "广东市"
+      }
+    }
+    // 浅拷贝
+    const newObj = {
+      ...obj
+    }
+    newObj.friends.name = "kobe"
+    console.log(obj.friends.name);
+    // 深拷贝  但是这里对于[symbol]类型的会报错
+    const deepObj = JSON.parse(JSON.stringify(obj))
+    deepObj.friends.name = "ldh"
+    console.log(deepObj.friends.name);
+    console.log(obj.friends.name);
+    // 深拷贝  对于内部有undefined null 以及函数的深拷贝之后会丢失  对于内部有时间函数也会变为字符串  date函数调用不了
+    // 当对象中有NaN、Infinity和-Infinity这三种值的时候 --- 会变成null
+    const info = {
+      undef: undefined,
+      nan: NaN,
+      infinityMax: Infinity,
+      InfinityMin: -Infinity,
+      foo: function () {
+        console.log("foo");
+      }
+    }
+    // info.childInfo = info
+    const deepInfo = JSON.parse(JSON.stringify(info))
+    // 当对象循环引用之后就会报错
+    console.log(deepInfo);
+    console.log(info);
+  </script>
+</body>
+
+</html>

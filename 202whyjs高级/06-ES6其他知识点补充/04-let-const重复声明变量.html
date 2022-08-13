@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    console.log(age); //此时会打印undefined
+    var age = 19
+    // let 和const会创建出来 但是不能被访问  认为不能被作用域提升
+    // 作用域提升 在变量声明之前可以被访问到的可以称为作用域提升
+    // console.log(name);//会报错
+    // let name = "kobe"
+    // 暂时性死区
+    // 从块作用域的顶部一直到变量声明之前 这个变量称为暂时性死区  TDZ
+  </script>
+</body>
+
+</html>

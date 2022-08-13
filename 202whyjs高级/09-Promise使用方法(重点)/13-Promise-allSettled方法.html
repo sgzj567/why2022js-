@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // all 方法有个弊端 就是一旦有个不符合就不会执行接下来的结果   但是allSettled 可以跳过这个结果 执行下一个   执行的then方法
+    const p1 = new Promise((resolve, reject) => {
+      reject("p1")
+    })
+    const p2 = new Promise((resolve, reject) => {
+      resolve("p2")
+    })
+    const p3 = new Promise((resolve, reject) => {
+      resolve("p3")
+    })
+    Promise.allSettled([p1, p2, p3]).then(res => {
+      console.log("all settled", res);
+    })
+    // 与all相比 allSettled 的res会返回一个数组里带有对象的数组  并且会把每个相对应的状态返回出来
+  </script>
+</body>
+
+</html>

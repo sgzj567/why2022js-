@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Person1(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    Person1.prototype.running = function () {
+      console.log("奔跑");
+    }
+
+    var p1 = new Person1()
+    p1.running()
+    console.log(Person1.prototype === p1.__proto__);
+    console.log(Person1.prototype.constructor);
+    Person1("why", "19")
+    class Person2 {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      running() {
+        console.log("我在草原");
+      }
+    }
+    var p2 = new Person2()
+    console.log(Person2.prototype === p2.__proto__);
+    console.log(Person2.prototype.constructor);
+    // Person2("cab", "0")
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const names = ["abc", "zkx", "nba"]
+
+    function foo(name1, name2, ...args) {
+      console.log(name1, name2, args);
+    }
+    foo(...names)
+    // 也可以展开字符串
+    const str = "hello"
+    foo(...str)
+    // ES9里面也可以对对象使用
+    const obj = {
+      name: "why",
+      age: 19
+    }
+    // foo(...obj)// 不可以这样使用不可迭代的
+    // 在构建对象字面量的时候才可以使用展开语法
+    const info = {
+      ...obj,
+      height: 1.88,
+      address: "广州市"
+    }
+    console.log(info);
+  </script>
+</body>
+
+</html>

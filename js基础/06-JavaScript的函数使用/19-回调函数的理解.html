@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function foo(fn) {
+      // 通过fn函数调用bar函数叫做函数回调
+      fn()
+    }
+
+    function bar() {
+      console.log("bar函数被执行了");
+    }
+    foo(bar)
+  </script>
+</body>
+
+</html>

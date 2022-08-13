@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    class Hyarray extends Array {
+      get lastItem() {
+        return this[this.length - 1]
+      }
+    }
+    var Hy1 = new Hyarray(20, 30, 49, 29)
+    console.log(Hy1.lastItem);
+    //直接对Array进行扩展
+    Array.prototype.lastItem = function () {
+      return this[this.length - 1]
+    }
+    var arr = [20, 345, 788, 9]
+    console.log(arr.lastItem());
+  </script>
+</body>
+
+</html>

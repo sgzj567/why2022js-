@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 当圆括号包裹住函数时 会当做函数表达式解析  而不是函数的声明
+    (function () {
+      console.log("函数被执行了");
+    })() +
+
+      function foo() {
+        console.log("函数1");
+      }()
+  </script>
+</body>
+
+</html>

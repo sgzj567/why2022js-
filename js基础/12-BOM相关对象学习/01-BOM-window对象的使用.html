@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <a href="http://www.baidu.com" target="_blank">百度一下</a>
+  <button>百度一下</button>
+  <script>
+    // window
+    // ECMAScript:全局对象 ->globalThis
+    // 对于浏览器:->window
+    // 对于node->global
+    console.log(window === globalThis);
+
+    // 浏览器窗口
+    console.log(window.outerHeight);
+    // 用var 定义的函数 会被加到window上
+
+    var btn = document.querySelector('button')
+    btn.addEventListener("click", function () {
+      window.open("http://www.baidu.com", "_self")
+    })
+
+    // 3.常见的事件
+    window.onfocus = function () {
+      console.log("窗口获得焦点");
+    }
+    window.onblur = function () {
+      console.log("窗口失去焦点");
+    }
+    window.onhashchange = function () {
+      console.log("hash值发生改变");
+    }
+  </script>
+</body>
+
+</html>

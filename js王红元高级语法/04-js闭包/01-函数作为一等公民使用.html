@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //函数作为参数
+        // function foo(arg) {
+        //     console.log("foo", arg);
+        // }
+        // foo(123);
+        function foo1(fn) {
+            fn();
+        }
+
+        function bar() {
+            console.log("bar");
+        }
+        foo1(bar)
+
+        function calc(num1, num2, calcFn) {
+            console.log(calcFn(num1, num2));
+        }
+
+        function add(num1, num2) {
+            return (num1 + num2);
+        }
+
+        function mul(num1, num2) {
+            return num1 * num2;
+        }
+
+        function sub(num1, num2) {
+            return num1 - num2;
+        }
+        calc(34, 22, sub)
+    </script>
+</body>
+
+</html>

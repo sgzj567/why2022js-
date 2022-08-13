@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<button>修改history</button>
+<button class="back">返回上一级</button>
+
+<body>
+  <script>
+    // 前端路由核心 修改了url  页面不刷新
+    // 1>.修改hash
+    // 2>.修改history
+    // history有两个属性 length会话中的记录数 state 保留当前状态值  5个方法
+    console.log(history.length);
+    console.log(history.state);
+    var btn = document.querySelector("button")
+    btn.addEventListener("click", function () {
+      history.pushState({
+        name: "why"
+      }, "", "/why")
+    })
+    var bk = document.querySelector(".back")
+    bk.onclick = function () {
+      history.back()
+      history.forward()
+    }
+  </script>
+</body>
+
+</html>

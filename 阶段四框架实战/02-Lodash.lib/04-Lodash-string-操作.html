@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./lib/loadsh.js"></script>
+  <script>
+    console.log(_.camelCase("end number"));
+    // 转换首字母大写  有空格不会去掉
+    console.log(_.capitalize("sjkahdl"));
+    // 检查字符串是否以给定的字符结尾的不
+    console.log(_.endsWith("zxk", 'b'));//false
+    // 检查字符串是否存在指定的位置
+    console.log(_.endsWith("zxk", 'x', 2));//false
+    // 如果字符串小于给定的数字  就在字符串左侧添加后续字符  直到达到给定的个数
+    console.log(_.padStart("7", 2, "0"));
+    console.log(_.padStart("22", 2, "2"));
+
+  </script>
+</body>
+
+</html>

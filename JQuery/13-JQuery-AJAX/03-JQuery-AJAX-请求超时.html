@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>取消请求</button>
+  <script src="./jquery/jquery.min.js"></script>
+  <script>
+    $(function () {
+      let jqXHR = $.ajax({
+        url: "http://httpbin.org/delay/7",//后台7秒之后才会返回请求
+        method: "POST",
+        // 如果超过5秒  就算超时  并且取消请求
+        timeout: 5000,
+        error: function (err) {
+          console.log(err);
+        }
+      })
+    })
+    // 取消请求
+    $('button').click(function () {
+      jqXHR.abort()
+    })
+  </script>
+</body>
+
+</html>

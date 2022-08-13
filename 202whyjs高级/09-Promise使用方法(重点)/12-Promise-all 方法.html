@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 全部所有  创建三个Promise
+    const p1 = new Promise((resolve, reject) => {
+      resolve("p1")
+    })
+    const p2 = new Promise((resolve, reject) => {
+      resolve("p2")
+    })
+    const p3 = new Promise((resolve, reject) => {
+      resolve("p3")
+    })
+    // 等到全部Promise结果是resolve的话就执行all方法  有一个是reject all就执行reject
+    Promise.all([p1, p2, p3]).then(res => {
+      console.log("执行all方法", res);
+    })
+  </script>
+</body>
+
+</html>

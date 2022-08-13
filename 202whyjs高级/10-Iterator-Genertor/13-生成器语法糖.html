@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const names = ["abc", "cba", "nba"]
+
+    function* foo(arr) {
+      yield* arr
+    }
+    const namesIterator = foo(names)
+    console.log(namesIterator.next());
+    class Person {
+      constructor(name, age, height, address) {
+        this.name = name;
+        this.age = age;
+        this.height = height;
+        this.address = address;
+      }
+      // 实例方法
+      *[Symbol.iterator]() {
+        yield* this.address
+      }
+    }
+    const
+  </script>
+</body>
+
+</html>

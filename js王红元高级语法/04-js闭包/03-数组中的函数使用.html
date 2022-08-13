@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var nums = [100, 15, 16, 20]
+        // var newsNum = [];
+        // for (var i = 0; i < nums.length; i++) {
+        //     if (nums[i] % 2 == 0) {
+        //         newsNum.push(nums[i])
+        //     }
+        // }
+        // console.log(newsNum);
+        // function:函数 一般与方法没有多大区别
+        // filter:过滤
+        // method方法:当我们函数属于某一个对象时,我们成这个函数是这个对象方法
+        // var obj = {
+        //     foo: function() {
+
+        //     }
+        // }
+        //1. num.filter(()=>(item,index,arr))
+        var nums = [100, 15, 16, 20]
+        var newNums = []
+        var newNums = nums.filter(function(item) {
+            return item % 2 === 0 //偶数 返回值是Boolean类型的
+        })
+        console.log(newNums);
+        //2. map映射
+        var newNums2 = []
+        var newNums2 = nums.map(function(item) {
+            return item * 10
+        })
+        console.log(newNums2);
+        //3. foreach遍历
+        nums.forEach(item => {
+            console.log(item);
+        });
+        var item = nums.find(function(item) {
+            return item === 29; //undefined
+        })
+        console.log(item);
+        // 4.find找对象
+        var friends = [{
+            name: "why",
+            age: 22
+        }, {
+            name: "james",
+            age: 37
+        }, {
+            name: "ldh",
+            age: 55
+        }]
+        var findFriend = friends.find(function(item) {
+            return item.name === 'ldh';
+        })
+        console.log(findFriend);
+        //5.findIndex找索引
+        var findIndex = friends.findIndex(function(item) {
+            return item.name === 'james'
+        })
+        console.log(findIndex);
+        // 累加
+        var total = 0;
+        for (var i = 0; i < nums.length; i++) {
+            total += nums[i]
+        }
+        console.log(total);
+        // 6.reduce累加 数组
+        // nums.reduce(function(prevValue,item){},init) prevValue:上一次值  item数组的值 init初始化值
+        var reduce = nums.reduce(function(prevValue, item) {
+            return prevValue + item;
+        }, 0)
+        console.log(reduce);
+    </script>
+</body>
+
+</html>

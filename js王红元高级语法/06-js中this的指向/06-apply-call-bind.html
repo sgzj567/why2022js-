@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 显示绑定
+    function foo() {
+      console.log("函数被调用了", this);
+    }
+    // foo 直接调用的不同在于this的绑定不同
+    // foo直接调用指向的是全局对象(window)
+    var obj = {
+      name: "obj"
+    }
+    // call/apply是可以指定this的对象
+    foo.apply("aaa") //此时apply this指定的是aaa
+    // call 和apply有什么区别
+    function sum(num1, num2, num3) {
+      console.log(num1 + num2 + num3, this);
+    }
+    sum.apply("apply", [20, 30, 44])
+    sum.call("call", 33, 44, 53)
+  </script>
+</body>
+
+</html>

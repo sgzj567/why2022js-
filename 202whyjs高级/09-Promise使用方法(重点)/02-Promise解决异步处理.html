@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+
+<body>
+  <script>
+    function execCode(counter) {
+      const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          if (counter > 0) {
+            let total = 0;
+            for (let i = 0; i < counter; i++) {
+              total += i;
+            }
+            resolve(total)
+          } else {
+            reject(`${counter}有误`)
+          }
+        }, 2000)
+      })
+      return promise
+    }
+    // const promise = execCode(100)
+    // promise.then((value) => {
+    //   console.log("执行成功", value);
+    // })
+    // promise.catch((error) => {
+    //   console.log("失败了有误", error);
+    // })
+    // const promise2 = execCode(-100)
+    // promise2.then((value) => {
+    //   console.log('代码执行成功', value);
+    // })
+    // promise2.catch((error) => {
+    //   console.log("代码有误", error);
+    // })
+    // 简写
+    execCode(23).then(value => {
+      console.log("代码执行成功", value);
+    }).catch(error => {
+      console.log("代码错误");
+    })
+  </script>
+</body>
+
+</html>

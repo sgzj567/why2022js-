@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var obj = {
+      name: "why",
+      eating: function () {
+        console.log(this.name + "在吃东西");
+      },
+      running: function () {
+        console.log(this.name + "在跑步");
+      },
+      studying: function () {
+        console.log(this.name + "在学习");
+      },
+    }
+    // 在开发中如果没有this也可以  但是有this在开放中我们一些操作就会变得十分方便
+    var info = {
+      name: "why",
+      eating: function () {
+        console.log(info.name + "在吃东西");
+      },
+      running: function () {
+        console.log(info.name + "在跑步");
+      },
+      studying: function () {
+        console.log(info.name + "在学习");
+      },
+    }
+    obj.eating();
+    obj.running();
+    obj.studying();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+.content {
+  font-size: 20px;
+  color: red;
+  /* 文字不能选中  但是这个有浏览器兼容性  需要加浏览器前缀  不过webpack里面 有  但是需要下载postcss-loader */
+  user-select: none;
+  background-color: #666666;
+}
+/* postcss-loader 可以对css转换和适配 */

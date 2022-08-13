@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // function () {}
+    // 箭头函数是没有显示原型的
+    let foo = () => {
+      console.log("123");
+    }
+    console.log(foo.__proto__ === Function.prototype);
+    console.log(foo.prototype); //没有显示原型  undefined  不绑定this super  arguments
+  </script>
+</body>
+
+</html>

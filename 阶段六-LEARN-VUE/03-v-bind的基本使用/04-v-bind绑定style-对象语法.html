@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+  <template id="my-app">
+    <!-- red必须加引号 不加就会当做变量 变量名可以短斜杠但是必须加单引号 驼峰不需要加-->
+    <h2 :style="{color:'red',fontSize:'30px'}">{{message}}</h2>
+    <h2 :style="fontStyleObj">{{message}}</h2>
+  </template>
+  <script src="../JS/vue.js"></script>
+  <script>
+    const App={
+      template:'#my-app',
+      data(){
+        return {
+          message:"Hello World",
+          fontStyleObj:{
+color:'aqua',fontSize:'30px'
+          }
+        }
+      }
+    }
+    Vue.createApp(App).mount("#app")
+  </script>
+</body>
+</html>

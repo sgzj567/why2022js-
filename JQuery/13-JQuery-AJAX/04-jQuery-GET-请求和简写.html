@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./jquery/jquery.min.js"></script>
+  <script>
+
+    $(function () {
+      // 4.给get添加请求头
+      $.ajax({
+        url: "http://httpbin.org/get",
+        method: "GET",
+        data: {
+          cityId: "504100",
+          keyWord: "展开"
+        },
+        headers: {//登陆成功后返回一个token
+          accessToken: "2394820348"
+        },
+        success: function (res) {
+          console.log(res);
+        }
+      })
+      // 3.
+      // $.get("http://httpbin.org/get")
+      //   .then(function (res) {
+      //     console.log(res);
+      //   }).catch(function (err) {
+      //     console.log("catch");
+      //   }).always(function () {
+      //     console.log("always");
+      //   })
+    })
+  </script>
+</body>
+
+</html>

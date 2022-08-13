@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 立即执行函数和普通代码有什么区别
+    // 在立即执行函数中定义的变量有自己作用域
+    (function () {
+      var message = "Hello World"
+      console.log(message);
+    })()
+
+        // var message = "Hello World"
+        // console.log(message);
+
+        // 1.应用场景一
+        // 防止全局变量的命名冲突
+  </script>
+</body>
+
+</html>

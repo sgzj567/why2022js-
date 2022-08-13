@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 多态必须要有继承 必须要有父类引用指向子类
+    // 多态  不同的数据类型进行同一个操作  表现出不同的行为  就是多态的体现
+    class Shape {
+      getArea() {}
+    }
+    class Rectangle extends Shape {
+      constructor(width, height) {
+        super()
+        this.width = width;
+        this.height = height;
+
+      }
+      getArea() {
+        return this.width * this.height
+      }
+    }
+    class Circle extends Shape {
+      constructor(radius) {
+        super()
+        this.radius = radius;
+      }
+      getArea(radius) {
+        return this.radius * this.radius * 3.14
+      }
+    }
+    var R1 = new Rectangle(10, 23)
+    console.log(R1);
+    console.log(R1.getArea());
+    var C1 = new Circle(13)
+    console.log(C1.getArea());
+    // 多态
+    function getAreaShape(shape) {
+      console.log(shape.getArea());
+    }
+    getAreaShape(C1)
+    getAreaShape(R1)
+  </script>
+</body>
+
+</html>

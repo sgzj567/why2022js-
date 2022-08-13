@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // let 和const 不能重复声明
+    // ES6之前的
+    var message1 = "Hello world"
+    message1 = "Hello why"
+    console.log(message1);
+    // ES6之后
+    let message2 = "Hello why"
+    message2 = "Hello nihao"
+    console.log(message2);
+
+    // const 
+    // const message3 = "Hello 123"
+    // message3 = "hello 456"
+    // console.log(message3); 会报错  const声明的常量不能改变
+    const obj = {
+      name: "why",
+      age: 19,
+    }
+    // obj = {} 不被允许  因为修改了obj的地址
+    // 但是可以修改内部值  因为obj的值没有被修改
+    obj.name = "kobe"
+    console.log(obj);
+  </script>
+</body>
+
+</html>

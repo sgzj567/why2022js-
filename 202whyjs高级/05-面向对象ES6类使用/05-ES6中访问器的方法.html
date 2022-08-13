@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    class Person {
+      constructor(name, age) {
+        this._name = name;
+        this._age = age;
+      }
+      set name(value) {
+        console.log("设置了name");
+        this._name = value;
+      }
+      get name() {
+        console.log("获取了name");
+        return this._name
+      }
+    }
+    var p1 = new Person("kobe", "19")
+    // console.log(p1._name); 约定俗成规范  不要在外界访问下划线的属性
+    p1.name = "why"
+    console.log(p1.name);
+    class Rectangle {
+      constructor(x, y, z, h) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.h = h;
+      }
+      get position() {
+        return {
+          x: this.x,
+          y: this.y
+        }
+
+      }
+      get size() {
+        return {
+          y: this.y,
+          z: this.z,
+        }
+      }
+    }
+    var react = new Rectangle(100, 20, 4, 5)
+    console.log(react.position);
+    console.log(react.size);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.弊端:需要设计这样的函数  什么地方传第一个函数  什么时候传callback函数
+    function execCode(counter, successCallback, failureCallback) {
+      if (counter <= 0) {
+        failureCallback(`${counter}有误`)
+      } else {
+        setTimeout(() => {
+          console.log("hello");
+          let i = 0;
+          i++;
+          successCallback(i)
+        }, 2000)
+      }
+
+    }
+    execCode(0, (value) => {
+      console.log("监听已经做好", value);
+    }, (err) => {
+      console.log("本次执行失败", err);
+    })
+  </script>
+</body>
+
+</html>

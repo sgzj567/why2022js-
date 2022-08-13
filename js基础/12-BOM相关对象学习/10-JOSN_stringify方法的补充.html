@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var obj = {
+      name: "why",
+      age: 19,
+      height: 1.88,
+      friend: {
+        name: "coderwhy"
+      }
+    }
+    // 将对象序列化   序列化就是转换为JSON格式
+    // replacer参数
+    // var objJSONString = JSON.stringify(obj, function (key, value) {
+    //   if (key === "name") {
+    //     return "coderwhy"
+    //   }
+    //   return value
+    // })
+    // console.log(objJSONString);
+    // 2.space参数
+    var objJSONString = JSON.stringify(obj, null, 2)
+    console.log(objJSONString);
+    // 修改字符串里面的值
+    var newObj = JSON.parse(objJSONString, function (key, value) {
+      if (key === "age") {
+        return value + 2
+      }
+      return value
+    })
+    console.log(newObj);
+  </script>
+</body>
+
+</html>

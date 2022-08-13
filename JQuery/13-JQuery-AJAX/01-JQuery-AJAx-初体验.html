@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./jquery/jquery.min.js"></script>
+  <script>
+    $(function () {
+      // $.ajax({
+      //   url: "http://httpbin.org/get",
+      //   method: "get",
+      //   // dataType:"json"  也可以自动推断
+      //   success: function (res) {
+      //     console.log(res);
+      //   },
+      //   error: function (err) {
+      //     console.log(err);
+      //   }
+      // })
+      // $.ajax({
+      //   url: "http://httpbin.org/post",
+      //   method: "post",
+      //   success: function (res) {
+      //     console.log(res);
+      //   }
+      // })
+      // 3.put(更新内容)
+      // $.ajax({
+      //   url: "http://httpbin.org/put",
+      //   method: "put",
+      //   success: function (res) {
+      //     console.log(res);
+      //   }
+      // })
+      // 4.delete请求
+      $.ajax({
+        url: "http://httpbin.org/delete",
+        method: "delete",
+        success: function (res) {
+          console.log(res);
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 一般都要写catch 方法
+    const promise = new Promise((resolve, reject) => {
+      resolve("aaa")
+      // reject("bbb")
+    })
+    promise.then(res => {
+      console.log("then的第一次回调", res);
+      throw new Error("第二个promise有误")
+    }).then(res => {
+      console.log("then的二次回调", res);
+    }).then(res => {
+      console.log("then的三次回调", res);
+      // throw Error("第四个promise有误")
+    }).catch(error => {
+      console.log("catch被回调", error);
+    })
+    // 中断函数的方法
+    // return
+    // throw
+    // yield 暂停  暂时性中断
+  </script>
+</body>
+
+</html>

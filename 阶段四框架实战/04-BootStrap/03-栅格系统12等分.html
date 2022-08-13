@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/css/bootstrap.min.css">
+  <style>
+    .bg {
+      background-color: red;
+    }
+
+    .bg2 {
+      background-color: yellow;
+    }
+
+    .bg3 {
+      background-color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- bootstrap 是把一个row分为了十二等分 -->
+  <!-- row 是配合col使用的 col不能超过12  否则会跑到下一行 -->
+  <div class="contaner">
+    <div class="row">
+      <div class="col-1 bg">123</div>
+      <div class="col-11 bg2">123</div>
+    </div>
+  </div>
+  <div class="contaner">
+    <div class="row">
+      <div class="col-3 bg3">123</div>
+      <div class="col-9 bg2">123</div>
+    </div>
+  </div>
+  <script src="./js/jquery-3.6.0.js"></script>
+  <script src="./js/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

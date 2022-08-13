@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const message = "fadd32409 3234asdfh"
+    const re = /\d+/ig //=> \d 匹配0-9的数字 + 代表大于1 及以上
+    const re1 = /\D+/ig
+    console.log(message.match(re1));
+    console.log(message.match(re));
+    // /\w/代表匹配A-Za-z0-9_  也就是拉丁字母 或数字或下划线
+    // . 除了换行符所有的字符
+    // \D 与\d匹配的相反
+  </script>
+</body>
+
+</html>

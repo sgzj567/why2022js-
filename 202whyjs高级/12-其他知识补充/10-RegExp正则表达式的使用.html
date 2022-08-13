@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 修饰符 i g m -->
+  <!-- /^a{5,8}/ $表示输入的a必须是5-8位 -->
+  输入账号:<input type="text">
+  <p class="tip">请输入账号</p>
+  <script>
+    const re1 = /^abc$/ig
+    const message = "fdabc123 faBC323 dfABN AOLI239048"
+    // 1.1使用正则对象实例方法
+    // test方法  检测一个字符串是否否和正则规则
+    if (re1.test(message)) {
+      console.log("message符合规则");
+
+    } else {
+      console.log("不符合");
+    }
+    // 1.2exec执行正则  获取第一个匹配的结果  并输出相应的信息  并返回
+    const re2 = /abc/ig
+    const res1 = re2.exec(message)
+    console.log(res1);
+    // 1.3match方法  拿到对应的结果 你如果后面不加g就会返回第一个符合的详情
+    const res2 = message.match(re2)
+    console.log(res2);
+    // 1.4matchAll方法 后面必须加g 返回的是一个迭代器
+    const res3 = message.matchAll(re2)
+    console.log(res3.next());
+    // 1.5replace /replaceAll  替换字符
+    // 1.6split
+    const res4 = message.split(re2)
+    console.log(res4);
+    // 1.7search  
+    const res5 = message.search(re2)
+    console.log(res5); //搜索不到就返回就返回-1  搜索到就返回索引位置
+    // 让用户输入的账号必须到达5个a
+    const inputEl = document.querySelector("input")
+    const tipEl = document.querySelector(".tip")
+    inputEl.oninput = function () {
+      const value = this.value
+      // console.log(value);
+      if (/aaaaa/.test(value)) {
+        tipEl.textContent = "输入的内容符合规则"
+      } else {
+        tipEl.textContent = "输入的内容不符合"
+
+      }
+    }
+  </script>
+</body>
+
+</html>

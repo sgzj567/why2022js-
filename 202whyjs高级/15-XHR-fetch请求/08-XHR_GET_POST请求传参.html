@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form class="info">
+    <input type="text" name="username">
+    <input type="password" name="password">
+  </form>
+  <button class="send">发送请求</button>
+  <script>
+    const formEl = document.querySelector(".info")
+    const sendEl = document.querySelector(".send")
+    sendEl.onclick = function () {
+      const xhr = new XMLHttpRequest()
+      xhr.onload = function () {
+        console.log(xhr.response);
+      }
+      xhr.responseType = "json"
+      // 传递参数方式一:get->query 传递不太安全
+      // xhr.open("get", "http://123.207.32.32:1888/02_param/get?name=why&age=18&address=广州市")
+      // xhr.send()
+      // 参数二 post
+      // xhr.open("post", "http://123.207.32.32:1888/02_param/posturl")
+      // 发送请求
+      //   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencode")
+      //   xhr.send("name=why&age=18&address=广州市")
+
+      // 3.传递参数方式三
+      // xhr.open("post", "http://123.207.32.32:1888/02_param/postform")
+      // const formData = new FormData(formEl)
+      // xhr.send(formData)
+      // 4.传递方式四
+      xhr.open("post", "http://123.207.32.32:1888/02_param/postjson")
+      // 服务器默认传过去的是formData形式  这里不是所以需要告诉一下
+      xhr.setRequestHeader("Content-type", "application/json")
+      xhr.send(JSON.stringify({ name: "why", age: 18, height: "1.88" }))
+
+    }
+  </script>
+</body>
+
+</html>

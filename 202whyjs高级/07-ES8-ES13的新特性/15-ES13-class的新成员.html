@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    class Person {
+      // 对象属性:public属性
+      height = 1.98
+      // 对象属性:
+
+      // #intro = "name is zl"
+      // 类属性
+      // 静态公共属性
+      // static totalCount = "70亿"
+      // 静态属性  私有的
+      static _totalManCount = "30亿"
+      constructor(name, age) {
+        this.name = name;
+        this.age = age
+      }
+    }
+    const p = new Person("zxk", 19)
+    console.log(p);
+    console.log(Person.totalCount);
+    console.log(Person._totalManCount);
+  </script>
+</body>
+
+</html>

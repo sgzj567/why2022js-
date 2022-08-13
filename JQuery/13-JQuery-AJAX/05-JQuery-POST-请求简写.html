@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script src="./jquery/jquery.min.js"></script>
+  <script>
+    $(function () {
+      // 1.
+      // $.ajax({
+      //   url: "http://httpbin.org/post?name=维护员&address=广州市",
+      //   method: "POST",
+      //   success: function (res) {
+      //     console.log(res);
+      //   }
+      // })
+      // 2.在data中提交参数
+      //   $.ajax({
+      //     url: "http://httpbin.org/post",
+      //     method: "POST",
+      // 此时不会拼接到url后面  get会
+      //     data: {
+      //       cityId: '50318',
+      //       keyWord: '小蛮腰',
+      //     },
+      //   contentType:application/x-www-form-urlencode //默认的是application/x-www-form-urlencode
+      //     success: function (res) {
+      //       console.log(res);
+      //     }
+      //   })
+      // })
+      // 3.data中JSON字符串
+      // $.ajax({
+      //   url: "http://httpbin.org/post",
+      //   method: "POST",
+      //   data: JSON.stringify({
+      //     cityId: '50318',
+      //     keyWord: '小蛮腰',
+      //   }),
+      //   // 告诉后端提交的字符串(或者内容)格式  按照这个解析
+      //   contentType: 'application/json;charest=UTF-8',//默认的是application/x-www-form-urlencode
+      // dataType:  表示回传的数据类型
+      //   success: function (res) {
+      //     console.log(res);
+      //   }
+      // })
+      // 4.在data中FormData  上传文件的时候一般用formData
+      // <form form action="" >
+      // <input name="cityId" value="400534">
+      //   <input name="keyWord" ,value="小蛮腰">
+      // </form>  
+      // let formData1 = new FormData();
+      // formData1.append("cityId", 400534)
+      // formData1.append("keyWord", "小蛮腰")
+      // $.ajax({
+      //   url: "http://httpbin.org/post",
+      //   method: "POST",
+      //   data: formData1,
+      //   processData: false,  默认的是true  会将data转为查询字符串
+      //   contentType: false,//表示 原始的xhr  默认的是formData
+      //   success: function (res) {
+      //     console.log(res);
+      //   }
+      // })
+      // 5.添加请求头
+      //   let formData1 = new FormData();
+      //   formData1.append("cityId", 400534)
+      //   formData1.append("keyWord", "小蛮腰")
+      //   $.ajax({
+      //     url: "http://httpbin.org/post",
+      //     method: "POST",
+      //     data: formData1,
+      //     processData: false,
+      //     contentType: false,//表示 原始的xhr  默认的是formData
+      //     // 请求头一般  公司需要添加  如果没有请求头就会访问不成功
+      //     headers: {
+      //       zxk: 'zzzxxxkkk'
+      //     },
+      //     success: function (res) {
+      //       console.log(res);
+      //     }
+      //   })
+      // })
+      // 6.post简写
+      $.post("http://httpbin.org/post", {
+        cityId: '23442',
+        keyWord: '小蛮腰',
+      }).then(function (res) {
+        console.log(res);
+      })
+    })
+  </script>
+</body>
+
+</html>

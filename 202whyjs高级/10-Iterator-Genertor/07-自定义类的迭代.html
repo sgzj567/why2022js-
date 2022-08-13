@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    class Person {
+      constructor(name, age, height, address) {
+        this.name = name;
+        this.age = age;
+        this.height = height;
+        this.address = address;
+      }
+      // 添加实例方法
+      running() {}
+        [Symbol.iterator]() {
+          let index = 0;
+          const iterator = {
+            next: () => {
+              if (index < this.address.length) {
+                return {
+                  done: false,
+                  value: this.address[index++]
+                }
+              } else {
+                return {
+                  done: true
+                }
+              }
+            }
+          }
+          return iterator
+        }
+    }
+    const p1 = new Person("why", "19",
+      1.98, ["广州市", "香港"])
+    for (const address of p1) {
+      console.log(address);
+    }
+  </script>
+
+</body>
+
+</html>

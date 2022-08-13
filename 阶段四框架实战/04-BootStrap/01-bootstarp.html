@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/css/bootstrap.min.css">
+  <style>
+    .bg {
+      background-color: #000000;
+    }
+
+    .sm {
+      background-color: #002752;
+    }
+
+    .md {
+      background-color: #004085;
+    }
+
+    .lg {
+      background-color: red;
+    }
+
+    .xl {
+      background-color: yellow;
+    }
+
+    .fluid {
+      background-color: skyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- container 表示是容器居中  同时也会有响应式变化 -->
+  <!-- bg 和 sm小于576都是100% 宽 -->
+  <div class="container bg">123</div>
+  <div class="container-sm sm">123</div>
+  <!-- md小于768都是100% -->
+  <div class="container-md md">123</div>
+  <!-- lg小于992都是100% -->
+  <div class="container-lg lg">123</div>
+  <!-- 小于1120px都是100%宽 -->
+  <div class="container-xl xl">123</div>
+  <!-- 通栏效果 -->
+  <div class="container-fluid fluid">123</div>
+  <div>123</div>
+  <!-- 首先是jQuery 后面是bootstrap -->
+  <script src="./js/jquery-3.6.0.js"></script>
+  <script src="./js/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

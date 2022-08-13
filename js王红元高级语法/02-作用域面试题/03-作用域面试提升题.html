@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 函数结果与它定义位置有关 与他调用位置无关?(此结论有待验证)
+    var n = 100
+
+    function foo1() {
+      console.log(n);
+    }
+
+    function foo2() {
+      var n = 200;
+      console.log(n);
+      foo1()
+    }
+    foo2() // 200 100
+    console.log(n) //100
+  </script>
+</body>
+
+</html>

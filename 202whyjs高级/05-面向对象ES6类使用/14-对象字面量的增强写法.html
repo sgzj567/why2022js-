@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var name = "why"
+    var age = "19"
+    // 如果相同 可以省略  属性的增强
+    // var obj = {
+    //   name: "kobe",
+    //   age
+    // }
+    // console.log(obj.name);
+    // console.log(obj.age);
+    // 方法的增强
+    var key = "address"
+    var obj = {
+      name,
+      age,
+      swimming() {
+        console.log("我不会游泳");
+      },
+      running() {
+        console.log(this);
+      },
+      eating: () => {
+        console.log(this); //window
+      },
+      // 属性增强
+      [key]: "广州市"
+    }
+    obj.swimming()
+    obj.eating()
+    obj.running()
+    console.log(obj[key]);
+  </script>
+</body>
+
+</html>

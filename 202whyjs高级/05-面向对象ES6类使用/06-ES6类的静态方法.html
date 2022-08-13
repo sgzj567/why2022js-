@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var names = ["abc", "bca", "nba"]
+    class Person {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      // 实例方法  本质是放在原型对象上的
+      running() {}
+      eating() {}
+      // 静态方法  放在类的本身上
+      static randomPerson() {
+        console.log(this);
+        var randomName = names[Math.floor(Math.random() * (names.length - 1))]
+        return new this(randomName, Math.floor(Math.random() * 100))
+      }
+    }
+    var p1 = new Person()
+    p1.eating()
+    p1.running()
+    var randomPerson = Person.randomPerson()
+    console.log(randomPerson);
+  </script>
+</body>
+
+</html>

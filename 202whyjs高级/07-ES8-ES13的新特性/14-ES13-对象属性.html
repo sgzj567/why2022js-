@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = {
+      name: "why",
+      age: 18,
+      __proto__: {
+        address: "广州市"
+      }
+    }
+    console.log(obj.name);
+    console.log(obj.address);
+    console.log(obj.hasOwnProperty("name"));
+    console.log(obj.hasOwnProperty("address"));
+    // 相等与下面的  返回Boolean值  想对于前者防止前者重写  防止对象中也有自己对应的方法
+    console.log(Object.hasOwn(obj, "name"));
+    console.log(Object.hasOwn(obj, "address"));
+    // 2.和hasOwnProperty
+    // 创建一个null  使这个info原型指向null
+    const info = Object.create(null)
+    info.name = "why"
+    // 下面的会报错  因为hasOwnProperty 是在对象的此时也就是info的__proto__上  但是创建出来的给他赋值为null  所以就会找不到
+    // console.log(info.hasOwnProperty("name"));  不是一个函数
+    // 解决办法  借用ES13的Object.hasOwn()
+    console.log(Object.hasOwn(info, "name"));
+  </script>
+</body>
+
+</html>

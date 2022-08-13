@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 常见的需要的转义字符
+    // [] \ $ ^ .| ? + * ()  
+    //  / 并不是一个特殊的字符  但是定义的时候需要用到 所以也需要转义\
+    const re1 = /\./ig
+    const message = "abc.why"
+    console.log(message.match(re1));
+    // 获取很多文件名 ? 是0个或者一个
+    const fileName = ["abc.html", "cch.jsx", "ban.html", "ahsk.js"]
+    const re2 = /\.jsx?$/
+    const newFileName = []
+    // 1.for循环
+    // for (const filename of fileName) {
+    //   if (re2.test(filename)) {
+    //     newFileName.push(filename)
+    //   }
+    // }
+    // console.log(newFileName);
+    // filter高阶函数
+    const newFileNames = fileName.filter(filename => re2.test(filename))
+    console.log(newFileNames);
+  </script>
+</body>
+
+</html>

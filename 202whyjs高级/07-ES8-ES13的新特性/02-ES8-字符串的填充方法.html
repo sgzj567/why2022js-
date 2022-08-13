@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1 class="card"></h1>
+  <script>
+    // 如果大于两位数  就不填充  应用于时间当中
+    const minute = "5".padStart(2, "0")
+    const second = "19".padStart(2, "0")
+    console.log(`${minute}:${second}`);
+    // 应用场景2 对一些敏感数据格式化
+    let carNumber = "12439874987357889"
+    const sliceNum = carNumber.slice(-4)
+    // console.log(sliceNum);
+    const newSliceNum = sliceNum.padStart(carNumber.length, "*")
+    const cardEl = document.querySelector(".card")
+    cardEl.innerHTML = newSliceNum
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./libs/dayjs.js"></script>
+  <script>
+    const t = new Date().getTime()
+    console.log(t);
+    //1. 时间戳是毫秒
+    //let day = dayjs(t)
+    //2.时间戳是秒的话
+    //3. let day = dayjs.unix(1659351974)
+    //4.解析Date对象
+    let day = dayjs(new Date('2022-10-2'))
+    // 时间格式化
+    console.log(day.format('YYYY-MM-DD HH:mm:ss'));
+  </script>
+</body>
+
+</html>

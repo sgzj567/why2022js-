@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./libs/dayjs.js"></script>
+  <script src="./libs/dayjs-relativeTime.js"></script>
+  <!-- 给dayjs全局变量添加中文包 -->
+  <script src="./libs/dayjs.zh-cn.js"></script>
+  <script>
+    // < !--会在dayjs原型上添加formNow方法 -->
+    dayjs.extend(dayjs_plugin_relativeTime)
+    // 切换使用中文
+    dayjs.locale('zh-cn')
+    // 1. 1个小时  5分钟  2天前
+    let day = dayjs(1659352912710)
+    console.log(day.fromNow());
+  </script>
+</body>
+
+</html>
