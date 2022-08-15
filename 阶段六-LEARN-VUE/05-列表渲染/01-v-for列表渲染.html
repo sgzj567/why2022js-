@@ -6,7 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    
+    li{
+      list-style: none;
+    }
+    .item{
+      background-color: orange;
+    }
   </style>
 </head>
 <body>
@@ -14,7 +19,19 @@
   <template id="my-app">
     <ul>
       <!-- movie为movies里面的元素 -->
-     <li  v-for="movie in movies"  :style="{listStyle:'none'}">{{movie}}</li>
+      <li  v-for="movie in movies"  :style="{listStyle:'none'}">{{movie}}</li>
+
+      <!-- 遍历里面的元素和索引 -->
+     <li v-for="(movie,index) in movies">{{index+1}}-{{movie}}</li>
+    
+     <!-- 渲染复杂数据 -->
+     <h2>商品列表</h2>
+     <div class="item" v-for="item in products">
+      <h3 class="title">{{item.name}}</h3>
+      <span class="pri">{{item.price}}</span>
+      <p>秒杀:{{item.desc}}</p>
+
+     </div>
     </ul>
   </template>
   <script src="../JS/vue.js"></script>
@@ -23,7 +40,12 @@
       template:'#my-app',
       data(){
         return {
-          movies:["让子弹飞","天注定","大佛普拉斯","新世界"]
+          movies:["让子弹飞","天注定","大佛普拉斯","新世界"],
+          products:[{name:"Mac",price:"9.9",desc:"9.9秒杀"},
+        {name:"IPhone",price:"9.9",desc:"9.9秒杀"},
+        {name:"Mi",price:"9.9",desc:"9.9秒杀"},
+        {name:"HUaWei",price:"9.9",desc:"9.9秒杀"},
+        ]
         }
       }
     }

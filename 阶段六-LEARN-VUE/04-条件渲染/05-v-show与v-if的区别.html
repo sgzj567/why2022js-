@@ -10,7 +10,7 @@
   <div id="app"></div>
   <template id="my-app">
     <!-- display:none 不占位置 -->
-    <!-- v-if与v-show在true的时候没有区别 在false的时候v-if压根不会渲染 而v-show会渲染 只是他讲css属性display设置为了none 而且v-show不能和v-else连用 -->
+    <!-- v-if与v-show在true的时候没有区别 在false的时候v-if压根不会渲染 而v-show会渲染 只是他讲css属性display设置为了none 而且v-show不能和v-else连用 v-show也不能和template连用-->
     <h2 v-if="isShow">{{message}}</h2>
     <h2  v-show="isShow">{{message}}</h2>
   </template>

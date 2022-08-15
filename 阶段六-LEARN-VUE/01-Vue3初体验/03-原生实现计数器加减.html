@@ -21,9 +21,16 @@
         counterEl.textContent = counter;
       };
       subEl.onclick = function () {
+         if(counter==0){
+          return;
+        }
+        else {
+          // this.disabled=false;
         counter -= 1;
         counterEl.textContent = counter;
-      };
+        }
+      }; 
+      
     </script>
   </body>
 </html>
