@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+  <template id="my-app">
+    <!-- lazy 就是绑定change事件 -->
+    <input type="text" v-model.lazy="message">
+    <h2>{{message}}</h2>
+    <input type="text" v-model="counter1">
+    <h2>{{counter1}}-{{typeof counter1}}</h2>
+    <!-- 自动转换为数字类型 -->
+    <input type="text" v-model.number="counter2">
+    <h2>{{counter2}}-{{typeof counter2}}</h2>
+    <!-- 直接将type设置为number -->
+    <input type="number" v-model="counter3">
+    <h2>{{counter3}}-{{typeof counter3}}</h2>
+  </template>
+  <script src="../JS/vue.js"></script>
+  <script>
+    const App={
+      template:'#my-app',
+      data(){
+        return {
+        message:"hello vue",
+        counter1:0,
+        counter2:0,
+        counter3:0,
+        }
+      }
+    }
+    Vue.createApp(App).mount("#app")
+  </script>
+</body>
+</html>
