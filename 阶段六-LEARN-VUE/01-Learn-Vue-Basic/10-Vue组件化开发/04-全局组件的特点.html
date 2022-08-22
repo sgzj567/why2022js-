@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .product{
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <nav-bar></nav-bar>
+    <product-item></product-item>
+    <product-item></product-item>
+    <product-item></product-item>
+  </div>
+  <!-- 全局组件一 -->
+ <template id="product">
+<div class="product">
+  <h2>商品信息</h2>
+  <p>商品图片</p>
+  <p>商品价格:<span>9.9秒杀</span></p>
+  <button @click="btnClick">输出</button>
+</div>
+</template>
+<!-- 全局组件二 -->
+<template id="nav">
+  <hr>
+<h1>我是导航栏</h1>
+<!-- 套用全局组件一 -->
+<product-item></product-item>
+<hr>
+</template>
+  <script src="../JS/vue.js"></script>
+  <script>
+    const App={}
+    const app=Vue.createApp(App)
+// 注册全局组件可以在任何地方使用
+app.component("product-item",{
+  template:"#product",
+  methods:{
+    btnClick(){
+      console.log("我是btn");
+    }
+  }
+})
+app.component("nav-bar",{
+  template:"#nav",
+})
+    app.mount("#app")
+  </script>
+</body>
+</html>
