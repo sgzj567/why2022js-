@@ -30,16 +30,15 @@
         var nums = [100, 15, 16, 20]
         var newNums = []
         var newNums = nums.filter(function(item) {
-            return item % 2 === 0 //偶数 返回值是Boolean类型的
+            return item % 2 === 0 //偶数 返回值是数组类型的 return后面的是Boolean类型
         })
         console.log(newNums);
         //2. map映射
-        var newNums2 = []
         var newNums2 = nums.map(function(item) {
             return item * 10
         })
         console.log(newNums2);
-        //3. foreach遍历
+        //3. foreach遍历  没有返回值
         nums.forEach(item => {
             console.log(item);
         });
@@ -58,6 +57,7 @@
             name: "ldh",
             age: 55
         }]
+        //7.find找出含有的具体值
         var findFriend = friends.find(function(item) {
             return item.name === 'ldh';
         })

@@ -11,7 +11,7 @@ export default {
   components: {
     ShowInfo
   },
-  // setup函数一开始就会调用
+  // setup函数一开始就会调用 
   setup() {
     const h2Ref = ref()
     const ShowRef = ref()
@@ -31,4 +31,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

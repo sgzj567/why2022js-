@@ -17,8 +17,9 @@ function createObject(o) {
 //     function F() {}
 // 将父类对象的给过渡对象的原型对象上
 // F.prototype = o;
+// var newObj = new F()
 // 返回新的实例化对象
-// return new F();
+// return newObj();
 // }
 
 // var info = createObject(obj)

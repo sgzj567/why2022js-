@@ -14,7 +14,7 @@ export default {
   data() {
     return {
       names: ["kobe", "kii", "John", "zxk"],
-      message: "习近平"
+      message: "狗头习"
     }
   },
   // 非父子之间通信 provide inject
@@ -23,7 +23,7 @@ export default {
       name: "why",
       age: 18,
       height: 1.88,
-      //如果用的是computed  而且computed是一个响应式的 返回的是ref对象 需要在 inject那边加.value
+      //如果想要传送data中的数据 要用的是provide函数  使用computed  而且computed是一个响应式的 返回的是ref对象 需要在 inject那边加.value
       message: computed(() => this.message),
     }
   }

@@ -13,12 +13,24 @@
     // ES12逻辑赋值运算符
     function foo(message) {
       // message = message || "默认值"
-      // message || = "默认值";
-      // message ? ? = "默认值"
+      // message ||= "默认值";
+      message=message ?? "默认值"
+      // message ??= "默认值"
       console.log(message);
     }
     foo("abc")
     foo()
+    // 逻辑与运算场景
+    const obj={
+      name:"why",
+      running:function(){
+        console.log("在跑步");
+      }
+    }
+    obj && obj.running&& obj.running()
+    obj?.running?.()
+    let info=obj&&obj.name&& obj.name
+    console.log(info);
   </script>
 </body>
 

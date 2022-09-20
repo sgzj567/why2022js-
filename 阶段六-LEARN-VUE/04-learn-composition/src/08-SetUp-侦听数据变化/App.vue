@@ -27,6 +27,7 @@ export default {
     watch(() => ({ ...message }), (newValue, oldValue) => {
       console.log(newValue, oldValue);
     }, {
+      // 默认深度侦听
       deep: true,
       immediate: true,
     })
@@ -38,4 +39,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

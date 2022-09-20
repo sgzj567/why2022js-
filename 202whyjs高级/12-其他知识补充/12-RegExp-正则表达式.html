@@ -14,7 +14,7 @@
     const message2 = "My name is ZXK"
     const re1 = /name/
     console.log(re1.test(message1));
-    // 需求:name 匹配name 必须是一个单独的词
+    // 需求:name 匹配name 必须是一个单独的词前后为\w所匹配的内容
     // 词边界 \b检测一侧位置是否匹配 \w 而另一侧不匹配\w
     const re2 = /\bname\b/
     console.log(re2.test(message1));

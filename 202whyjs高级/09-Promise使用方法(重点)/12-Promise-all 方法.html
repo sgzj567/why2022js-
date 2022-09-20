@@ -13,6 +13,7 @@
     // 全部所有  创建三个Promise
     const p1 = new Promise((resolve, reject) => {
       resolve("p1")
+      // reject("代码有误")
     })
     const p2 = new Promise((resolve, reject) => {
       resolve("p2")
@@ -20,9 +21,13 @@
     const p3 = new Promise((resolve, reject) => {
       resolve("p3")
     })
-    // 等到全部Promise结果是resolve的话就执行all方法  有一个是reject all就执行reject
+    // 等到全部Promise结果是resolve的话就执行all方法 将结果包裹在数组中 有一个是reject all就执行reject
+    // 数组中放的是可迭代的
+    // 作用在发送多个网络请求的时候 需要所有结果的时候
     Promise.all([p1, p2, p3]).then(res => {
       console.log("执行all方法", res);
+    }).catch(err=>{
+      console.log("执行错误",err);
     })
   </script>
 </body>

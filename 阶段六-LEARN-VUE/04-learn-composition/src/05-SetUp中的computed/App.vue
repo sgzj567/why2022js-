@@ -10,9 +10,10 @@ import { reactive, computed, ref } from 'vue';
 export default {
   setup() {
     const names = reactive({
-      firstName: "why",
-      lastName: "kobe"
+      firstName: "kobe",
+      lastName: "bryant"
     })
+    // computed完整的写法是对象 只写函数本质是在写get语法 computed返回值也是ref
     const fullName = computed(() => {
       return names.firstName + " " + names.lastName
     })
@@ -29,4 +30,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

@@ -10,10 +10,10 @@
 
 <body>
   <script>
-    // finally方法是不管执行reject方法还是resolve都会在最后执行
+    // finally方法是不管执行reject方法还是resolve都会在最后执行 但是不接受参数
     const promise = new Promise((resolve, reject) => {
-      // reject()
-      resolve("aaa")
+      reject("bbb")
+      // resolve("aaa")
     })
     promise.then(res => {
       console.log("第一个回调", res);

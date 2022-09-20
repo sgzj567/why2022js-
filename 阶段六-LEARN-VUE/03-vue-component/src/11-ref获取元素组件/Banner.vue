@@ -2,6 +2,7 @@
   <div class="banner">
     <h2>我是banner</h2>
   </div>
+  <h3>我是sub</h3>
 </template>
 
 <script>

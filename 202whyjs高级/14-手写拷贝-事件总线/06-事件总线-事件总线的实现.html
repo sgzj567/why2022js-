@@ -15,16 +15,16 @@
       constructor() {
         this.eventMap = {}
       }
+      
       on(eventName, eventFn) {
         let eventFns = this.eventMap[eventName]
         if (!eventFns) {
+          // 存方法
           eventFns = []
           this.eventMap[eventName] = eventFns
         }
         eventFns.push(eventFn)
       }
-
-
 
       emit(eventName, ...args) {
         let eventFns = this.eventMap[eventName]

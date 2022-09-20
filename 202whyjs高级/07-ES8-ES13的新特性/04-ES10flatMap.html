@@ -12,15 +12,16 @@
   <script>
     // 1.flat的使用  将一个数组按照指定的深度遍历,将遍历到的子数组和元素组成一个新的数组  进行返回
     const nums = [10, 20, [39, 49],
-      [49, 54], 435, [983, 32]
+      [49, 54], 435, [983,[23,45], 32]
     ];
-    const newNums = nums.flat(2)
+    const newNums = nums.flat(2)  
     const newNums1 = nums.flat(1)
     console.log(newNums);
     console.log(newNums1);
     // flatMap的使用
     // 1.对每个数组元素应用一次传入的map对应的函数
-    const message = ["hello world", "hello codeWhy", "你好,李银河"]
+    // 2.在对数组进行flat深度为1 
+    const message = ["hello world", "hello codeWhy", "你好 李银河"]
     // console.log(message);
     const newMessage = message.map(item => item.split(" "))
     console.log(newMessage);

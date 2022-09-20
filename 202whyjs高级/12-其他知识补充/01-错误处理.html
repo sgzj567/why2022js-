@@ -10,20 +10,22 @@
 
 <body>
   <script>
+    // console.log(typeof 12);
     function sum(num1, num2) {
-      if (typeof num1 !== Number && typeof num1 !== Number) {
-        throw "error num1传入的不是number类型"
+      if (typeof num1 !== "number" && typeof num2 !=="number") {
+        throw new Error( "error num1传入的不是number类型")
       }
+      
       console.log(num1 + num2);
     }
-    sum()
+    sum(12,23)
     //代码遇到throw 后面的代码就不会执行了  后面可以跟Boolean number  string
     // 2.也可以抛出对象
     // throw {
-    //   erroMessage: "我是错误信息"
+    //   errMessage: "我是错误信息"
     // }
     // 3.error 类
-    throw new Error("我是错误信息")
+    // throw new Error("我是错误信息")
   </script>
 </body>
 

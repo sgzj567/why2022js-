@@ -18,9 +18,9 @@
     <!-- select单选 -->
     <select v-model="fruit">
       <option  v-for="item in allFruits"  :value="item.value" :key="item.value">{{item.text}}</option>
-      
     </select>
     <h2>单选{{fruit}}</h2>
+
     <!-- 多选 -->
      <select multiple size="2" v-model="fruits">
       <option  v-for="item in allFruits"  :value="item.value" :key="item.value">{{item.text}}</option>

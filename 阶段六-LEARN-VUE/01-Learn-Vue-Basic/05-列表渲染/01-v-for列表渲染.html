@@ -12,12 +12,16 @@
     .item{
       background-color: orange;
     }
+    .item .title{
+      color: red;
+    }
   </style>
 </head>
 <body>
   <div id="app"></div>
   <template id="my-app">
     <ul>
+      <!-- v-for渲染可迭代对象 -->
       <!-- movie为movies里面的元素 -->
       <li  v-for="movie in movies"  :style="{listStyle:'none'}">{{movie}}</li>
 

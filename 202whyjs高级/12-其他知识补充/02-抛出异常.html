@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function foo(){
+      console.log("foo function");
+      // throw后面Boolean 字符串 数字类型 遇到throw后后面的就不执行
+      // throw "aaaa"
+      // new Error 就会把详细错误信息传出来
+      throw new Error("我是错误信息")
+      console.log("foo function");
+      console.log("foo function");
+      console.log("foo function");
+      console.log("foo function");
+    }
+    foo()
+  </script>
+</body>
+</html>

@@ -16,6 +16,9 @@
 <body>
   <div id="app"></div>
   <template id="my-app">
+    <h2>{{counter}}</h2>
+    <!-- 也可以写表达式 -->
+    <button @click="counter++">+1</button>
 <div class="area" v-on="{click:btnClick,mousemove:mouseMove}"></div>
   </template>
   <script src="../JS/vue.js"></script>
@@ -29,6 +32,7 @@
         }
       },
        methods:{
+        // 逻辑是先写方法再调用
           btnClick(){
             console.log("鼠标点击了");
           },

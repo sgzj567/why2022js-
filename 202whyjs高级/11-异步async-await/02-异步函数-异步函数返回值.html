@@ -10,10 +10,29 @@
 
 <body>
   <script>
+    // 异步函数返回的是Promise
     async function bar() {
-      // 相当于return Promise.resolve(123)
-      return 123
+      // 相当于return Promise.resolve(123)  返回的是普通值的话直接调用resolve
+      // 1.返回一个普通的值
+      // return 123
+      // 2.返回一个Promise
+      // return new Promise((resolve,reject)=>{
+      //   setTimeout(()=>{
+      //     resolve("aaa")
+      //   },2000)
+      // })
+      // 3.返回一个thenable
+      return{
+        then:function(resolve,reject){
+          setTimeout(()=>{
+            resolve("bbb")
+          },2000)
+        }
+      }
     }
+    bar().then(res=>{
+      console.log(res);
+    })
   </script>
 </body>
 

@@ -15,6 +15,7 @@ export default {
   },
   methods: {
     changeValue() {
+      // 发出事件
       this.$emit("update:modelValue", 999)
     }
   }

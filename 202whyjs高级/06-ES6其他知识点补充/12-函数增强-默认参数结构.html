@@ -10,13 +10,13 @@
 
 <body>
   <script>
-    // const obj = {
-    //   name: "why",
-    // }
-    // const {
-    //   name = "zxk", height = 1.88
-    // } = obj
-    // console.log(obj);
+    const obj = {
+      name: "why",
+    }
+    const {
+      name = "zxk", height = 1.88
+    } = obj
+    console.log(obj);
     // 函数的默认值是个对象
     // function foo(obj = {
     //   name: "why",
@@ -24,6 +24,8 @@
     // }) {
     //   console.log(obj.name, obj.age);
     // }
+    // foo()
+    // 默认值与结构一起使用
     // function foo({
     //   name,
     //   age
@@ -33,14 +35,15 @@
     // }) {
     //   console.log(name, age);
     // }
+    // foo()
     function foo({
       name = "zxk",
       age = 17
     } = {}) {
       console.log(name, age);
     }
-    foo()
-    foo(name = "zxk", age = 18)
+    // foo()
+    foo({name:'zxk',age:'23'})
   </script>
 </body>
 

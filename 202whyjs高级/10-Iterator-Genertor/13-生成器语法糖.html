@@ -11,8 +11,9 @@
 <body>
   <script>
     const names = ["abc", "cba", "nba"]
-
+    // yield*是跟在生成器函数中
     function* foo(arr) {
+      // yield*后面那个可迭代对象 每次返回一个元素
       yield* arr
     }
     const namesIterator = foo(names)
@@ -24,12 +25,11 @@
         this.height = height;
         this.address = address;
       }
-      // 实例方法
+      // 实例方法 迭代器
       *[Symbol.iterator]() {
         yield* this.address
       }
     }
-    const
   </script>
 </body>
 

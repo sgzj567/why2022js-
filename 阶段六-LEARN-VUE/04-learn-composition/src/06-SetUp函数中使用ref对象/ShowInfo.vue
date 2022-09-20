@@ -7,7 +7,7 @@
 export default {
   setup() {
     function ShowInfoFoo() {
-      console.log("ShowInfoFoo");
+      console.log("ShowInfoFoo function");
     }
     return {
       ShowInfoFoo
@@ -17,4 +17,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

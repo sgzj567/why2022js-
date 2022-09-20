@@ -11,14 +11,29 @@
 <body>
   <script>
     const promise = new Promise((resolve, reject) => {
-      // resolve()
-      reject("aaa")
+      resolve()
+      // reject("aaa")
     })
     // 另一种写法  要写catch 就要写then  但是可以单独写then
-    promise.then(res => {
-      console.log("成功回调");
-    }, err => {
-      console.log("失败回调", err);
+    // promise.then(res => {
+    //   console.log("成功回调");
+    // }, err => {
+    //   console.log("失败回调", err);
+    // })
+    promise.then(()=>{
+      console.log("成功回调~");
+    })
+     promise.then(()=>{
+      console.log("成功回调~");
+    }) 
+    promise.then(()=>{
+      console.log("成功回调~");
+    }) 
+    promise.then(()=>{
+      console.log("成功回调~");
+    })
+     promise.then(()=>{
+      console.log("成功回调~");
     })
   </script>
 </body>

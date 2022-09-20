@@ -11,11 +11,11 @@
 <body>
   <script>
     // 1.贪婪模式  惰性模式
-    const message = "我最喜欢的两本书: <<黄金时代>>和<<沉默的大多数>>"
-    // 贪婪模式
+    const message = "我最喜欢的两本书: <<黄金时代>>和<<沉默的大多数>>  .. <<一只特立独行的猪>>"
+    // 贪婪模式 中间的所有的都会匹配
     const nameRe = /<<.+>>/ig
     console.log(message.match(nameRe));
-    // 惰性模式
+    // 惰性模式 只包含当前规则的 接着匹配后面的  用的最多
     const nameRe1 = /<<.+?>>/ig
     console.log(message.match(nameRe1));
   </script>

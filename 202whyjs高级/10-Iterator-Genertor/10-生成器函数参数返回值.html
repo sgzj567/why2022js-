@@ -15,6 +15,7 @@
     // 代码执行可以通过yield来控制
     // 调用生成器函数时默认返回一个生成器对象  它是特殊的迭代器
     // 要想执行函数 要拿到生成器对象  调用next方法  遇到yield  暂停操作  再次操作 就再次调用next方法
+    // yield返回值是一个调用迭代器传进去的参数
     function* foo(name) {
       console.log("我是生成器", name);
       const name1 = yield "next2"

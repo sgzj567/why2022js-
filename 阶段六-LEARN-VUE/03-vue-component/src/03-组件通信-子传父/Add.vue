@@ -10,7 +10,7 @@
 <script>
 
 export default {
-  // 也可以传对象
+  // 也可以传对象对参数进行验证
   // emits: {
   //   add: function (count) {
   //     if (count <= 10) {

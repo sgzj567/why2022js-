@@ -11,16 +11,22 @@
 <body>
   <script>
     class Person {
+      // 1.实例属性
       // 对象属性:public属性
       height = 1.98
       // 对象属性:
 
       // #intro = "name is zl"
-      // 类属性
+      //2. 类属性
       // 静态公共属性
-      // static totalCount = "70亿"
+      static totalCount = "70亿"
       // 静态属性  私有的
       static _totalManCount = "30亿"
+      // 3.静态代码块 只执行一次创建的时候
+      static{
+        console.log("12");
+        console.log("99");
+      }
       constructor(name, age) {
         this.name = name;
         this.age = age

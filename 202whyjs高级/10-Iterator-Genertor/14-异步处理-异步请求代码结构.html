@@ -17,18 +17,33 @@
         }, 2000)
       })
     }
-    // 链式调用
-    // function getData() {
-    //   requestData("why").then(res1 => {
-    //     return requestData(res1 + "aaa").then(res2 => {
-    //       return requestData(res2 + "bbb").then(res3 => {
-    //         console.log(res3 + "kobe");
-    //       })
-    //     })
+    // 方式一  层层嵌套 
+    // function getData(){
+    //   requestData("why").then(res=>{
+    //     console.log(res);
+    // // 第二次网络请求
+    //  requestData(res+"kobe").then(res2=>{
+    //   console.log(res2);
+    //   // 第三次
+    //   requestData(res2+"james").then(res3=>{
+    //     console.log(res3);
+    //   })
+    //  })
+
     //   })
     // }
+    //方式二 链式调用  then返回的值是promise类
+    function getData() {
+      requestData("why").then(res1 => {
+        return requestData(res1 + "aaa").then(res2 => {
+          return requestData(res2 + "bbb").then(res3 => {
+            console.log(res3 + "kobe");
+          })
+        })
+      })
+    }
     // 方式三:
-    // yield返回的是一个生成器  需要拿到值在调用
+    // yield返回的是一个生成器(特殊的迭代器)  需要拿到值在调用
     // function* getData() {
     //   const res1 = yield requestData("why")
     //   const res2 = yield requestData(res1 + "kobe")

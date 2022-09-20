@@ -15,9 +15,10 @@
     const namesIterator = {
       next: function () {
         // 迭代器里面必须有next方法 
-        // done:Boolean
+        // done:Boolean  后面还有数据的话是true
         // value:具体值/undefined
         // 必须返回一个对象
+        // 通过索引是否迭代完
         if (index < names.length) {
           return {
             done: false,

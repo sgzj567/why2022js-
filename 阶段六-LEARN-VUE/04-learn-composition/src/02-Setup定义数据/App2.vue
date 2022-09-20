@@ -12,8 +12,6 @@
 
 <script>
 import { onMounted, reactive, ref } from 'vue';
-
-
 export default {
   setup() {
     // ref 定义从网络当中获取的数据

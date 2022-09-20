@@ -11,7 +11,7 @@
 <body>
   <script>
     //1.1 数组解构
-    var names = ["abc", "nba", "undefined", "cba ", " nfl "]
+    var names = ["abc", "nba", undefined, "cba ", " nfl "]
     // 数组解构要有严格顺序  有不想解构的 空出来 用逗号隔开
     // var [name1, name2, name3] = names
     // 解构出数组
@@ -19,8 +19,8 @@
     // console.log(name2);
     // console.log(newNames);
     // 解构出默认值
-    // var [name1, name2, name3 = "default"] = names
-    // console.log(name3);
+    var [name1, name2, name3 = "default"] = names
+    console.log(name3);
     //2.1 对象的解构
     var obj = {
       name: "why",
@@ -58,6 +58,7 @@
       age,
       ...newObj
     } = obj
+    // newObj是一个新对象
     console.log(newObj);
     // 在函数中  应用
     function getPosition({

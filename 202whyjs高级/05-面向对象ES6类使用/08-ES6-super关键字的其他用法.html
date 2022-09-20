@@ -14,6 +14,9 @@
       running() {
         console.log("running");
       }
+      static eating(){
+        console.log("吃粑粑");
+      }
     }
     class Dog extends Person {
       // 如果子类对继承的方法不满意  重新写 就是重写
@@ -22,9 +25,14 @@
         // 调用父类的方法
         super.running()
       }
+      static eating(){
+        console.log("吃");
+        super.eating()
+      }
     }
     var D1 = new Dog()
     D1.running()
+    Dog.eating()
   </script>
 </body>
 

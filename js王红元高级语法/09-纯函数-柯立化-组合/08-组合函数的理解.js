@@ -10,7 +10,7 @@ var result = square(sum(10))
 console.log(result);
 
 
-// 实现最简单的组合函数
+// 实现最简单的组合函数n 与m是函数
 
 function composeFn(n, m) {
   return function (count) {

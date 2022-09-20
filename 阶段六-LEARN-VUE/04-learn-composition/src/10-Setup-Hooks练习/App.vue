@@ -33,13 +33,17 @@ export default {
     // 修改标题
     const title = useTitle("首页")
     function popClick() {
-      useTitle("首页-流行")
+      // useTitle("首页-流行")
+      title.value = "首页-流行"
     }
     function hotClick() {
-      useTitle("首页-热门")
+      // useTitle("首页-热门")
+      title.value = "首页-热门"
+
     }
     function songClick() {
-      useTitle("首页-歌单")
+      // useTitle("首页-歌单")
+      title.value = "首页-歌单"
     }
     // 获取滚动坐标
     const { scrollPosition } = useScrollPosition()

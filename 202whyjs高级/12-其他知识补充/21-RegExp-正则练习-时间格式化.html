@@ -9,11 +9,39 @@
 </head>
 
 <body>
+  <h2></h2>
   <script>
-    const time = +new Date()
-    console.log(time);
-    const time1 = new Date(time)
-    console.log(time1);
+  // const time = +new Date()
+  // console.log(time);
+    // console.log(new Date());
+    function formatTime(timeSta,normalTime){
+    const date= new Date(timeSta)
+    // console.log(date);
+      const infoTime={
+        "y+":date.getFullYear(),
+        "M+":date.getMonth()+1,
+        "d+":date.getDate(),
+        "h+":date.getHours(),
+        "m+":date.getMinutes(),
+        "s+":date.getSeconds(),
+      }
+      // console.log(infoTime["/y+/"]);
+      for (const key in infoTime) {
+      if(new RegExp(key).test(normalTime)){
+        // 转为字符串
+        const value=(infoTime[key]+"").padStart(2,"0")
+         normalTime = normalTime.replace(new RegExp(key),value)
+      }
+      }
+      return normalTime
+    }
+    // const normalTime=2022-10-10
+
+    const h2El=document.querySelector("h2")
+    h2El.textContent=formatTime(1663559985143,"yyyy-MM-dd hh:mm:ss")
+    
+    // const time1 = new Date(time)
+    // console.log(time1);
   </script>
 </body>
 

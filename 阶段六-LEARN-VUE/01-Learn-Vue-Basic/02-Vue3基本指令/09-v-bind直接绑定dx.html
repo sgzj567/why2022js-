@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+  <template id="my-app">
+    <!-- 将对象里的键作为属性名 值作为属性值 -->
+    <h2 v-bind="props" @click="btnClick">hello bind</h2>
+    <h2 v-bind:style="sty">hello bind</h2>
+  </template>
+  <script src="../JS/vue.js"></script>
+  <script>
+    const App={
+      template:'#my-app',
+      data(){
+        return {
+          props:{
+            name:"wy",
+            age:18,
+            height:1.88
+          },
+          sty:{
+            color:'red',
+            fontSize:"19px"
+          }
+        }
+      },
+      methods:{
+        btnClick(event){
+          console.log('p',event);
+        }
+      }
+    }
+    Vue.createApp(App).mount("#app")
+  </script>
+</body>
+</html>

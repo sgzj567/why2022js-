@@ -35,7 +35,7 @@ export default {
   mounted() {
     console.log("home");
   },
-  // 针对keepalive进入和离开进行的状态
+  // 针对keep-alive进入和离开进行的状态 所以在keep-alive无法通过created mounted来监测
   activated() {
     console.log("activated");
   },

@@ -18,19 +18,19 @@
       name: "kobe",
       age: 19
     }
+    // 当某个对象被回收了就执行这个函数
     const finalRegistry = new FinalizationRegistry((key) => {
       console.log("某一个对象被回收了:",
         this[key]);
     })
     const finalRegistry1 = new FinalizationRegistry((key) => {
-      console.log("一个对象被回收了:",
-        key);
-    })
+      console.log("一个对象被回收了:",key);
+    }) 
+    // 可以注册多个函数
     finalRegistry.register(obj, info)
-    finalRegistry1.register(info)
+    finalRegistry1.register(info,"why")
     obj = null
-    // info = null
-    // info = null
+    info = null
     // obj.name = "kobe"
   </script>
 </body>

@@ -1,5 +1,6 @@
 <template>
   <div class="calc">
+    <!-- template有专门解析ref的所以不需要加value -->
     <div class="counter">{{ counter }}</div>
     <div class="box">
       <input type="button" value="+1" @click="increment">
@@ -11,13 +12,15 @@
 
 <script>
 import useWays from './components/useWays'
-import { ref } from "vue"
 export default {
   // setup里面不能写this
   setup() {
-    const { counter, increment, decrement } = useWays()
+    // const { counter, increment, decrement } = useWays()
+    // return {
+    //   counter, increment, decrement,
+    // }
     return {
-      counter, increment, decrement,
+      ...useWays()
     }
 
   }

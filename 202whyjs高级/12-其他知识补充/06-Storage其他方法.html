@@ -10,15 +10,17 @@
 
 <body>
   <script>
+    // 将token抽取到一个常量中
     const ACCESS_TOKEN = 'token'
+    // 只读属性 返回个数
     console.log(localStorage.length);
     localStorage.setItem(ACCESS_TOKEN, "whytoken")
     console.log(localStorage.getItem(ACCESS_TOKEN));
-    // 通过索引获取值
+    // 通过索引获取key
     console.log(localStorage.key(0));
     localStorage.removeItem("info")
     console.log(localStorage.length);
-    localStorage.clear()
+    // localStorage.clear()
   </script>
 </body>
 

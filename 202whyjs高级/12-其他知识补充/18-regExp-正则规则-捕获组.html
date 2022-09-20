@@ -10,6 +10,7 @@
 
 <body>
   <script>
+    // match返回数组 matchAll返回对象 是迭代器
     // 1.贪婪模式  惰性模式
     const message = "我最喜欢的两本书: <<黄金时代>>和<<沉默的大多数>>"
     // 贪婪模式
@@ -21,7 +22,8 @@
     // 提取出文本 不要书名号()  捕获组  单独分开与不捕获的
     const nameRe2 = /<<(.+?)>>/ig
     const iterator = message.matchAll(nameRe2)
-    // console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator);
     for (const item of iterator) {
       console.log(item[1]);
     }

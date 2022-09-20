@@ -1,8 +1,8 @@
 <template>
   <div class="app">
     <h1 class="title">我是App.vue</h1>
-    </div>
-    <!-- AppHeader -->
+  </div>
+  <!-- AppHeader -->
   <app-header></app-header>
 </template>
 
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style scoped>
-.title{
- color:red;
+.title {
+  color: red;
 }
 </style>

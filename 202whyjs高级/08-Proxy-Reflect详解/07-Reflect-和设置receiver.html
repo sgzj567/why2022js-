@@ -25,8 +25,8 @@
     const objPro = new Proxy(obj, {
       set: function (target, key, newValue, receiver) {
         console.log(`${key}的值被改变`);
-        // console.log(receiver);
-        // receiver指向Proxy  可以决定对象this的指向
+        // console.log(receiver===objPro);
+        // receiver指向Proxy  可以决定对象访问器this的指向
         // console.log(target === obj); true
         // target[key] = newValue(如果对象不可以写  就无法知道) 此时这里操作的是原对象  利用Reflect 改为间接操作
         const isSuccess = Reflect.set(target, key, newValue, receiver)

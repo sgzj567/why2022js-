@@ -17,10 +17,11 @@
     // }
     // 给obj添加一个name属性  为防止重名覆盖之前的属性  所以出现了Symbol  生成一个独一无二的值
     // ES6之后 使用Symbol生成一个独一无二的值
+    // 在对象中只有字符串或者Symbol可以作为对象
     const s1 = Symbol()
     const obj = {
       s1: "why",
-      [s1]: "zxk"
+      [s1]: "zxk",
     }
     console.log(obj);
   </script>

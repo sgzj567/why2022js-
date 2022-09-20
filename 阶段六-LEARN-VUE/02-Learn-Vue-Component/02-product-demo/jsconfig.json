@@ -17,6 +17,7 @@
       "dom",
       "dom.iterable",
       "scripthost"
-    ]
+    ],
+    "jsx": "preserve"
   }
 }

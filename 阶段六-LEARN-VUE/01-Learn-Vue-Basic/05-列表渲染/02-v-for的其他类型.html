@@ -12,6 +12,8 @@
     <ul>
       <!-- 遍历对象 可以遍历可迭代对象 -->
       <li v-for="(value,key,index) in info">{{value}}:{{key}}-{{index+1}}</li>
+      <!-- 默认值写一个的话是value -->
+      <li v-for="item in info">{{item}}</li>
     </ul>
     <!-- 遍历字符串 -->
     <ul>

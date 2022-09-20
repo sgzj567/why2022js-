@@ -17,7 +17,7 @@
     <!-- 自动转换为数字类型 -->
     <input type="text" v-model.number="counter2">
     <h2>{{counter2}}-{{typeof counter2}}</h2>
-    <!-- 直接将type设置为number -->
+    <!-- 直接将type设置为number 次是不能输入其他类型的字符-->
     <input type="number" v-model="counter3">
     <h2>{{counter3}}-{{typeof counter3}}</h2>
     <hr>

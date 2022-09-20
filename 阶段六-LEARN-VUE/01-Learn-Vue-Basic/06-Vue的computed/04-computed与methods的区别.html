@@ -20,6 +20,7 @@
     <h2>{{ fullName }}</h2>
    <!-- 修改lastName -->
    <button @click="changeName">修改lastName</button>
+   <!-- 相对于methods来说 计算属性所依赖的数据不发生变化时 它不需要重新计算 但是methods会多次调用 -->
   </template>
   <script src="../JS/vue.js"></script>
   <script>
@@ -31,7 +32,8 @@
         lastName:"bryant",
         message:"my name is why",
         }
-      },  methods:{
+      }, 
+       methods:{
         getFullName(){
           console.log("getFullName------");
           return this.firstName+" "+this.lastName;
@@ -39,14 +41,13 @@
       changeName(){
         this.lastName="why";
       }
-        
       },
       computed:{
       fullName(){
           console.log("fullName------");
           return this.firstName+" "+this.lastName;
         },
-    reverseMessage(){
+     reverseMessage(){
           return this.message.split(" ").reverse().join(" ")
         }
       }

@@ -27,7 +27,7 @@
     //   console.log("删除成功");
     // }
 
-    // 2.用Reflect删除  返回的是Boolean
+    // 2.用Reflect删除  返回的是Boolean 可以改变访问器(set,get)this的指向 不操作原来的对象
     if (Reflect.deleteProperty(obj, "name")) {
       console.log("删除成功");
     } else {

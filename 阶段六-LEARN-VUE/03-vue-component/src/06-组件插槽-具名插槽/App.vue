@@ -1,6 +1,6 @@
 <template>
   <nav-bar>
-    <!-- 具名插槽要写在template模板中 -->
+    <!-- 具名插槽要写在template模板中 也就是多个插槽-->
     <template v-slot:left>
       <button>我是按钮</button>
     </template>
@@ -13,7 +13,8 @@
       <span>我是right</span>
     </template>
   </nav-bar>
-
+  <hr>
+  <!-- 采用默认插槽 -->
   <nav-bar>
     <template v-slot:[position]>
       <button>注册</button>

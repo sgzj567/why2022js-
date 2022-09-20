@@ -14,7 +14,7 @@
       resolve("aaa")
     })
     // promise的方法返回值就是Promise
-    // 只执行第一个Promise的then方法和第二个Promise的then方法(因为第一个then方法后的是接受前一个的promise不是所定义的函数promise)  但是第一个promise的then方法也会打印(这里的决议并不是最初的promise的决议 也就是resolve)
+    // 只执行第一个Promise的then方法和第二个Promise的then方法链式里面的then不执行(因为第一个then方法后的是接受前一个的promise不是所定义的函数promise)  但是第一个promise的then方法也会打印(这里的决议并不是最初的promise的决议 也就是resolve)
     // then返回的promise也就是相当于重新建了一个promise  调用resolve方法
     // promise支持链式调用
     promise.then(res => {

@@ -47,6 +47,10 @@
         deep:true,
         // 第一次渲染的时候就进行侦听
         immediate:true,
+      },
+      // 监听里面的属性
+      "info.name":function(newValue,oldValue){
+        console.log(newValue,oldValue);
       }
       
 

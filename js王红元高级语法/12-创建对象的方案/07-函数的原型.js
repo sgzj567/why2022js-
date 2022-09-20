@@ -9,5 +9,7 @@ console.log(foo.prototype);
 var f1 = new foo()
 var f2 = new foo()
 // new 会把new出来的对象内部的[[prototype]]地址指向构造函数的prototype属性
+// 即this.__proto__=foo.__prototype
 console.log(f1.__proto__ === foo.prototype); //true
 console.log(f1.__proto__ === f2.__proto__); //true
+// console.log(foo.__proto__);

@@ -27,7 +27,7 @@ export default {
       console.log(message);
     }
 
-    // 响应式  reactive里面应为复杂类型数据 也只能返回复杂类型的数据
+    // 响应式  reactive里面应为复杂类型数据(数组 对象) 也只能返回复杂类型的数据
     let infos = reactive({
       userCount: "why",
       passWord: 123456,

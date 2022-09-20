@@ -6,6 +6,7 @@ function Person(name, age, height) {
 }
 var p1 = new Person("zs", 19, "广西市")
 var p2 = new Person("ls", 20, "广东市")
+// 下面这个操作不好 因为会失去constructor
 // Person.prototype = {
 //     eating: function() {
 //         console.log(this.name + "在吃饭");

@@ -11,13 +11,14 @@
 <body>
   <h2 class="name"></h2>
   <script>
+    // Object.defineProperties的缺点只能监控属性的改变和获取但是监控不了删除和新增属性 以及判断是否有某个属性 而且他不是来监控的
     // 监听对象中的所有操作
     const obj = {
       name: "why",
       age: "19",
       height: 1.88
     }
-    // 什么是响应式
+    // 什么是响应式 vue2中响应式
     const nameEl = document.querySelector(".name")
     nameEl.textContent = obj.name
     // 响应式 自动监听到元素的改变 就会改变响应的内容或者操作 在此例子中就不用重复写24行
@@ -25,17 +26,21 @@
     nameEl.textContent = obj.name
     const keys = Object.keys(obj)
     for (const key of keys) {
+      let value=obj[key]
       Object.defineProperty(obj, key, {
         set: function (newValue) {
           console.log(`监听,给${key}设置了新值,${newValue}`);
+          value=newValue
         },
         get: function () {
           console.log(`获取了${key}值`);
+          return value
         }
       })
     }
     obj.name = "kobe"
     console.log(obj.name);
+    console.log(obj.age);
   </script>
 </body>
 

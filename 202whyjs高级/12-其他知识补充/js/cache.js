@@ -4,6 +4,7 @@ class Cache {
   }
   setCache(key, value) {
     if (value) {
+      // 将对象转换为字符串
       this.storage.setItem(key, JSON.stringify(value))
     } else {
       throw new Error("value有误")

@@ -20,6 +20,7 @@
       running() {}
       eating() {}
       // 静态方法  放在类的本身上
+      // Math.random()  返回一个随机数(0-1) 包括0但是不包括1
       static randomPerson() {
         console.log(this);
         var randomName = names[Math.floor(Math.random() * (names.length - 1))]

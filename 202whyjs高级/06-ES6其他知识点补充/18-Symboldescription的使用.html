@@ -19,7 +19,7 @@
       [s2]: "广州市"
     }
     // 获取键值  但是Symbol的键值获取不到
-    // console.log(Object.keys(obj));  
+    console.log(Object.keys(obj));  
     const symbolKeys = Object.getOwnPropertySymbols(obj)
     console.log(symbolKeys);
     for (const key of symbolKeys) {
@@ -28,6 +28,10 @@
     // description
     const s3 = Symbol("ccc")
     console.log(s3.description);
+    // 想要相等的symbol值
+    const sKey1=Symbol.for(s3.description)
+    const sKey2=Symbol.for(s3.description)
+    console.log(sKey1===sKey2);
   </script>
 </body>
 

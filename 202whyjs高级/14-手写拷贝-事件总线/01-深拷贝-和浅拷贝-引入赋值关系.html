@@ -16,15 +16,20 @@
       friends: {
         name: "why",
         address: "广东市"
-      }
+      },
+      [Symbol()]:"john"
     }
     // 浅拷贝
     const newObj = {
       ...obj
     }
+    // 浅拷贝第二层是引用赋值
     newObj.friends.name = "kobe"
     console.log(obj.friends.name);
-    // 深拷贝  但是这里对于[symbol]类型的会报错
+
+   const obj3=Object.assign({},obj)
+   console.log("obj3",obj3);
+    // 深拷贝  但是这里对于[symbol]类型的会报错 循环引用会报错
     const deepObj = JSON.parse(JSON.stringify(obj))
     deepObj.friends.name = "ldh"
     console.log(deepObj.friends.name);

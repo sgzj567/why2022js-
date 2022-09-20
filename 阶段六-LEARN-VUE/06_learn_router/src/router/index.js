@@ -7,7 +7,7 @@ import { createRouter, createWebHashHistory, createWebHistory } from "vue-router
 // const About = () => import(/*webpackChunkName:'about'*/"../views/About.vue")
 // 创建一个路由
 const router = createRouter({
-  // 指定采用的模式
+  // 指定采用的模式 映射关系
   // history: createWebHistory(),
   history: createWebHashHistory(),
   routes: [
@@ -16,13 +16,41 @@ const router = createRouter({
       path: "/", redirect: "/home"
     },
     {
-      path: "/home", component: () => import("../views/Home.vue")
+      path: "/login",
+      component: () => import("../views/Login.vue")
     },
     {
+      path: "/order",
+      component: () => import("../views/Order.vue")
+    },
+    {
+      name: "home",
+      path: "/home", component: () => import("../views/Home.vue"),
+      meta: {
+        name: "John",
+        age: 18,
+      },
+      children: [
+        {
+          path: "/home",
+          redirect: "/home/recommend"
+        },
+        {
+          path: "recommend",
+          component: () => import("../views/HomeRecommend.vue")
+        },
+        {
+          path: "ranking",
+          component: () => import("../views/HomeRanking.vue")
+        },
+      ]
+    },
+    {
+      name: "about",
       path: "/about", component: () => import("../views/About.vue")
     },
     {
-      // 动态路由
+      // 动态路由 组件不变 内容变
       path: "/user/:id", component: () => import("../views/User.vue")
     },
     {
@@ -31,6 +59,34 @@ const router = createRouter({
     }
   ]
 })
+// 动态路由管理
+let isAdmin = true
+if (isAdmin) {
+  router.addRoute({
+    path: "/admin",
+    component: () => import("../views/Admin.vue")
+  })
+  // 添加vip页面
+  router.addRoute("home", {
+    path: "vip",
+    component: () => import("../views/HomeVip.vue")
+  })
+}
+console.log(router.getRoutes());
+//
 
-// 
+// 2.路由导航守卫 beforeEach有返回值 undefined 默认返回路径
+// 需求:进入订单页面判断用户是否登录
+// 跳转页面时候 如果没有登录取登录页面登录
+// 如果登录就直接去订单页面
+router.beforeEach((to, form) => {
+  // to即将进入到Route对象
+  // from即将离开Route对象
+  // if (to.path !== "/login") {
+  //   return "/login"
+  // }
+  const token = localStorage.getItem("token")
+  if (!token && to.path === "/order")
+    return "/login"
+})
 export default router

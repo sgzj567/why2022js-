@@ -24,6 +24,9 @@
         message:"my name is why",
         }
       },
+      // 处理响应式数据 所有的getter setter的this上下文自动的绑定为组件实例
+      //  建议使用计算属性 对应的是对象  属性是函数 使用的时候不用加括号
+      // 而且计算属性有缓存 methods没有缓存
       computed:{
       fullName(){
           return this.firstName+" "+this.lastName;

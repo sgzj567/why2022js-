@@ -13,17 +13,18 @@ function Student(name, age, friends, sno) {
 }
 
 
-Student.prototype = new Person()
 Person.prototype = new Student()
 Person.prototype.eating = function () {
   console.log("在吃饭");
 }
+Student.prototype = new Person()
+
 Student.prototype.running = function () {
   console.log("在跑步");
 }
 // 继承
-Student.prototype = new Person()
-Person.prototype = new Student()
+// Student.prototype = new Person()
+// Person.prototype = new Student()
 var stu = new Student()
 var p1 = new Person()
 

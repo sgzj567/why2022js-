@@ -6,6 +6,7 @@
 </template>
 
 <script>
+// 事件总线 非父子组件
 import AppHeader from './AppHeader.vue';
 import eventBus from './utils/event-bus';
 import caterGory from './caterGory.vue';
@@ -26,6 +27,7 @@ export default {
     }
   },
   created() {
+    // on 监听事件 handler回调函数
     eventBus.on("whyEvent", (name, age, height) => {
       console.log("我是在App中的", name, age, height);
       this.message = "hi xi"

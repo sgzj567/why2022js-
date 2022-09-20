@@ -10,6 +10,7 @@
 
 <body>
   <script>
+    // const re2=RegExp("abc","ig") ig是修饰代表忽略大小写  可以这样创建
     const message = "fadd32409 3234asdfh"
     const re = /\d+/ig //=> \d 匹配0-9的数字 + 代表大于1 及以上
     const re1 = /\D+/ig
@@ -18,6 +19,11 @@
     // /\w/代表匹配A-Za-z0-9_  也就是拉丁字母 或数字或下划线
     // . 除了换行符所有的字符
     // \D 与\d匹配的相反
+    // 需求将abc无论带小写换为cba
+    const message2="abc BHC ABC ldj abc"
+    const re3=/abc/ig
+    const arr=message2.replaceAll(re3,"cba")
+    console.log(arr);
   </script>
 </body>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h2>home{{ name }}-{{ age }}</h2>
+    <h2>home {{ name }}-{{ age }}</h2>
     <button @click="homeBtn">homeBtn</button>
   </div>
 </template>

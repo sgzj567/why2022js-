@@ -11,6 +11,7 @@
 <body>
   <script>
     // [Symbol.iterator]名字固定
+    // 创建可迭代对象  函数需要返回一个迭代器
     const info = {
       friends: ["kobe", "james", "curry"],
       [Symbol.iterator]: function () {
@@ -20,7 +21,7 @@
             if (index < info.friends.length) {
               return {
                 done: false,
-                value: info.friends[index++]
+                value: info.friends[index++],
               }
             } else {
               return {
@@ -36,6 +37,8 @@
       console.log(value);
     }
     const infosIterator = info[Symbol.iterator]()
+    console.log(infosIterator.next());
+    console.log(infosIterator.next());
     console.log(infosIterator.next());
   </script>
 </body>

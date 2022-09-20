@@ -11,6 +11,7 @@
 <body>
   <script>
     // map 可以用几乎任何类型作为键
+    // map解决的事是普通对象中不能用复杂类型作为键(只可以放字符串或者symbol) 但是map 对象可以用复杂类型作为键
     const info1 = {
       name: "why"
     }
@@ -23,7 +24,7 @@
     //   [info2]: "kobe",
     // }
     // console.log(info3); //不会出现info1 因为它会把所有的键转换为相同的字符串  就会覆上面的
-    // 2.Map
+    // 2.Map 前面是key后面是值
     const map = new Map()
     map.set(info1, "aaa")
     map.set(info2, "xk")

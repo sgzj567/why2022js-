@@ -26,7 +26,7 @@
         resolve("p3")
       }, 4000);
     })
-    // any 执行第一个resolve方法的
+    // any 执行第一个resolve方法的 与race相比race返回第一个resolve的值 如果都是reject就执行catch
     Promise.any([p1, p2, p3]).then(res => {
       console.log(res);
     }).catch(error => {

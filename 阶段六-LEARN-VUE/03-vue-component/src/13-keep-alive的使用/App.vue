@@ -5,8 +5,8 @@
     </template>
     <!-- <h1>{{ Page[currentIndex] }}</h1> -->
     <!-- keep-alive 保持缓存状态  include 精准控制 exclude 除过什么其他都缓存-->
-    <!-- include:name属性来自组件定义的时候的name name属性要用逗号隔开 -->
-    <keep-alive include="home">
+    <!-- include:name属性来自组件定义的时候的name name属性要用逗号隔开 这里的name不是组件注册的时候的name是在组件内部的单独属性-->
+    <keep-alive include="home,about">
       <component :is="Tabs[currentIndex]" name="why" :age="19"></component>
     </keep-alive>
     <!-- <component is="about"></component> -->

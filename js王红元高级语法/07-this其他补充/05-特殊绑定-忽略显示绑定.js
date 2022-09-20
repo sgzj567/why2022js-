@@ -1,5 +1,5 @@
 function foo() {
-    console.log(this);
+  console.log(this);
 }
 foo.apply("apply")
 foo.apply({});

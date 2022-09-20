@@ -11,10 +11,12 @@
 <body>
   <script>
     // 在执行过程中如果有错误 就会执行catch
+    // 如果异步函数 中有异常就会 抛出错误 进行Promise.reject(err)处理
     async function foo() {
       console.log("_____________1");
       console.log("_____________2");
-      "ABC".filter()
+      // "ABC".filter()
+      throw new  Error("错误")
       console.log("_____________3");
       console.log("_____________4");
       return 123
@@ -22,8 +24,7 @@
     foo().then(res => {
       console.log("res:", res)
     }).catch(err => {
-      console.log(
-        err)
+      console.log(err)
     })
   </script>
 </body>

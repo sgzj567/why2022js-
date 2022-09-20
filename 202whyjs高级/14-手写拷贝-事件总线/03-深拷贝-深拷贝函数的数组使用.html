@@ -16,7 +16,7 @@
         return originValue
       }
       // 2.如果是对象类型才需要创建对象
-      const newObj = Array.isArray ? [] : {}
+      const newObj = Array.isArray(originValue) ? [] : {}
       for (const key in originValue) {
         newObj[key] = deepCopy(originValue[key])
       }

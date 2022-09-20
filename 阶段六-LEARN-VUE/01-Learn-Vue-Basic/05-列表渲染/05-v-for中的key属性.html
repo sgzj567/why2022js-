@@ -10,9 +10,10 @@
   <div id="app"></div>
   <template id="my-app">
     <ul>
-      <!-- key 要求是唯一的:id -->
+      <!-- key 要求是唯一的:id 作用:虚拟dom对比  减少不必要的重复渲染-->
       <li v-for="item in letters" :key="item">{{item}}</li>
     </ul>
+    <button @click="insert">插入f</button>
   </template>
   <script src="../JS/vue.js"></script>
   <script>
@@ -20,7 +21,13 @@
       template:'#my-app',
       data(){
         return {
-letters:["a","b","c","d"]
+         letters:["a","b","c","d"]
+        }
+      },
+      methods:{
+        // 虚拟dom 有key 对比前后数组 在有相同父元素的子节点 并不会重新渲染列表 因为对于列表中的abc他们并没有变化 我们只需要插入一个即可
+        insert(){
+          this.letters.splice(2,0,"f")
         }
       }
     }
