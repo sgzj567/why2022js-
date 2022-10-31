@@ -2,37 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
 <body>
-    <script>
-        function pow2(x, n) {
-            var result = 1
-            for (var i = 0; i < n; i++) {
-                result *= x
-            }
-            return result
-        }
+  <script>
+    function pow2(x, n) {
+      var result = 1
+      for (var i = 0; i < n; i++) {
+        result *= x
+      }
+      return result
+    }
 
-        console.log(pow2(2, 2));
-        console.log(pow2(3, 3));
-        console.log(Math.pow(2, 2));
-        console.log(Math.pow(3, 3));
+    console.log(pow2(2, 2));
+    console.log(pow2(3, 3));
+    console.log(Math.pow(2, 2));
+    console.log(Math.pow(3, 3));
 
-        // 使用递归  性能没有for高 但是代码简洁
-        function pow1(x, n) {
-            if (n === 1)
-                return x
-            return x * pow1(x, n - 1)
-        }
+    // 使用递归  性能没有for高 但是代码简洁
+    function pow1(x, n) {
+      if (n === 1)
+        return x
+      return x * pow1(x, n - 1)
+    }
 
-        console.log(pow1(2, 2));
-        console.log(pow1(3, 3));
-    </script>
+    console.log(pow1(2, 2));
+    console.log(pow1(3, 3));
+  </script>
 </body>
 
 </html>

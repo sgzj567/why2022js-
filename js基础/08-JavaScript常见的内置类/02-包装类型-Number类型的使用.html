@@ -10,11 +10,14 @@
 
 <body>
   <script>
-    // 对象的方法
+    // 对象的方法  调用对象属性和方法返回一个新的值
     var num = 1000
+    // toString默认返回一个字符串 toString(base) base是2-36 默认是10
     console.log(num.toString()); //默认转换为十进制
     console.log(num.toString(2)); //转换为二进制
     console.log(num.toString(8)); //转换为八进制
+    console.log(typeof (num.toString()));//string
+    console.log(num);
     // 如果直接对一个数字进行操作  需要使用.. 运算符
     console.log(1000..toString(2));
     // 类的方法
@@ -22,7 +25,7 @@
     console.log(Number(num1));
     console.log(Number.parseInt(num1));
     console.log(Number.parseFloat(num1));
-    // toFixed(digits) 方法  格式化一个数字  保留digits位小数
+    // toFixed(digits) 方法  格式化一个数字  保留digits位小数 会四舍五入
     var num2 = 123.123
     console.log(num2.toFixed(2)); //返回的是字符串类型
     console.log(typeof num2.toFixed(2));

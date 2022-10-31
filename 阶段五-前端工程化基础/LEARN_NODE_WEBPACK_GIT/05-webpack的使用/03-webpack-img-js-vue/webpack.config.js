@@ -44,7 +44,7 @@ module.exports = {
         },
         // 指出build下生成文件或者图片的名字
         generator: {
-          // 占位符
+          // 占位符[]
           // 指向原来图片名字 name
           // ext:扩展名
           // hash:webpack生成的hash
@@ -57,13 +57,13 @@ module.exports = {
         use: [
           {
             loader: "babel-loader",
-            options: {
-              // 转换箭头函数
-              // plugins: [
-              //   "@babel/plugin-transform-arrow-functions"
-              // ]
-            }
+            // options: {
+            // 转换箭头函数
+            // plugins: [
+            //   "@babel/plugin-transform-arrow-functions"
+            // ]
           }
+          // }
         ]
       },
       {

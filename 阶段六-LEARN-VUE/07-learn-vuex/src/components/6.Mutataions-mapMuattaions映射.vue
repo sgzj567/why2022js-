@@ -10,22 +10,18 @@
 export default {
   methods: {
     actionBtn() {
-      // action里面使用dispatch mutations l里面使用commit
+      // action里面使用dispatch mutations 里面使用commit
       this.$store.dispatch("incrementAction")
     },
     actionChangeName() {
-      this.$store.dispatch("actionChangeName", "ldh")
+      this.$store.dispatch("actionChangeName", "john")
     }
   }
 }
 </script>
 <script setup>
-import { mapActions } from 'vuex';
-
-
-
-
 </script>
 
 <style scoped>
+
 </style>

@@ -6,7 +6,7 @@ const { VueLoaderPlugin } = require("vue-loader/dist/index")
 // const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 //  在dist文件夹下生成html文件 
 const HtmlWebpackPlugin = require("html-webpack-plugin")
-// 使用DefinePlugins注入全局变量
+// 使用DefinePlugins注入全局变量  这个是webpack自带的不需要下载
 const { DefinePlugin } = require("webpack")
 module.exports = {
   // 开发模式设置 上线阶段设置为production  开发阶段设置为development
@@ -20,7 +20,7 @@ module.exports = {
   },
   // 扩展名
   resolve: {
-    extensions: [".js", "json", ".vue", ".jsx", "ts", ".tsx"],
+    extensions: [".js", ".json", ".vue", ".jsx", "ts", ".tsx"],
     // 如果多层嵌套
     alias: {
       utils: path.resolve(__dirname, "./src/utils")
@@ -54,7 +54,7 @@ module.exports = {
         },
         // 指出build下生成文件或者图片的名字
         generator: {
-          // 占位符
+          // 占位符[]
           // 指向原来图片名字 name
           // ext:扩展名
           // hash:webpack生成的hash
@@ -68,12 +68,12 @@ module.exports = {
         use: [
           {
             loader: "babel-loader",
-            options: {
-              // 转换箭头函数
-              // plugins: [
-              //   "@babel/plugin-transform-arrow-functions"
-              // ]
-            }
+            // options: {
+            //   转换箭头函数
+            //   plugins: [
+            //     "@babel/plugin-transform-arrow-functions"
+            //   ]
+            // }
           }
         ]
       },
@@ -87,6 +87,7 @@ module.exports = {
       }
     ]
   },
+  // 插件给全局注入  任何地方都可以使用
   plugins: [
     // 做css的操作
     new VueLoaderPlugin(),
@@ -101,7 +102,7 @@ module.exports = {
     ),
     new DefinePlugin({
       coderwhy: "'why'",
-      counter: "'123'",
+      counter: "123",
     })
   ]
 }

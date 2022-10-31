@@ -21,17 +21,13 @@ export default {
 <script setup>
 import { computed, toRefs } from 'vue';
 import { mapGetters, useStore } from 'vuex';
-// 1.使用mapGetters
-// const { message: messageFn } = mapGetters(["message"])
-// const message = computed(messageFn.bind({ $store: store }))
-// 2.使用getters
+
 const store = useStore()
-// const { message } = toRefs(store.getters)  这里的不是响应式
 // 3.针对某个getters使用computed
 const message = computed(() => store.getters.message)
 const { name } = toRefs(store.state)
 function changeName() {
-  store.commit("changeName")
+  store.commit("changeName", "why")
 }
 function changeInfo() {
   store.commit("changeInfo", {
@@ -42,4 +38,5 @@ function changeInfo() {
 </script>
 
 <style scoped>
+
 </style>

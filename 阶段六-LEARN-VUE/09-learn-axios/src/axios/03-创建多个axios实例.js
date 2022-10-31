@@ -4,12 +4,12 @@ import axios from 'axios'
 
 
 // 创建其他实例发送请求 优点 可以提供多个实例  在服务器地址不一样的情况下
-const instancel = axios.create({
+const instance = axios.create({
   baseURL: "http://123.207.32.32:9001",
-  timeout: 1000,
+  timeout: 6000,
   headers: {}
 })
-instancel.get("/lyric", {
+instance.get("/lyric", {
   params: {
     id: 500665346,
   }

@@ -2,33 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
 <body>
-    <script>
-        // function foo(name, age) {
-        //     console.log(arguments);
-        //     console.log(this); //window
-        // }
-        // foo('why', 19) //默认调用函数  this指向window
-        // 2.情况二:如果函数是被某一个对象来引用并调用它  那么this会指向这个对象
-        var obj = {
-                name: "why",
-                running: function() {
-                    console.log('running');
-                    console.log(this);
-                    console.log(obj);
-                    console.log(obj === this);
-                }
-            }
-            // obj.running();//thi指向obj
-        var fn = obj.running
-        fn() //默认函数调用  this指向window
-    </script>
+  <script>
+    // function foo(name, age) {
+    //     console.log(arguments);
+    //     console.log(this); //window
+    // }
+    // foo('why', 19) //默认调用函数  this指向window
+    // 2.情况二:如果函数是被某一个对象来引用并调用它  那么this会指向这个对象
+    var obj = {
+      name: "why",
+      running: function () {
+        console.log('running');
+        console.log(this);
+        console.log(obj);
+        console.log(obj === this);
+      }
+    }
+    // obj.running();//thi指向obj
+    var fn = obj.running
+    fn() //默认函数调用  this指向window
+  </script>
 </body>
 
 </html>

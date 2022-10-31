@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const arr = ['12', 'pink']
+    // length可写属性
+    arr.length = 4
+    console.log(arr);
+    // for  in  遍历数组是索引  遍历对象数key
+    for (const i in arr) {
+      console.log(i);
+    }
+    // for of 遍历的是item 用于数组
+    for (const value of arr) {
+      console.log(value);
+    }
+  </script>
+</body>
+
+</html>

@@ -2,43 +2,56 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
 <body>
-    <script>
-        // splice  在这个方法中是修改原数组  
-        var names = ["why", "zxk", "kobe"];
-        //1. 数组尾部添加和删除 push pop
-        // names.push("james")
-        // console.log(names);
-        // //删除的时候也可以接受它
-        // names.pop("james");
-        // console.log(names);
-        // //2. 数组头部添加和删除 unshift  shift
-        // names.unshift("ldh", "zy")
-        // console.log(names);
-        // // 删除只能一个一个删除
-        // names.shift("ldh");
-        // console.log(names);
+  <script>
+    // splice  在这个方法中是修改原数组  
+    var names = ["why", "zxk", "kobe"];
+    //1. 数组尾部添加和删除 push pop
+    // names.push("james")
+    // console.log(names);
+    // //删除末尾数据  只能一次删除一个  不能传递参数 传递参数无效  同时他可以返回删除的元素
+    // names.pop();
+    // console.log(names);
+    // //2. 数组头部添加和删除 unshift  shift
+    // names.unshift("ldh", "zy")
+    // console.log(names);
+    // // 删除只能一个一个删除
+    // names.shift("ldh");
+    // console.log(names);
 
-        // 3.在任意位置添加 删除  替换元素
-        // 参数一 start :什么位置开始操作元素
-        // 参数二: deleteCount  删除元素的个数
-        // 3.1删除元素
-        // names.splice(1, 2)
-        // console.log(names);
-        // 3.2 新增元素
-        // deleteCount:0  后面添加新的元素
-        // names.splice(1, 0, "james", "curry")
-        // console.log(names);
-        // 3.3替换元素  先移出元素  再添加
-        names.splice(1, 2, "ldh", "zxy")
-        console.log(names);
-    </script>
+    // 3.在任意位置添加 删除  替换元素
+    // 参数一 start :什么位置开始操作元素
+    // 参数二: deleteCount  删除元素的个数
+    // 3.1删除元素
+    // names.splice(1, 2)
+    // console.log(names);
+    // 3.2 新增元素
+    // deleteCount:0  后面添加新的元素
+    // names.splice(1, 0, "james", "curry")
+    // console.log(names);
+    // 3.3替换元素  先移出元素  再添加
+    names.splice(1, 2, "ldh", "zxy")
+    console.log(names);
+    // 里面的数字是代表创建的是长度为5的数组
+    const arr = new Array(5)
+    console.log(arr);
+    const arr3 = ["why", "cba", "nba"]
+    const arr4 = ["way", "aba", "ncv"]
+    // concat 拼接数组
+    const arr5 = arr3.concat(arr4)
+    console.log(arr5);
+    const arr6 = [...arr3, ...arr4]
+    console.log(arr6);
+    const arr7 = []
+    arr7.push(...arr3, ...arr4)
+    console.log(arr7);
+  </script>
 
 </body>
 

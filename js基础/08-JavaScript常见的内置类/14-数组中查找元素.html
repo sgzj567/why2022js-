@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const arr1 = [
+      { id: 101, name: "why", age: 19 },
+      { id: 105, name: "why", age: 19 },
+      { id: 102, name: "why", age: 12 },
+    ]
+    // find 返回符合条件的元素 是高阶函数
+    const m = arr1.find(item => item.id === 102)
+    console.log(m);
+  </script>
+</body>
+
+</html>

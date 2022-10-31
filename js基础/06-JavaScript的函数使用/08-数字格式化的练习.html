@@ -2,34 +2,34 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
 <body>
-    <script>
-        // 语法糖  一般简写或者特殊写法
-        var num1 = 4000021332
-        var num2 = 32424325
+  <script>
+    // 语法糖  一般简写或者特殊写法
+    var num1 = 4000021332
+    var num2 = 32424325
 
-        function formatCount(count) {
-            var result = 0
-            if (count > 1000000000) {
-                result = Math.floor(count / 1000000000) + '亿' //Math.floor 四舍五入
-            } else if (count > 100000) {
-                result = Math.floor(count / 100000) + '万'
-            } else {
-                result = count
+    function formatCount(count) {
+      var result = 0
+      if (count > 1000000000) {
+        result = Math.floor(count / 1000000000) + '亿' //Math.floor 四舍五入
+      } else if (count > 100000) {
+        result = Math.floor(count / 100000) + '万'
+      } else {
+        result = count
 
-            }
-            return result
-        }
+      }
+      return result
+    }
 
 
-        console.log(formatCount(num1));
-    </script>
+    console.log(formatCount(num1));
+  </script>
 </body>
 
 </html>

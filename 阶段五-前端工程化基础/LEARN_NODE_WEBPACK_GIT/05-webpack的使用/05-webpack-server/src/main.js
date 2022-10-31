@@ -15,3 +15,10 @@ foo()
 createApp(Hello).mount("#app")
 console.log(counter);
 console.log(coderwhy);
+console.log("aaaa");
+
+if (module.hot) {
+  module.hot.accept("./utils/math.js"), () => {
+    console.log("指定那个模块发生了热更新");
+  }
+}

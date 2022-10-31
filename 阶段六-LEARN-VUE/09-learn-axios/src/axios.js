@@ -1,0 +1,9 @@
+// axios发送请求
+// 创建axios实例
+// axios拦截器
+// axios请求封装
+// 功能特点:在浏览器中发送XMLHttpRequest请求
+// 在node中发送http请求
+// 支持promiseAPI
+// 拦截请求和响应
+// 转换请求和响应

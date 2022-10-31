@@ -20,6 +20,10 @@
     xhr.ontimeout = function () {
       console.log("请求过期", xhr.timeout);
     }
+    // 监听取消事件
+    xhr.onabort=function(){
+      console.log("请求取消");
+    }
     // 代表浏览器超过3秒  就取消浏览器请求功能  如果没有设置 就是0
     xhr.timeout = 3000
     xhr.open("get", "http://123.207.32.32:1888/01_basic/timeout")

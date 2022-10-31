@@ -14,11 +14,14 @@
     var str2 = "hello"
     var newStr = str2 + str1
     console.log(newStr);
-    // 1.字符串拼接 concat  也可以用于数组  这个返回一个新的数组  或者对象
+    // 1.字符串拼接 concat  也可以用于数组  这个返回一个新的数组  或者对象  字符串时不可修改的
     var newStr2 = str1.concat(str2)
     console.log(newStr2);
     // 2.删除收尾空格
+    const name = " why "
     // str.trim
+    console.log(name);
+    console.log(name.trim());
     // 3.字符串的切割 split
     var message = "abc-cba-nba"
     var items = message.split('-') // 返回的是数组
@@ -26,6 +29,9 @@
     // 转换字符串拼接方式  join 前面必须是数组
     var newMessage = items.join('*')
     console.log(newMessage);
+    // slice不会修改原来的字符串 从1 开始 到2结束 不包含2
+    const str3 = str1.slice(1, 2)
+    console.log(str3);
   </script>
 
 </body>

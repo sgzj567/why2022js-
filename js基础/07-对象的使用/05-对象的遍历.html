@@ -17,12 +17,11 @@
     }
     // console.log(Object.keys(info)); //返回的是数组形式
     // 普通循环
-    var infoKeys = Object.keys(info) //获取key
+    var infoKeys = Object.keys(info) //获取key  可枚举属性
     for (var i = 0; i < infoKeys.length; i++) {
       var key = infoKeys[i]
       var value = info[key]
       console.log(key, value);
-
     }
     // for in:遍历对象  一般如果用不到索引值 就用下面的
     for (var key in info) {

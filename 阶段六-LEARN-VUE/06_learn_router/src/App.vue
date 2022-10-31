@@ -6,7 +6,7 @@
       <!-- 自己设置路由的活跃类 -->
       <!-- <router-link to="/home" active-class="active">首页</router-link> -->
       <!-- 也可以给to写成类的模式 -->
-      <!-- 一般不加replace replace返回的时候不记录之前的路径 active-class是自己设定的原本router-link-active的名字-->
+      <!-- 一般不加replace replace返回的时候不记录之前的路径 active是自己设定的原本是router-link-active的名字-->
       <router-link :to="{
         path: '/home'
       }" active-class="active" replace>首页</router-link>

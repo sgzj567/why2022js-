@@ -2,7 +2,7 @@
 // 也可以是use的store
 import { defineStore } from 'pinia'
 import useUser from './use'
-// 返回的是函数
+// 返回的是函数 必须定义一个用户名 区分store
 const count = defineStore("counter", {
   state: () => ({
     name: "kobe",

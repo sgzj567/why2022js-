@@ -12,13 +12,18 @@
   <script>
     var obj = {
       name: "why",
-      "my friend": "kobe"
+      "my friend": "kobe",
+      "eating something": function () {
+        console.log("eat");
+      },
     }
 
     // 获取没有friend
-    // 为什么需要方括号[]
-
+    // 为什么需要方括号[] 方括号里的值是字符串  或者是变量
+    console.log(obj.name == obj["name"]);
     console.log(obj["my friend"]);
+    const eatKey = "eating something"
+    obj[eatKey]();
   </script>
 </body>
 

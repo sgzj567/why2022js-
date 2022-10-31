@@ -25,9 +25,10 @@ module.exports = {
         // use: ["style-loader", "css-loader", {
         //   // 这个是适配use-select这个属性
         //   loader: "postcss-loader",
-        //   // 给postcss-loader 配插件  这个插件也需下载 即autoprefixer 添加浏览器前缀
-        // 但是这个也有一个预设插件: 提前把这个插件 以及一些css功能的插件特性  postcss-preset-env -D
+        //   // 给postcss-loader 需要配插件  这个插件也需下载 即autoprefixer 添加浏览器前缀
+        // 但是这个也有一个预设插件: 提前把这个插件 以及一些css功能的插件特性提前预设  postcss-preset-env -D
         //   options: {
+        //    单独写这个配置文件不需要加postcssOptions
         //     postcssOptions: {
         //       plugins: ["autoprefixer"]
         //     }

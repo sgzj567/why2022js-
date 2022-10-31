@@ -9,7 +9,6 @@
 </template>
 
 <script setup>
-import { storeToRefs } from 'pinia';
 
 import useCount from '../pinia/counter';
 
@@ -22,4 +21,5 @@ const countStore = useCount()
 </script>
 
 <style scoped>
+
 </style>

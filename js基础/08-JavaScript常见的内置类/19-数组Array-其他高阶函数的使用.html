@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const arr = ["abc", "nba", "dfa", "asw"]
+    arr.forEach(function (item) { console.log(item, this); }, { name: "why" })
+    // 2.filter函数 过滤
+    const num = [23, 33, 34, 56, 45, 31]
+    const newNum = num.filter(item => item % 2 == 0)
+    console.log(newNum);
+    // map映射
+    const newArr = num.map(item => item * item)
+    console.log(newArr);
+  </script>
+</body>
+
+</html>

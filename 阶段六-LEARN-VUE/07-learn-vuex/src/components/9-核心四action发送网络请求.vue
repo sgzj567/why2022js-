@@ -1,11 +1,12 @@
 <template>
   <div class="home">
-    <h2>当前计数:{{ $store.state.counter }}</h2>
-    <h2>当前name:{{ $store.state.name }}</h2>
-    <button @click="actionBtn">发起action</button>
-    <button @click="actionChangeName">修改name</button>
     <template v-for="item in $store.state.banners" :key="item.width">
       <li> title:{{ item.title }} </li>
+    </template>
+    <template v-for="item in $store.state.recommend" :key="item.width">
+      <li>
+        <img :src="item.image" alt="">
+      </li>
     </template>
   </div>
 </template>
@@ -33,11 +34,12 @@ import { useStore } from 'vuex';
 const store = useStore()
 // then是检查请求是否成功 但是 必须前面返回的是promise对象
 store.dispatch("fetchHomeMultidataAction").then(res => {
-  console.log("aaa");
+  console.log("then被回调");
 })
 
 
 </script>
 
 <style scoped>
+
 </style>

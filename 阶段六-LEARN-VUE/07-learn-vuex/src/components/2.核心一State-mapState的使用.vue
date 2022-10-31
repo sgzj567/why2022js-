@@ -23,6 +23,7 @@
 import { mapState } from 'vuex';
 export default {
   computed: {
+     这里数组的名字要和store中的保持一致  不过mapState有两种写法 数组和对象    
     ...mapState(["name", "level", "avatarURL"]),
     // 对象中可以修改传过来的值
     ...mapState({
@@ -38,11 +39,12 @@ export default {
 <script setup>
 import { computed, toRefs } from 'vue';
 import { mapState, useStore } from 'vuex';
+//2. 在setup中使用mapState函数
 // mapState返回的是函数
 // const { name, level } = mapState(["name", "level"])
 // console.log(fns);
-// const cname = computed(name)
-// const clevel = computed(level)
+// const cname = computed(name.bind({$store.store}))
+// const clevel = computed(level.bind({$store.store}))
 // 3.直接对storeState进行结构
 const store = useStore()
 // 但是接收到的不是响应式 需要转换为响应式
@@ -50,4 +52,5 @@ const { name: cname, level: clevel } = toRefs(store.state)
 </script>
 
 <style scoped>
+
 </style>

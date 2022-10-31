@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const arr = [23, 5, 9, 23, 45, 38, 94]
+    const arr1 = [23, 5, 9, 23, 45, 38, 94]
+    for (let i = 0; i < arr.length - 1; i++) {
+      let temp
+      for (let j = i; j < arr.length - 1 - j; j++) {
+        if (arr[i] >= arr[j]) {
+          temp = arr[i]
+          arr[i] = arr[j]
+          arr[j] = temp
+        }
+      }
+    }
+    console.log(arr);
+    const newArr1 = arr.sort((item1, item2) => {
+      // item1-item2>0 就将item1排在item2前面
+      // return item1 - item2
+      return item2 - item1
+    })
+    console.log(newArr1);
+    // 数组反转
+    const newArr = arr1.reverse()
+    console.log(newArr);
+  </script>
+</body>
+
+</html>

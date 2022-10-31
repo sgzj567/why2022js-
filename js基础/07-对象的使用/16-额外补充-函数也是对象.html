@@ -10,9 +10,13 @@
 
 <body>
   <script>
-    // 引申一些东西
+    // 引申一些东西 执行的时候都是在栈里面的
+    const info = {}
+    info.name = "abc"
+    console.log(info);
     function sayHello() { }
     sayHello.age = 19;
+    sayHello()
     console.log(sayHello.age);
   </script>
 </body>

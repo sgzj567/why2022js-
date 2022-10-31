@@ -10,9 +10,19 @@
 
 <body>
   <script>
-        // 原始类型的包装
-        // JavaScript的原始数据类型 并非对象类型,理论上他们没有办法获取属性或者方法
-        // 但时为什么会看到调用方法呢  是因为对其封装了对应的包装类型
+    // 原始类型的包装
+    // null undefined 没有包装类型和方法
+    // JavaScript的原始数据类型 并非对象类型,理论上他们没有办法获取属性或者方法
+    // 但时为什么会看到调用方法呢  是因为对其封装了对应的包装类型  调用他们的属性或者方法时返回一个新的值 最后删除包装类型
+    var name = "zxk"
+    var height = 1.88
+    var message = "hello world"
+    // 以空格做切割  为什么会能调用split 和length因为它里面有内置类 它是包装类型
+    console.log(message.split(" "));
+    console.log(name.length);
+    console.log(123 && 234);
+    console.log(0 && 120);
+    console.log(123 || 0);
   </script>
 </body>
 

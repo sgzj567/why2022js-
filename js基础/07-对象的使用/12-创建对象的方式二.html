@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 工厂函数
+    function createStu(name, age, height) {
+      let stu = {}
+      stu.name = name
+      stu.age = age
+      stu.height = height,
+        stu.running = function () {
+          console.log("running");
+        }
+      return stu
+    }
+    const stu1 = createStu("zxk", 23, 1.72)
+    console.log(stu1);
+  </script>
+</body>
+
+</html>

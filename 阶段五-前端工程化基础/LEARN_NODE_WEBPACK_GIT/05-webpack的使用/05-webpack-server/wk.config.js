@@ -26,10 +26,11 @@ module.exports = {
       utils: path.resolve(__dirname, "./src/utils")
     }
   },
-  // serve 需要下载webpack-dev-serve
-  //  开启hmr  但是webpack是自动开启的 
+  // serve 需要下载webpack-dev-serve -D(修改了代码就可以直接切换到浏览器查看 不用打开live sever) 
+  //  开启hmr 开启本地服务 但是webpack是自动开启的 
+  // 不会生产dist文件夹 会放在内存里
   devServer: {
-    hot: true,
+    hot: true,//默认就是true  热更新
     // 自己配置端口名字
     port: 8888,
     // 自动打开浏览器 在执行完serve

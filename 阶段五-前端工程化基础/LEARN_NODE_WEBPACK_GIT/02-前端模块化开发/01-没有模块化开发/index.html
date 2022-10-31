@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 此时引入相同的变量会冲突 解决办法 用函数(立即执行函数)形成各自的作用域 -->
+  <!-- 但是没有标准 规范化的CommonJS(在node中使用的 webpack是利用node解析js)/AMD/CMD -->
+  <!--现在标准化的是ES6的ESModule -->
+  <script src="./aaa.js"></script>
+  <script src="./bbb.js"></script>
+  <script>
+    console.log(moduleA.height);
+  </script>
+</body>
+</html>

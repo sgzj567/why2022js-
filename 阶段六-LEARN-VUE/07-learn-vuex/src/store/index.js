@@ -14,6 +14,8 @@ const store = createStore({
       { id: 113, name: "kobe", age: 25 },
     ],
     // 服务器数据
+    banners: [],
+    recommend: []
   }),
   getters: {
 
@@ -26,6 +28,7 @@ const store = createStore({
     message(state, getters) {
       return `name:${state.name} level:${state.level} ageTotal:${getters.total}`
     },
+    // 在getters属性中是可以返回一个函数的
     getFriendById(state) {
       return (id) => state.friends.find(item => item.id === id)
     }
@@ -42,7 +45,12 @@ const store = createStore({
       state.level = newInfo.level
     },
     // 不要在mutations进行异步操作
-
+    changeBanners(state, banners) {
+      state.banners = banners
+    },
+    changeRecommend(state, recommend) {
+      state.recommend = recommend
+    }
   },
   actions: {
     incrementAction(context) {
@@ -51,6 +59,22 @@ const store = createStore({
       // console.log(context.store);
       context.commit("increment")
     },
+    actionChangeName(context, playLoad) {
+      context.commit("changeName", playLoad)
+      console.log(playLoad);
+    },
+    async fetchHomeMultidataAction(context) {
+      //   fetch("http://123.207.32.32:8000/home/multidata").then(res => {
+      //     res.json().then(data => {
+      //       console.log(data);
+      //     })
+      //   })
+      const res = await fetch("http://123.207.32.32:8000/home/multidata")
+      const data = await res.json()
+      console.log(data);
+      context.commit("changeBanners", data.data.banner.list)
+      context.commit("changeRecommend", data.data.recommend.list)
+    }
   },
   // 引入module
   modules: {
