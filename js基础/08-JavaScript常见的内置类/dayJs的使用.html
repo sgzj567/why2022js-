@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./day/day.js"></script>
+  <script>
+    const time = dayjs().date(23)
+    console.log(time);
+    const day = new Date(2022, 11, 23)
+    const d = dayjs(day)
+    console.log(d);
+    console.log(dayjs().second(23));
+    const nextDay = dayjs("2022-11-01").subtract(2, 'day').format('DD/MM/YYYY')
+    const preDay = dayjs("2022-11-01").add(2, 'day').format('DD/MM/YYYY')
+    console.log(preDay);
+    console.log(nextDay);
+    const day1 = dayjs().format('DD-MM-YYYY')
+    console.log(day1);
+    const day2 = dayjs().format('YYYY年MM月DD日')
+    console.log(day2);
+    const month = dayjs().month() + 1
+    console.log(month);
+    // 日期
+    const date = dayjs().date()
+    console.log(date);
+    //周几
+    const day3 = dayjs().day()
+    console.log(day3);
+
+    console.log(dayjs().format('YYYY/MM/DD HH:mm:ss'));
+  </script>
+</body>
+
+</html>

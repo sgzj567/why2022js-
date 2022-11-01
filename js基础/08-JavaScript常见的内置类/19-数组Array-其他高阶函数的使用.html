@@ -11,14 +11,20 @@
 <body>
   <script>
     const arr = ["abc", "nba", "dfa", "asw"]
+    // 1.foreach  返回结果是undefined 不能跳出循环 只能使用抛出异常来跳出
     arr.forEach(function (item) { console.log(item, this); }, { name: "why" })
     // 2.filter函数 过滤
     const num = [23, 33, 34, 56, 45, 31]
     const newNum = num.filter(item => item % 2 == 0)
     console.log(newNum);
-    // map映射
+    //3. map映射 返回结果是新的数组
     const newArr = num.map(item => item * item)
     console.log(newArr);
+    // 4.reduce 累加
+    const newArr2 = num.reduce((pre, next) => {
+      return pre + next
+    }, 1)
+    console.log(newArr2);
   </script>
 </body>
 

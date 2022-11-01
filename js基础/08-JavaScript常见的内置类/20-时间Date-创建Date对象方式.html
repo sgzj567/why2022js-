@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const time = new Date()
+    console.log(time.getDate());
+    console.log(time.getDay());
+    console.log(time.getMonth() + 1);
+    console.log(time.getFullYear());
+    console.log(+time);
+    console.log(time.getMinutes());
+    console.log(time.getHours());
+    console.log(time);
+    console.log(new Date());
+    //2. 传入参数 时间字符串
+    console.log(new Date("2022-11-02"));
+    // 3.传入具体年月日时分秒
+    const date = new Date(2033, 10, 23, 12, 55, 12, 123)
+    console.log(date);
+    // 4.时间戳 表示1970 1 1 00-00-00 UTC毫秒到现在的时间戳
+  </script>
+</body>
+
+</html>
