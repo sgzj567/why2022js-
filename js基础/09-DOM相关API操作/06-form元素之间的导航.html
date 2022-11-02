@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="">
+    <input type="text" name="account">
+    <input name="password" type="number">
+    <input name="hobbies" type="checkbox" checked>
+    <select name="fruits" id="">
+      <option value="apple">苹果</option>
+      <option value="banana">香蕉</option>
+    </select>
+  </form>
+
+  <script>
+    // 获取form
+    const formEl = document.forms[0]
+    console.log(formEl);
+    const textEl = formEl.elements.account
+    setTimeout(function () {
+      console.log(textEl.value);
+    }, 5000)
+  </script>
+</body>
+
+</html>

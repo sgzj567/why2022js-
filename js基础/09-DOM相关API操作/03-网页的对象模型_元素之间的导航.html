@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="box">我是盒子</div>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <script>
+    // 获取元素都有element
+    // 获取子元素
+    const children = document.body.children
+    console.log(children);
+    // 获取元素节点
+    const childNodes = document.body.childNodes
+    console.log(childNodes);
+    // 获取下一个兄弟元素
+    const ulEl = children[0].nextElementSibling
+    console.log(ulEl);
+  </script>
+</body>
+
+</html>

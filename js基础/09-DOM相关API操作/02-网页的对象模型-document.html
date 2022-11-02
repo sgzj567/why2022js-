@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- {$}*5 -->
+  <!-- 换行也是节点 -->
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <script>
+    // 全部元素
+    const bodyEl = document.documentElement
+    // 头部元素
+    const headEl = document.head
+    // 元素声明
+    const typeEl = document.doctype
+    console.log('bodyEl', bodyEl, headEl, typeEl);
+    const children = document.body.children[0].parentNode
+    console.log(children);
+  </script>
+</body>
+
+</html>
