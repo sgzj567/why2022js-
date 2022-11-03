@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="box" id="abc" title="标题" age="19">我是盒子</div>
+  <!-- 元素里的属性叫做attribute -->
+  <input type="checkbox" checked>
+  <script>
+    obj = {
+      name: "why"
+    }
+    // 对象里的属性叫做property
+    const boxEl = document.querySelector('.box')
+    // age叫做非标准属性 需要通过getAttribute获取
+    console.log(boxEl.id, boxEl.title, boxEl.age);
+    console.log(boxEl.getAttribute("age"));
+    const inputEl = document.querySelector("input")
+    if (inputEl.getAttribute("checked")) {
+      console.log("checked被选中", inputEl.getAttribute("checked"));
+    } else {
+      console.log("未选中");
+    }
+    // 标准属性一般用.值获取
+    if (inputEl.checked) {
+      console.log('选中', typeof inputEl.checked);
+    }
+  </script>
+</body>
+
+</html>

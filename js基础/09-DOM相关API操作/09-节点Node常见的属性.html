@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 我是注释 -->
+  我是文本
+  <div class="box">我是box</div>
+  <script>
+    const childNodes = document.body.childNodes
+    const comment = childNodes[1]
+    const text = childNodes[2]
+    const divEl = childNodes[3]
+    console.log(comment, text, divEl);
+    // 节点属性
+    console.log(comment.nodeType, text.nodeType, divEl.nodeType);
+    divEl.textContent = "嘿嘿嘿"
+    // 2.4 outerhtml
+
+  </script>
+</body>
+
+</html>

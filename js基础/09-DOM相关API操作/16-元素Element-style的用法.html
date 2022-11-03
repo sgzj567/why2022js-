@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">哈哈哈哈哈哈</div>
+  <script>
+    // 在property中使用驼峰命名
+    const boxEl = document.querySelector(".box")
+    // boxEl.style.backgroundColor = "red"
+    // 设置多个样式
+    boxEl.style.cssText = "font-size:12px;color:red"
+    // 获取属性
+    console.log(boxEl.style.backgroundColor);//只能获取内联样式
+    // 全局获取样式
+    console.log(getComputedStyle(boxEl).backgroundColor);
+  </script>
+</body>
+
+</html>
