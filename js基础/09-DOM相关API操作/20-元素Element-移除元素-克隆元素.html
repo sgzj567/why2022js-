@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button class="remove-btn">移除</button><button class="clone">克隆</button>
+  <div class="box">
+    <h1>我是标题</h1>
+    <p>我是p标签</p>
+  </div>
+  <script>
+    const reBtn = document.querySelector("button")
+    const boxEl = document.querySelector(".box")
+    const cloneEL = document.querySelector(".clone")
+    reBtn.addEventListener("click", function () {
+      boxEl.remove()
+    })
+    // 复制
+    cloneEL.addEventListener("click", function () {
+      // 这个是浅层拷贝
+      // const newNode = boxEl.cloneNode()
+      // 深度拷贝
+      const newNode = boxEl.cloneNode(true)
+      newNode.children[0].textContent = "哈哈哈哈"
+      boxEl.after(newNode)
+
+      console.log(newNode);
+
+    })
+  </script>
+</body>
+
+</html>

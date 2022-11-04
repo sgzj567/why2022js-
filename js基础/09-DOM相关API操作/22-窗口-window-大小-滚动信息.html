@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      height: 2000px;
+      background-color: antiquewhite;
+    }
+
+    button {
+      position: fixed;
+      right: 0;
+      bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <button>按钮</button>
+  <div class="box"></div>
+  <script>
+    // 整个浏览器高度 包含菜单 标签
+    console.log(window.outerHeight);
+    // 浏览器内容区域  开发中常用的
+    console.log(window.innerHeight);
+    // 获取window滚动宽度 和高度
+    window.onclick = function () {
+      console.log(window.scrollX);
+      console.log(window.scrollY);
+    }
+    const btnEl = document.querySelector("button")
+    btnEl.onclick = function () {
+      // x y
+      // window.scrollTo(0, 1000)
+      // 原来基础上滚动
+      window.scrollBy(0, 100)
+    }
+    btnEl.hidden = true
+    window.onscroll = function () {
+      if (window.scrollY > 500) {
+        btnEl.hidden = false
+      } else {
+        btnEl.hidden = true
+      }
+    }
+  </script>
+</body>
+
+</html>

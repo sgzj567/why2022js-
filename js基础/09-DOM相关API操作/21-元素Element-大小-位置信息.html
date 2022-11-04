@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      height: 100px;
+      width: 100px;
+      border: 1px solid red;
+      /* box-sizing: border-box; */
+      box-sizing: content-box;
+      background-color: aqua;
+      overflow: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    哈哈哈哈哈
+    哈哈哈哈哈
+    哈哈哈哈哈
+    哈哈哈哈哈
+    哈哈哈哈哈
+    哈哈哈哈哈
+    哈哈哈哈哈
+  </div>
+  <script>
+    const boxEl = document.querySelector(".box")
+    const boxStyle = getComputedStyle(boxEl)
+    console.log(boxStyle.width, boxStyle.height, boxStyle.backgroundColor);
+    // 都是没有单位的
+    // clientWidth:contentWidth+padding 是内容宽度和内边距 不包含滚动条宽度
+    console.log(boxEl.clientWidth);
+    // offsetWidth是整个元素的宽度 包含边框 以及滚动条宽度
+    console.log(boxEl.offsetWidth);
+    // offsetTop是上边框距离父元素顶部的高度
+    console.log(boxEl.offsetTop);
+    // scrollHeight是整个元素的内容高度 包含滚动条隐藏的 但是不包含边框
+    console.log(boxEl.scrollHeight);
+    // scrollTop是上边框距离顶部的高度 包含 上边框的高度(滚动的高度)
+    window.onclick = function () {
+      console.log(boxEl.scrollTop);
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>2022-11-4</h2>
+  <script>
+    const date = new Date()
+    const year = date.getFullYear()
+    const getMonth = date.getMonth() + 1
+    const day = date.getDate().toString().padStart(2, "0")
+    const h2El = document.querySelector("h2")
+    h2El.textContent = `${year}-${getMonth}-${day}`
+    const str = "4"
+    console.log(str.padStart(2, "0"));
+  </script>
+</body>
+
+</html>
