@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <button class="btn">按钮</button>
+  </div>
+  <script>
+    const btnEl = document.querySelector(".btn")
+    btnEl.onclick = function () {
+      console.log("按钮发生点击");
+    }
+    const divEl = document.querySelector(".box")
+    // divEl.onclick = function () {
+    //   console.log("盒子触发了");
+    // }
+    // 区分是谁点击的 event存储事件类型 各种事件信息  这个是event是由浏览器创建
+    // event可以在 事件处理函数回调时 被系统传入 我们可以在回调函数中拿到这个对象
+    divEl.onclick = function (event) {
+      // console.log("盒子触发了");
+      // 2是事件本身  3是事件冒泡  1是事件捕获
+      // console.log("当前事件发生的元素", event.target);
+      // console.log("事件所处的阶段", event.eventPhase);
+      // console.log("事件类型", event.type);
+      // 3.target/currentTarget
+      console.log(event.target);
+      // 事件处理的对象 是div
+      console.log(event.currentTarget);
+      console.log(event.currentTarget == event.target);
+    }
+  </script>
+</body>
+
+</html>

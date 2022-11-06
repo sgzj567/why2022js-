@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    window.addEventListener("DOMcontentLoaded", function () {
+      console.log("HTML内容加载");
+    })
+    window.onload = function () {
+      const boxEl = document.querySelector(".box")
+      boxEl.style.color = "red"
+      console.log("文档中所有资源都加载完成了");
+    }
+  </script>
+  <div class="box">
+    哈哈哈哈
+  </div>
+  <a href="http://baidu.com">百度</a>
+</body>
+
+</html>

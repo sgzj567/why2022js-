@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+    const boxEl = document.querySelector(".box")
+    boxEl.onclick = function () {
+      console.log("box");
+    }
+    // 监听鼠标右键
+    boxEl.oncontextmenu = function () {
+      console.log("text");
+    }
+    // 鼠标按下来
+    boxEl.onmousedown = function () {
+      console.log("down");
+    }
+    // 鼠标抬起来
+    boxEl.onmouseup = function () {
+      console.log("up");
+    }
+    // 鼠标进入 不支持冒泡
+    boxEl.onmouseenter = function () {
+      console.log("enter");
+    }
+  </script>
+</body>
+
+</html>

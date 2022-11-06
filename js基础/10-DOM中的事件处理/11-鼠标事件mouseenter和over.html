@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+
+    span {
+      display: block;
+      width: 50px;
+      height: 50px;
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <span></span>
+  </div>
+  <script>
+    const boxEl = document.querySelector(".box")
+    // 第一组  不支持冒泡 进入子元素没反应 是独立事件
+    // boxEl.onmouseenter = function () {
+    //   console.log("enter");
+    // }
+    // boxEl.onmouseleave = function () {
+    //   console.log("leave");
+    // }
+    // 第二组  不会把子元素当做自己的元素
+    boxEl.onmouseover = function () {
+      console.log("box-over");
+    }
+    boxEl.onmouseout = function () {
+      console.log("box-out");
+    }
+    const spanEl = document.querySelector("span")
+    spanEl.onmouseenter = function () {
+      console.log("span-enter");
+    }
+    spanEl.onmouseleave = function () {
+      console.log("span-leave");
+    }
+  </script>
+</body>
+
+</html>

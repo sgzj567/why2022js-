@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button class="cancel1">取消clearTimeOut</button>
+  <button class="cancel">取消SetTimeOut</button>
+  <script>
+    // 1.setTimeOut
+    const foo = function (name, height, age) {
+      console.log("我是foo", name, height, age);
+    }
+    // const time = setTimeout(foo, 3000)
+    // time
+    // // 2.取消定时器clearTimeout
+    // const btnEl = document.querySelector("cancel")
+    // btnEl.onclick = function () {
+    //   // time是一个数字
+    //   clearTimeout(time)
+    // }
+
+    // 3.取消间隔器 也可以传参数
+    const interTime = setInterval(foo, 2000, "why", 1.88, 18)
+    const btnEl1 = document.querySelector(".cancel1")
+    btnEl1.onclick = function () {
+      clearInterval(interTime)
+    }
+  </script>
+</body>
+
+</html>

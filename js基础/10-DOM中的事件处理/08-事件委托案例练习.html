@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .active {
+      color: aqua;
+      font-size: large;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+  </ul>
+  <script>
+    const liEls = document.querySelectorAll("li")
+    // for (let i = 0; i < liEls.length; i++) {
+    //   liEls[i].onclick = function () {
+    //     event.currentTarget.classList.add("active")
+    //   }
+    // }
+
+    // 统一在ul中监听  委托事件
+    const ulEl = document.querySelector("ul")
+    // ulEl.addEventListener("click", function (event) {
+    //   console.log(event.target);
+    //   event.target.classList.add("active")
+    // })
+
+    // 新需求 点击添加active 取消 先移除 在添加
+    ulEl.addEventListener("click", function (event) {
+      // for (let i = 0; i < ulEl.children.length; i++) {
+      //   ulEl.children[i].classList.remove("active")
+      // }
+      // 1.找到active移除
+      const activeEl = document.querySelector(".active")
+      // 如果activeEl存在就执行后面的
+      activeEl && activeEl.classList.remove("active")
+      event.target.classList.add("active")
+    })
+  </script>
+</body>
+
+</html>

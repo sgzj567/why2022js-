@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>按钮</button>
+  <script>
+    const btnEl = document.querySelector("button")
+    // 必须定义函数 才能保证是同一对象
+    const foo = function () {
+      console.log("click");
+    }
+    btnEl.addEventListener("click", foo)
+    setTimeout(() => {
+      btnEl.removeEventListener("click", foo)
+    }, 5000)
+  </script>
+</body>
+
+</html>

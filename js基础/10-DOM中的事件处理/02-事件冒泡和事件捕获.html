@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: red;
+      margin-left: 50%;
+      margin-top: 15%;
+    }
+
+    span {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <span></span>
+  </div>
+  <script>
+    const spanEl = document.querySelector("span")
+    const divEl = document.querySelector("div")
+    //默认是事件冒泡 事件一层一层向上传递 从最内层向最外层传递 叫做事件冒泡
+    // spanEl.onclick = function () {
+    //   console.log("spanEl点击了");
+    // }
+    // divEl.onclick = function () {
+    //   console.log("divEl点击了");
+    // }
+    // 事件从外层往里面是事件捕获 第三个参数是true
+    spanEl.addEventListener("click", function () {
+      console.log("span");
+    }, true)
+    divEl.addEventListener("click", function () {
+      console.log("div");
+    }, true)
+    // 既有事件捕获也有冒泡就先执行事件捕获
+  </script>
+</body>
+
+</html>

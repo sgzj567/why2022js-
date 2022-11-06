@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box>span {
+      display: block;
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="http://www.baidu.com">百度</a>
+  <div class="box">
+    <span>
+      <button>按钮1</button>
+    </span>
+  </div>
+  <script>
+    // const aEl = document.querySelector("a")
+    // aEl.addEventListener("click", function (event) {
+    //   //1. 阻止默认行为
+    //   event.preventDefault()
+    //   console.log("默认");
+    // })
+
+    // 2.阻止事件进一步传播
+    const boxEl = document.querySelector(".box")
+    const spanEl = document.querySelector("span")
+    const btnEl = document.querySelector("button")
+    boxEl.addEventListener("click", function () {
+      console.log("box事件捕获");
+    }, true)
+    spanEl.addEventListener("click", function (event) {
+      console.log("span事件捕获");
+      // 阻止事件冒泡或者捕获 (阻止事件进一步传播)
+      event.stopPropagation()
+    }, true)
+    btnEl.addEventListener("click", function () {
+      console.log("btn事件捕获");
+    }, true)
+    // 事件冒泡
+    boxEl.addEventListener("click", function () {
+      console.log("box事件冒泡");
+    })
+    spanEl.addEventListener("click", function () {
+      console.log("span事件冒泡");
+    })
+    btnEl.addEventListener("click", function () {
+      console.log("btn事件冒泡");
+    })
+  </script>
+</body>
+
+</html>
