@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function foo() {
+      console.log("foo", this);
+    }
+    // 默认绑定优先级最低
+    // 显示优先级最高
+    const obj = { foo: foo }
+    obj.foo.apply('why')
+    // 2.bind 优先级高于默认
+    const bar = obj.foo.bind("aaa")
+    bar()
+    // 3.new 不可以和apply call 一起使用
+    // new 高于bind绑定
+    const baz = foo.bind("ccc")
+    baz()
+    new baz()
+
+    // 4.bind/apply优先级 bind高于apply与call
+    const abFn = foo.bind("bbb")
+    abFn.apply("ccc")
+    abFn.call("ddd")
+
+  </script>
+</body>
+
+</html>

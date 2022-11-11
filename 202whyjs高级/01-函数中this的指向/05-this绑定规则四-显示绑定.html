@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = {
+      name: "why"
+    }
+    function foo() {
+      console.log("foo函数", this);
+    }
+    obj.foo = foo
+    obj.foo()
+    // 强制绑定this
+    foo.call(obj)
+    // 执行函数 this绑定的就是对象 aaa 会转换为包装类型 如果不是包装类换会转换为window
+    foo.call(undefined)
+    foo.call(true)
+    foo.call("aaa")
+    foo.apply(obj)
+  </script>
+</body>
+
+</html>

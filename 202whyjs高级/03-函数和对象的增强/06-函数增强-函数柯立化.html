@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 只传递一部分参数 其余参数让它返回的函数接受
+    function add1(a, b, c, d) {
+      return a + b + c + d
+    }
+    //此过程就是函数柯立化 
+    function add(a) {
+      return function add2(b) {
+        return function add3(c) {
+          return function add4(d) {
+            return a + b + c + d
+          }
+        }
+      }
+    }
+    const sum = add(3)(4)(5)(8)
+    console.log(sum);
+  </script>
+</body>
+
+</html>

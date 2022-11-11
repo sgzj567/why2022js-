@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // "use strict"
+    function foo() {
+      console.log("foo", this, typeof this);
+    }
+    foo.apply("abc")
+    // 绑定的是非包装类型的话就是window
+    // 严格模式下 就是 基本类型
+    foo.apply(null)
+    foo.apply(undefined)
+    function bar() {
+      console.log("bar", this);
+    }
+    const obj = { name: "obj" }
+    const obj1 = {
+      name: "obj1",
+      foo: function () {
+        console.log("foo函数", this);
+      }
+    };
+    // obj.foo = obj1.foo
+    // obj.foo()
+    // 独立函数调用 输出window
+    (obj.foo = obj1.foo)()
+
+  </script>
+</body>
+
+</html>

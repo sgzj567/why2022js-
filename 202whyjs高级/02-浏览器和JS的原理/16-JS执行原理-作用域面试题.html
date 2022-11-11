@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.面试题1
+    // var n = 100
+    // function foo() {
+    //   n = 200
+    // }
+    // foo()
+    // console.log(n);
+
+    // 2.面试题二
+    // var n = 100
+    // function foo() {
+    //   console.log(n);//undefined
+    //   var n = 200
+    //   console.log(n);//200
+    // }
+    // foo()
+
+
+    // 作用域链只与定义位置有关
+
+    // 面试题三
+    // var n = 100
+    // function foo1() {
+    //   console.log(n);
+    // }
+
+    // function foo2() {
+    //   var n = 200
+    //   console.log(n);//200
+    //   foo1()//100
+    // }
+    // foo2()
+
+    // 面试题四
+    // var n = 100
+    // function foo() {
+    //   console.log(n);//undefined
+    //   return
+    //   var n = 200
+    // }
+    // foo()
+
+    // 面试题五:
+    function foo() {
+      var a = b = 100
+    }
+    foo()
+    console.log(b);
+    // b相当于定义全局变量
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // "use strict"
+    //严格模式不会以外创建全局变量
+
+    // function foo() {
+    //   name = "why"
+    // }
+    // foo()
+    // console.log(name);
+    // const obj = {
+    //   name: "kobe"
+    // }
+    // Object.defineProperty(obj, "name", {
+    //   // 是否可以删除
+    //   configurable: false,
+    //   // 是否可以写入
+    //   writable: false
+    // })
+    // 严格模式下不可写 就不赋值 静默下可以即使writable:false
+    // obj.name = "james"
+    // console.log(obj.name);
+
+    // 严格模式参数名字不能相同
+    // 八进制不能以0开头  严格模式下不能使用width
+    // 严格模式下函数执行this 不会绑定Windows  对应值是undefined 如果绑定指定this 包装类型会直接绑定 非包装类型是它基本数据
+    function baz() {
+      "use strict"
+      console.log(this);
+    }
+    baz()
+    baz.apply(123)
+    baz.apply(undefined)
+    baz.apply(null)
+
+  </script>
+</body>
+
+</html>

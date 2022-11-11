@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // arguments 是类数组  不能使用数组方法 比如filter 类数组是对象类型
+    function foo(m, n) {
+      // console.log(arguments);
+      console.log(typeof arguments);
+      // for (let i = 0; i < arguments.length; i++) {
+      //   // console.log(arguments[i]);
+      //   // 取偶数
+      //   if (arguments[i] % 2 === 0) {
+      //     console.log(arguments[i]);
+      //   }
+      // }
+      // 1.将arguments转为数组 
+      // 第一种方法 es6
+      const arr = Array.from(arguments)
+      console.log(arr instanceof Array);
+      // 第二种方法 展开运算符
+      const arr2 = [...arguments]
+      console.log(arr2 instanceof Array);
+
+      // 第三种方法  使用slice
+      const arr3 = [].slice.apply(arguments)
+      console.log(arr3);
+
+    }
+    foo(23, 34)
+  </script>
+</body>
+
+</html>

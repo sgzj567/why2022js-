@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 剩余参数 rest 是个数组  剩余参数要放到最后
+    function foo(num1, num2, ...args) {
+      console.log(arguments);
+    }
+
+    foo(23, 34, 345, 56)
+
+    function bar(...args) {
+      console.log(args);
+    }
+
+    bar(23, 34, 56, 63, 12)
+
+    // arguments 与rest区别
+    // arguments 包含的是所有参数 rest包含的是没有对应的形参的实参
+    // arguments是一个类数组(对象)箭头函数中没有 rest 是数组 箭头函数中可以使用
+  </script>
+</body>
+
+</html>

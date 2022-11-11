@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function foo(name, age) {
+      console.log("foo函数", name, age, this);
+    }
+    foo("why", 18)
+    // apply 以数组方式传入第二个实参
+    foo.apply("apply", ["why", 19])
+    // call 以参数列表形式传入实参
+    foo.call("call", "why", 19)
+  </script>
+</body>
+
+</html>

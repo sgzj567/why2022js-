@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // "use strict"
+    const obj = {
+      name: "why",
+      foo: function () {
+        console.log("foo函数", this);
+      }
+    }
+    const bar = obj.foo
+    obj.foo()
+
+    //2. 独立函数调用
+    bar()
+
+    // 高阶函数
+    function test(fn) {
+      fn()
+    }
+    // 也是独立函数调用 内部
+    test(obj.foo)
+    // 3.严格模式下 独立函数的调用this指向的是undefined
+  </script>
+</body>
+
+</html>
