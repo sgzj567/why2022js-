@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 对象只有隐式原型__proto__
+    // 函数的原型叫做显示原型
+    function foo() { }
+    console.log(foo.prototype);
+    // 函数对象原型作用:
+    // 构造函数时(new) 将函数的显示原型赋值给对象的隐式原型
+
+    const f1 = new foo()
+    const f2 = new foo()
+    console.log(f1.__proto__ === foo.prototype);//true
+    console.log(f2.__proto__ === f1.__proto__);//true
+  </script>
+</body>
+
+</html>

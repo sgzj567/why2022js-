@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+    }
+
+    Person.prototype.running = function () {
+      console.log("running");
+    }
+    const names = ["why", "kobe", "john", "James"]
+    // 类方法是加在构造函数上的 实例方法是在原型上的
+    Person.prototype.randomNames = function () {
+      return names[(Math.floor(Math.random() * names.length))]
+    }
+    const p1 = new Person("why", 19)
+    // 没有实例的情况下不能调用原型上的函数
+    // Person.running()
+    p1.running()
+    const name = Person.prototype.randomNames()
+    console.log(name);
+  </script>
+</body>
+
+</html>

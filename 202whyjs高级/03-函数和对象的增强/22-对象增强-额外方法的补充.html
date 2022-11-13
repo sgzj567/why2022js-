@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = {
+      name: "why",
+      age: 19
+    }
+
+    console.log(Object.getOwnPropertyDescriptor(obj, "name"));
+    console.log(Object.getOwnPropertyDescriptors(obj));
+
+    // 阻止对象的扩展
+    Object.preventExtensions(obj)
+    obj.address = "河南"
+    console.log(obj.address);
+
+    // 3.密封对象  实际是调用preventExtensions  并将configurable设置为false
+    Object.seal(obj)
+    delete obj.name
+    console.log(obj);
+
+    // freeze 调用seal 并将writeable :false
+  </script>
+</body>
+
+</html>

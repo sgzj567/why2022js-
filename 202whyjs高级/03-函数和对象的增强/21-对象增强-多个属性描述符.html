@@ -10,7 +10,20 @@
 
 <body>
   <script>
-    function composeFn(...fns) { }
+    const obj = {
+      name: "why",
+      age: 19,
+    }
+    Object.defineProperties(obj, {
+      name: {
+        configurable: true,
+        enumerable: true
+      },
+      age: {
+        configurable: true,
+        enumerable: true
+      }
+    })
   </script>
 </body>
 

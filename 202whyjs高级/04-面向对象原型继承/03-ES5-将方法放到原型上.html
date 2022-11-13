@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Student(name, age) {
+      this.name = name
+      this.age = age
+      // 如果将方法放到构造函数本身上 就会在创建对象每次给他创建相同方法 会造成内存浪费
+      // this.running = function () {
+      //   console.log(this.name + "is" + "running");
+      // }
+    }
+    // 当一个对象拥有属性时 可以将他的属性放到构造函数原型对象上
+    Student.prototype.running = function () {
+      console.log(this.name + "is" + "running");
+    }
+    const S1 = new Student("why", 12)
+    const S2 = new Student("kobe", 36)
+
+    console.log(S1.running === S2.running);
+    S1.running()
+  </script>
+</body>
+
+</html>

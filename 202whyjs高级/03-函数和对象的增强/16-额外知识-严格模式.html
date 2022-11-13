@@ -33,7 +33,7 @@
 
     // 严格模式参数名字不能相同
     // 八进制不能以0开头  严格模式下不能使用width
-    // 严格模式下函数执行this 不会绑定Windows  对应值是undefined 如果绑定指定this 包装类型会直接绑定 非包装类型是它基本数据
+    // 严格模式下函数执行this 不会绑定Windows  对应值是undefined; 如果绑定指定this 包装类型会直接绑定 非包装类型是它基本数据
     function baz() {
       "use strict"
       console.log(this);

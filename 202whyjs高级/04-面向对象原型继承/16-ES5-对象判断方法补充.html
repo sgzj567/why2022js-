@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = {
+      name: "why",
+      age: 19
+    }
+    obj.__proto__.message = '哈哈'
+    //  1.hasOwnProperty判断属性是否在本身上
+    console.log(obj.hasOwnProperty("name"));
+    console.log(obj.message);
+    console.log(obj.hasOwnProperty("message"));
+    // 2.遍历的不只是自己上的属性 也有原型上的
+    console.log('name' in obj);
+    console.log('message' in obj);
+
+    // 3.instanceOf 用于检测构造函数的prototype是否在某个实例对象的原型链上(实例对象与类的关系)
+    function Person() { }
+    const p1 = new Person()
+    console.log(p1 instanceof Person);
+    console.log(p1 instanceof Object);
+
+    // 4.isPrototypeOf 判断对象与对象的关系
+    console.log(Person.prototype.isPrototypeOf(p1));
+    // 可以用于判断对象之间的继承
+    // console.log(obj.isPrototype());
+  </script>
+</body>
+
+</html>

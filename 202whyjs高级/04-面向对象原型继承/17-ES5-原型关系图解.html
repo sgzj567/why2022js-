@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = {}
+
+    // 原型对象创建时隐式原型默认都是指向Object的显示原型
+    console.log(obj.__proto__ === Object.prototype);
+    console.log(Object.prototype.__proto__);//null
+    function foo() { }
+    console.log(foo.prototype.__proto__ === Function.prototype);//
+    console.log(foo.prototype.__proto__ === Object.prototype);//
+    console.log(Object.prototype.__proto__ === null);
+    console.log(Function.prototype.__proto__ == Object.prototype);//true
+    console.log(Object.__proto__ === Function.prototype);
+    console.log(Function.__proto__ === Function.prototype);
+    function bar() { }
+    console.log(bar.__proto__ === Function.prototype);
+    console.log(foo.__proto__ === Function.prototype);
+    console.log(foo.__proto__ === bar.__proto__);
+
+    // 重点
+    console.log(foo.__proto__ === Function.prototype === bar.__proto__);//false
+  </script>
+</body>
+
+</html>

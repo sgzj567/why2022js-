@@ -11,9 +11,19 @@
 <body>
   <script>
     var obj = {
-      name: "why"
+      name: "why",
       age: 19
     }
+
+    // 如果一个对象没有Object.defineProperty则它的configurable默认是true
+    // 如果有configurable则默认它的属性时false
+    Object.defineProperty(obj, "age", {
+      configurable: false,//控制这个属性是否可以删除
+      enumerable: false,//是否可以遍历
+      writable: false//是否可以修改属性 属性不可以写入 称为只读属性
+    })
+
+    console.log(Object.keys(obj));
   </script>
 </body>
 

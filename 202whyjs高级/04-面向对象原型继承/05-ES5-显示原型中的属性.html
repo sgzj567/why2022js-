@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function foo() { }
+    // 函数显示原型  指向constructor 它指回函数本身(循环引用)
+    console.log(foo.prototype);
+    console.log(foo.prototype.constructor === foo);
+    console.log(foo.prototype.constructor.name === foo.name);
+
+    foo.prototype.eating = function () {
+      console.log("eating");
+    }
+    foo.prototype.message = "hello world"
+
+    const f1 = new foo()
+    f1.eating()
+    console.log(f1.message === f1.__proto__.message);//true
+
+  </script>
+
+</body>
+
+</html>

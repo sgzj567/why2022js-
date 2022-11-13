@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const obj = {
+      name: "why",
+      age: 19
+    }
+    console.log(obj);
+    // 获取对象原型属性
+    // 这个不是标准的 是浏览器自己加的
+    console.log(obj.__proto__);
+    // 标准的是
+    console.log(Object.getPrototypeOf(obj));
+    // 原型的作用
+    // 当我们获取一个属性的值 时
+    // 他先在自己的对象中查找,如果找到直接返回
+    // 如果没有,那么就会去原型中去查找
+    console.log(obj.message);
+    obj.__proto__.message = "hello world"
+    console.log(obj.message);
+  </script>
+</body>
+
+</html>
