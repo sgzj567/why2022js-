@@ -11,18 +11,18 @@
 <body>
   <script>
     // 定义一个父类
-    class Person{
-      constructor(name,age){
-        this.name=name
-        this.age=age
+    class Person {
+      constructor(name, age) {
+        this.name = name
+        this.age = age
       }
-      running(){
+      running() {
         console.log("running");
       }
     }
-    class Student extends Person{
+    class Student extends Person {
       constructor(name, age, sno, score) {
-        super(name,age)
+        super(name, age)
         this.sno = sno
         this.score = score
       }
@@ -31,12 +31,12 @@
       }
 
     }
-    class Teacher extends Person{
+    class Teacher extends Person {
       constructor(name, age, teaches) {
         super(name, age)
         this.teaches = teaches
       }
-      teaching(){
+      teaching() {
         console.log("teaching");
       }
     }
@@ -44,8 +44,9 @@
     var T1 = new Teacher("why", "19", "math")
     console.log(T1);
     T1.running()
+    T1.teaching()
 
-    var  stu1=new Student('zxk',23,102,133)
+    var stu1 = new Student('zxk', 23, 102, 133)
     console.log(stu1);
   </script>
 </body>

@@ -10,12 +10,12 @@
 
 <body>
   <script>
-    class Hyarray extends Array {
+    class HyArray extends Array {
       get lastItem() {
         return this[this.length - 1]
       }
     }
-    var Hy1 = new Hyarray(20, 30, 49, 29)
+    var Hy1 = new HyArray(20, 30, 49, 29)
     console.log(Hy1.lastItem);
     //直接对Array进行扩展
     Array.prototype.lastItem = function () {

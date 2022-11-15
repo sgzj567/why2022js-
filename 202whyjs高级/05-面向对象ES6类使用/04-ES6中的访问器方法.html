@@ -15,11 +15,15 @@
 
       set name(value) {
         this._name = value
+        console.log("set方法");
       },
       get name() {
-        return this._name = name
+        console.log("get方法");
+        return this._name
       }
     }
+
+    console.log(obj._name);
   </script>
 </body>
 

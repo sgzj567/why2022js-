@@ -12,6 +12,9 @@
   <script>
     class Person {
       //构造方法 当我们通过new关键字对调用类时  默认调用constructor方法 一个类只有一个构造函数 class作用类似new
+      // 使用new 操作符是会调用constructor函数
+      // 将this赋值给新创建出来的对象
+      // 如果构造函数没有返回非空对象,则返回创建出来的对象
       constructor(name, age) {
         this.name = name;
         this.age = age;
@@ -23,10 +26,13 @@
       }
 
     }
+
+    // 创建实例对象
     var p1 = new Person("why", "19")
     console.log(p1);
     console.log(Person.prototype === p1.__proto__);
     p1.running()
+    // 不存在  此方法是在原型上需要实例调用
     console.log(Person.running);
     console.log(Person.prototype.running);
   </script>
