@@ -12,19 +12,30 @@
   <script>
     // 1.在ES5之前只有函数和全局会形成自己的作用域
     // 代码块{}
-    // function foo() {
-    //   var message = "hello"
-    //   console.log(message);
-    // }
+    function foo() {
+      var message = "hello"
+      console.log(message);
+    }
+    foo()
+    // console.log(message);//访问不到 函数有块级作用域
     // 2.从ES6开始使用let const function class声明的变量会有块级作用域
     {
       let age = 19
       const height = 1.88
-
+      var sco = 123  //var没有块级作用域
       function foo() {
         console.log("foo function");
       }
+      class Person {
+        constructor(name, age) {
+          this.name = name
+          this.age = age
+        }
+      }
     }
+
+    // const p1 = new Person()//不能被访问
+    console.log(sco);
     foo() // 浏览器可以访问  允许像var 可以在下面访问 但是不能提前访问
     // console.log(age);//访问不到  没有定义  外界不能访问
   </script>

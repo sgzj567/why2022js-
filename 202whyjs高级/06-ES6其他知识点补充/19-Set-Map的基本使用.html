@@ -24,6 +24,7 @@
       age: 19
     }
     set.add(obj)
+    console.log(set);
     //3. 用于数组去重  set是可迭代的
     const names = ["kobe", "zxk", "why", "zxk"]
     const newNamesSet = new Set(names)
@@ -32,18 +33,18 @@
     console.log(newNames);
 
     for (const item of names) {
-      let newNames1=[]
+      let newNames1 = []
       if (!newNames1.includes(item)) {
         newNames1.push(item)
       }
     }
-      console.log(newNames);
+    console.log(newNames);
     // 4.set的其他属性
     console.log(set.size);
     console.log(newNamesSet.size);
     // 4.1clear清除所有元素
     // set.clear()
-    // set.delete(10)
+    // set.delete(10)//返回的是Boolean类型是否这个值
     // 4.3has方法  返回boolean型的
     // console.log(set.has(obj));
     // Array.from(set)

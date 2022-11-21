@@ -17,9 +17,11 @@
       // yield arr[1]
       // yield arr[2]
       // yield arr[3]
-      for (let i = 0; i < arr.length; i++) {
-        yield arr[i]
-      }
+
+      // for (let i = 0; i < arr.length; i++) {
+      //   yield arr[i]
+      // }
+      yield* names
     }
     const namesIterator = createArrayIterator(names)
     console.log(namesIterator.next());

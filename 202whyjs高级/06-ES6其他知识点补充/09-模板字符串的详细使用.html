@@ -23,7 +23,8 @@
       console.log("参数:", arg);
     }
     foo("why", 19, 1.88)
-    foo `my name is ${name},age is ${age}`
+    // 参数将被依次传入后面 不会按位置传入
+    foo`my name is ${name},age is ${age}`
 
     function bar({
       name: name,

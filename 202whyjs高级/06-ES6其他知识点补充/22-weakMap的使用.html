@@ -19,6 +19,10 @@
     }
     const weakMap = new WeakMap()
     weakMap.set(obj1, "ldh")
+    weakMap.set(obj2, "john")
+    console.log(weakMap);
+    weakMap.delete(obj1)
+    // weakMap.clear()  weakMap没有clear方法 他也是无序的
     console.log(weakMap);
   </script>
 </body>

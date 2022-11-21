@@ -11,7 +11,7 @@
 <body>
   <script>
     // map 可以用几乎任何类型作为键
-    // map解决的事是普通对象中不能用复杂类型作为键(只可以放字符串或者symbol) 但是map 对象可以用复杂类型作为键
+    // map解决的事是普通对象中不能用复杂类型作为键(只可以放字符串或者symbol) 但是map 对象可以用复杂类型作为键(即任何类型的键)
     const info1 = {
       name: "why"
     }
@@ -38,9 +38,11 @@
       console.log(item);
     })
     for (const item of map) {
-      const [key, value] = item
+      // const [key, value] = item
       console.log(item);
     }
+    console.log(map.entries);
+    console.log(map[Symbol.iterator]);
   </script>
 </body>
 

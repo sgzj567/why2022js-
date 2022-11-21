@@ -15,14 +15,15 @@
     function foo(arg1, arg2) {
       // 默认值写法
       // 写法都不严谨 因为都可能传到0 0 是false
-      // arg1=arg1?arg1:0
+      arg1 = arg1 ? arg1 : 0
+      // 这个是判断前面是否是false 为false就用后面的值
       // arg1 = arg1 || "我是默认值"
 
       // 2.严谨的写法
       // 三元运算符
-      arg1 = (arg1 === undefined || arg1 === null) ? "我是默认值" : arg1
+      // arg1 = (arg1 === undefined || arg1 === null) ? "我是默认值" : arg1
       // ES6之后新增的语法
-      // arg1 = arg1 ? ? "我是默认值"
+      // arg1 = arg1 ?? "我是默认值"
       // 3.直接在参数后加等号 写默认值
       // function foo(arg1="我是默认值",arg2="我是默认值")
       console.log(arg1);

@@ -24,6 +24,20 @@
       [s1]: "zxk",
     }
     console.log(obj);
+    let s2 = Symbol("foo")
+    let s3 = Symbol("bar")
+    let o = {
+      [s2]: "foo val",
+      [s3]: "bar val",
+      baz: "baz val",
+      qux: "qux  val"
+    }
+    // 获取对象的符号属性数组
+    console.log(Object.getOwnPropertySymbols(o));
+    // 获取对象的普通属性数组
+    console.log(Object.getOwnPropertyNames(o));
+    // 获取对象属性以及符号属性描述符对象
+    console.log(Object.getOwnPropertyDescriptors(o));
   </script>
 </body>
 

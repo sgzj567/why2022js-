@@ -19,11 +19,11 @@
       console.log("执行内部代码", name3);
     }
     const generator = foo("next1")
+    console.log(generator.next());
+    // 通过generator提前结束函数  return之后的done:true value:false
+    console.log(generator.return("re"));
     console.log(generator.next("2"));
-    // 通过generator提前结束函数
-    // console.log(generator.return("re"));
-    // console.log(generator.next("2"));
-    // console.log(generator.next());
+    console.log(generator.next(3));
     // 通过throw error中断
   </script>
 </body>
