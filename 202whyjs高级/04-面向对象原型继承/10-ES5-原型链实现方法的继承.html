@@ -10,7 +10,27 @@
 
 <body>
   <script>
-
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+      this.address = "武汉市"
+      this.arr = [12, 34, 21]
+    }
+    Person.prototype.running = function () {
+      console.log("running");
+    }
+    // 子类
+    function Student() {
+    }
+    Student.prototype = new Person()
+    const s1 = new Student()
+    const s2 = new Student()
+    console.log(s1.address);
+    s1.running()
+    //  如果父类的私有属性有引用值就会影响到另一个子类
+    s1.arr.push(2)
+    console.log(s1.arr);
+    console.log(s2.arr);
   </script>
 </body>
 
