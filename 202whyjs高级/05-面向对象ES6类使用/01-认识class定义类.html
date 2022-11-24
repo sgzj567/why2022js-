@@ -16,13 +16,14 @@
     class Person {
 
     }
+    // 类定义声明不能提升
     // 创建是实例对象
     var p1 = new Person()
     var p2 = new Person()
     console.log(p1);
     console.log(p2);
     // 另一种定义方法
-    var Student = class {}
+    var Student = class { }
     var stu1 = new Student()
     console.log(stu1);
   </script>
