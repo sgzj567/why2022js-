@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Person(name, age) {
+      this.name = name
+      this.age = age
+      this.address = "武汉市"
+      this.arr = [12, 34, 21]
+    }
+    Person.prototype.running = function () {
+      console.log("running");
+    }
+    // 子类
+    function Student(name, age) {
+      // 借用构造函数
+      Person.call(this, name, age)
+    }
+    const s1 = new Student()
+    const s2 = new Student()
+    console.log(s1.address);
+    // 缺点子类拿不到原型上的方法和属性
+    s1.running()
+  </script>
+</body>
+
+</html>

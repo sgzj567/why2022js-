@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function object(o) {
+      function Person() { }
+      Person.prototype = o
+      return new Person()
+    }
+
+    function inheritPrototype(subType, superType) {
+      let prototype = object(superType.prototype)
+      // 改写constructor指向
+      prototype.constructor = subType
+      subType.prototype = prototype
+    }
+
+    function Big(name, age) {
+      this.name = name
+      this.age = age
+      this.arr = [12, 34, 542]
+    }
+    Big.prototype.sum = function (a, b) {
+      return a + b
+    }
+    function Small(name, age, sno) {
+      Big.call(this, name, age)
+      this.sno = sno
+    }
+    inheritPrototype(Small, Big)
+    Small.prototype.running = function () {
+      console.log("running");
+    }
+    const instance1 = new Small("why", 19, 112)
+    console.log(instance1);
+    const result = instance1.sum(12, 23)
+    console.log(result);
+    instance1.running()
+  </script>
+</body>
+
+</html>
