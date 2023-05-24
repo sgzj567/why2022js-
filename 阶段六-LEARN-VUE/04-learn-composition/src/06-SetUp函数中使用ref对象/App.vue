@@ -20,7 +20,11 @@ export default {
     })
     // setup中的mounted是onMounted
     onMounted(() => {
+      // 拿子组件值
+      console.log(ShowRef.value.name);
+      // 子组件
       console.log(ShowRef.value);
+      // 子组件方法
       ShowRef.value.ShowInfoFoo()
     })
     return {

@@ -8,7 +8,8 @@ import { createApp } from 'vue'
 // import App from './09-setup-provide-inject/app.vue'
 // import App from './08-Setup-侦听数据变化/AppWatchEffect.vue'
 // import App from './08-Setup-侦听数据变化/App.vue'
-import App from './10-Setup-Hooks练习/App.vue'
+// import App from './10-Setup-Hooks练习/App.vue'
+import App from './11-script-setup语法/App.vue'
 
 
 createApp(App).mount('#app')

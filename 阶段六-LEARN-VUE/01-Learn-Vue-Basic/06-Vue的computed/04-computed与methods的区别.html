@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <!-- 计算属性与methods的区别:计算属性有缓存 数据不发生变化时 计算属性不需要重新计算 但是如果依赖的数据发生变化 计算属性依然会重新计算 -->
   <div id="app"></div>
@@ -18,36 +20,36 @@
     <h2>{{ fullName }}</h2>
     <h2>{{ fullName }}</h2>
     <h2>{{ fullName }}</h2>
-   <!-- 修改lastName -->
-   <button @click="changeName">修改lastName</button>
-   <!-- 相对于methods来说 计算属性所依赖的数据不发生变化时 它不需要重新计算 但是methods会多次调用 -->
+    <!-- 修改lastName -->
+    <button @click="changeName">修改lastName</button>
+    <!-- 相对于methods来说 计算属性所依赖的数据不发生变化时 它不需要重新计算 但是methods会多次调用 -->
   </template>
   <script src="../JS/vue.js"></script>
   <script>
-    const App={
-      template:'#my-app',
-      data(){
+    const App = {
+      template: '#my-app',
+      data() {
         return {
-        firstName:"kobe",
-        lastName:"bryant",
-        message:"my name is why",
+          firstName: "kobe",
+          lastName: "bryant",
+          message: "my name is why",
         }
-      }, 
-       methods:{
-        getFullName(){
-          console.log("getFullName------");
-          return this.firstName+" "+this.lastName;
-        },
-      changeName(){
-        this.lastName="why";
-      }
       },
-      computed:{
-      fullName(){
-          console.log("fullName------");
-          return this.firstName+" "+this.lastName;
+      methods: {
+        getFullName() {
+          console.log("getFullName------");
+          return this.firstName + " " + this.lastName;
         },
-     reverseMessage(){
+        changeName() {
+          this.lastName = "why";
+        }
+      },
+      computed: {
+        fullName() {
+          console.log("fullName------");
+          return this.firstName + " " + this.lastName;
+        },
+        reverseMessage() {
           return this.message.split(" ").reverse().join(" ")
         }
       }
@@ -55,4 +57,5 @@
     Vue.createApp(App).mount("#app")
   </script>
 </body>
+
 </html>

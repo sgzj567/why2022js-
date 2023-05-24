@@ -2,7 +2,7 @@
   <div class="home">
     <h2>Home:{{ $store.state.counter }}</h2>
     <h2>在setup中使用:{{ counter }}</h2>
-    <h2>在option中使用computed的方法获取store中的数据:{{ storeCounter}}</h2>
+    <h2>在option中使用computed的方法获取store中的数据:{{ storeCounter }}</h2>
     <button @click="increment">+1</button>
   </div>
 </template>

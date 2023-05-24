@@ -10,7 +10,7 @@
 export default {
   methods: {
     actionBtn() {
-      // action里面使用dispatch mutations 里面使用commit
+      // action里面使用dispatch mutations里面使用commit
       this.$store.dispatch("incrementAction")
     },
     actionChangeName() {

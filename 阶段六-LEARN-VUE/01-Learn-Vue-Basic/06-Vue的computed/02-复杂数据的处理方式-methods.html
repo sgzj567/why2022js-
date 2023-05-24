@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <div id="app"></div>
   <template id="my-app">
-   <h2>{{getFullName()}}</h2>
-   <h2>{{getReverseMessage()}}</h2>
+    <h2>{{getFullName()}}</h2>
+    <h2>{{getReverseMessage()}}</h2>
   </template>
   <script src="../JS/vue.js"></script>
   <script>
-    const App={
-      template:'#my-app',
-      data(){
+    const App = {
+      template: '#my-app',
+      data() {
         return {
-        firstName:"kobe",
-        lastName:"bryant",
-        message:"my name is why",
+          firstName: "kobe",
+          lastName: "bryant",
+          message: "my name is why",
         }
       },
       // 但是这种方法就是让所有的data使用过程都会变成一个方法的调用
-      methods:{
-        getFullName(){
-          return this.firstName+" "+this.lastName;
+      methods: {
+        getFullName() {
+          return this.firstName + " " + this.lastName;
         },
-        getReverseMessage(){
+        getReverseMessage() {
           return this.message.split(" ").reverse().join(" ")
         }
       }
@@ -36,4 +38,5 @@
     Vue.createApp(App).mount("#app")
   </script>
 </body>
+
 </html>

@@ -4,7 +4,7 @@
       <div class="left"></div>
       <div class="middle"></div>
       <div class="right"></div>
-  </div>
+    </div>
   </div>
 </template>
 
@@ -15,7 +15,6 @@ export default {
 </script>
 
 <style scoped>
-
 .clearfix:after {
   /*伪元素是行内元素 正常浏览器清除浮动方法*/
   content: "";
@@ -29,21 +28,25 @@ export default {
   *zoom: 1;
   /*ie6清除浮动的方式 *号只有IE6-IE7执行，其他浏览器不执行*/
 }
-.box{
+
+.box {
   display: flex;
   height: 300px;
   background-color: aqua;
 }
-.left{
+
+.left {
   width: 25%;
   background-color: antiquewhite;
 }
-.middle{
+
+.middle {
   width: 50%;
   background-color: red;
 }
-.right{
+
+.right {
   width: 25%;
-  background-color: beige;
+  background-color: antiquewhite;
 }
 </style>

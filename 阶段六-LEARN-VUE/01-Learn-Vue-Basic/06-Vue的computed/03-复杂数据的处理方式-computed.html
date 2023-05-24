@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <!-- 计算属性与methods的区别:计算属性有缓存 -->
   <div id="app"></div>
   <template id="my-app">
-   <h2>{{fullName}}</h2>
-   <h2>{{reverseMessage}}</h2>
+    <h2>{{fullName}}</h2>
+    <h2>{{reverseMessage}}</h2>
   </template>
   <script src="../JS/vue.js"></script>
   <script>
-    const App={
-      template:'#my-app',
-      data(){
+    const App = {
+      template: '#my-app',
+      data() {
         return {
-        firstName:"kobe",
-        lastName:"bryant",
-        message:"my name is why",
+          firstName: "kobe",
+          lastName: "bryant",
+          message: "my name is why",
         }
       },
       // 处理响应式数据 所有的getter setter的this上下文自动的绑定为组件实例
       //  建议使用计算属性 对应的是对象  属性是函数 使用的时候不用加括号
       // 而且计算属性有缓存 methods没有缓存
-      computed:{
-      fullName(){
-          return this.firstName+" "+this.lastName;
+      computed: {
+        fullName() {
+          return this.firstName + " " + this.lastName;
         },
-    reverseMessage(){
+        reverseMessage() {
           return this.message.split(" ").reverse().join(" ")
         }
       }
@@ -39,4 +41,5 @@
     Vue.createApp(App).mount("#app")
   </script>
 </body>
+
 </html>

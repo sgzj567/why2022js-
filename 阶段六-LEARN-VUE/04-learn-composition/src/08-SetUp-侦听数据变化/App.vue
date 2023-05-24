@@ -27,7 +27,7 @@ export default {
     watch(() => ({ ...message }), (newValue, oldValue) => {
       console.log(newValue, oldValue);
     }, {
-      // 默认深度侦听
+      // 以函数形式写不是默认深度侦听
       deep: true,
       immediate: true,
     })

@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h2>message:{{ message }}</h2>
-    <h2>option中使用: {{message }}</h2>
+    <h2>option中使用: {{ message }}</h2>
   </div>
 </template>
 <!-- <script>

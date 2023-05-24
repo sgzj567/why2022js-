@@ -9,8 +9,9 @@ export default {
     function ShowInfoFoo() {
       console.log("ShowInfoFoo function");
     }
+    const name = "why"
     return {
-      ShowInfoFoo
+      ShowInfoFoo, name
     }
   }
 }

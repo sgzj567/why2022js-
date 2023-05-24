@@ -1,55 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <div id="app"></div>
   <template id="my-app">
     <!-- 单选框不需要value -->
-<label for="agree"> 
-  <!-- 单选框默认v-model绑定的是Boolean值如果要想点到文本就有效果必须加id 与for属性 切值必须一样 -->
-  <input id="agree" type="checkbox" v-model="isAgree">同意协议
-</label>
-<h2>单选框{{isAgree}}</h2>
-<!-- 多选框 必须绑定value-->
-   <div class="hobbies">
-    <h2>请选择你的爱好:</h2>
-    <!-- 相当于绑定value 与事件 并将value绑定到hobbies -->
- <label for="sing">
-  <input type="checkbox" id="sing" v-model="hobbies" value="sing"> 唱
- </label>
+    <label for="agree">
+      <!-- 单选框默认v-model绑定的是Boolean值如果要想点到文本就有效果必须加id 与for属性 切值必须一样 -->
+      <input id="agree" type="checkbox" v-model="isAgree">同意协议
+    </label>
+    <h2>单选框{{isAgree}}</h2>
+    <!-- 多选框 必须绑定value-->
+    <div class="hobbies">
+      <h2>请选择你的爱好:</h2>
+      <!-- 相当于绑定value 与事件 并将value绑定到hobbies -->
+      <label for="sing">
+        <input type="checkbox" id="sing" v-model="hobbies" value="sing"> 唱
+      </label>
 
- <label for="jump">
-  <input type="checkbox" v-model="hobbies" value="jump"> 跳
- </label>
+      <label for="jump">
+        <input type="checkbox" v-model="hobbies" value="jump"> 跳
+      </label>
 
- <label for="rap">
-  <input type="checkbox" v-model="hobbies" value="rap"> rap
- </label>
+      <label for="rap">
+        <input type="checkbox" v-model="hobbies" value="rap"> rap
+      </label>
 
- <label for="basketball">
-  <input type="checkbox" v-model="hobbies" value="basketball"> 篮球
- </label>
-<h2>爱好:{{hobbies}}</h2>
-   </div>
+      <label for="basketball">
+        <input type="checkbox" v-model="hobbies" value="basketball"> 篮球
+      </label>
+      <h2>爱好:{{hobbies}}</h2>
+    </div>
   </template>
   <script src="../JS/vue.js"></script>
   <script>
-    const App={
-      template:'#my-app',
-      data(){
+    const App = {
+      template: '#my-app',
+      data() {
         return {
-          isAgree:false,
+          isAgree: false,
           // hobbies保存选中的值
-          hobbies:[],
+          hobbies: [],
         }
       }
     }
     Vue.createApp(App).mount("#app")
   </script>
 </body>
+
 </html>

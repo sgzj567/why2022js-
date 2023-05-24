@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <div id="app"></div>
   <template id="my-app">
@@ -14,49 +16,50 @@
   </template>
   <script src="../JS/vue.js"></script>
   <script>
-    const App=
-      {
-      template:'#my-app',
-      data(){
+    const App =
+    {
+      template: '#my-app',
+      data() {
         return {
-          message:"Hello World",
-          info:{name:'why',age:18}
+          message: "Hello World",
+          info: { name: 'why', age: 18 }
         }
       },
-      methods:{
-       changeName(){
-        // 创建一个对象直接赋值给info
-        // this.info={name:"kobe"};
-        // 2.直接修改原对象的某个属性
-        this.info.name="kobe"
-       }
+      methods: {
+        changeName() {
+          // 创建一个对象直接赋值给info
+          // this.info={name:"kobe"};
+          // 2.直接修改原对象的某个属性
+          this.info.name = "kobe"
+        }
       },
-      watch:{
-      //   // 侦听默认是不深度侦听的
-      //  info(newValue,oldValue){
-      //   // 如果这里是对象类型 这里的oldValue是Proxy代理对象
-      //   console.log("改变后的值",newValue,"旧的值",oldValue);
-      //  },
-      info:{
-        handler(newValue,oldValue){
-          // 但是前后的值打印出来是一样的 因为info没有改变 侦听的是info
-          console.log("改变后的值",newValue,"旧的值",oldValue);
-          console.log(newValue===oldValue);
+      watch: {
+        //   // 侦听默认是不深度侦听的
+        //  info(newValue,oldValue){
+        //   // 如果这里是对象类型 这里的oldValue是Proxy代理对象
+        //   console.log("改变后的值",newValue,"旧的值",oldValue);
+        //  },
+        info: {
+          handler(newValue, oldValue) {
+            // 但是前后的值打印出来是一样的 因为info没有改变 侦听的是info
+            console.log("改变后的值", newValue, "旧的值", oldValue);
+            console.log(newValue === oldValue);
+          },
+          // 进行深度侦听
+          deep: true,
+          // 第一次渲染的时候就进行侦听
+          immediate: true,
         },
-        // 进行深度侦听
-        deep:true,
-        // 第一次渲染的时候就进行侦听
-        immediate:true,
-      },
-      // 监听里面的属性
-      "info.name":function(newValue,oldValue){
-        console.log(newValue,oldValue);
-      }
-      
+        // 监听里面的属性
+        "info.name": function (newValue, oldValue) {
+          console.log(newValue, oldValue);
+        }
+
 
       }
     }
-Vue.createApp(App).mount("#app")
-</script>
+    Vue.createApp(App).mount("#app")
+  </script>
 </body>
+
 </html>

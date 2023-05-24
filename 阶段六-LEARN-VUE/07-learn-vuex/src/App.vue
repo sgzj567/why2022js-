@@ -17,9 +17,9 @@
 // import Home from './components/6.Mutataions-mapMuattaions映射.vue'
 // import Home from './components/7.核心四action的基本使用.vue'
 // import Home from './components/08-核心四action-mapaction映射.vue'
-// import Home from './components/9-核心四action发送网络请求.vue'
+import Home from './components/9-核心四action发送网络请求.vue'
 // import Home from './components/10-核心五Modules基本使用.vue'
-import Home from './components/11.核心五Module默认模块化.vue'
+// import Home from './components/11.核心五Module默认模块化.vue'
 // import Home from './components/Home.vue';
 </script>
 

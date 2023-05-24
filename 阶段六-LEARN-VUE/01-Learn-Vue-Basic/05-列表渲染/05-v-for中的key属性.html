@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <div id="app"></div>
   <template id="my-app">
@@ -17,21 +19,22 @@
   </template>
   <script src="../JS/vue.js"></script>
   <script>
-    const App={
-      template:'#my-app',
-      data(){
+    const App = {
+      template: '#my-app',
+      data() {
         return {
-         letters:["a","b","c","d"]
+          letters: ["a", "b", "c", "d"]
         }
       },
-      methods:{
+      methods: {
         // 虚拟dom 有key 对比前后数组 在有相同父元素的子节点 并不会重新渲染列表 因为对于列表中的abc他们并没有变化 我们只需要插入一个即可
-        insert(){
-          this.letters.splice(2,0,"f")
+        insert() {
+          this.letters.splice(2, 0, "f")
         }
       }
     }
     Vue.createApp(App).mount("#app")
   </script>
 </body>
+
 </html>

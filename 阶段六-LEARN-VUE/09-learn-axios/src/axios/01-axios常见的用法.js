@@ -18,12 +18,17 @@ import axios from 'axios'
 
 // 3.发送post请求 参数没有拼接到url后面
 axios.post("http://123.207.32.32:1888/02_param/postjson", {
-  data: {
-    name: "coder",
-    password: 123456,
-  },
+  // data: {
+  //   name: "coder",
+  //   password: 123456,
+  // },
+  // 与上面相等
+  name: "coder",
+  password: 123456,
 }).then(res => {
   console.log("res:", res.data);
 })
+
+
 
 

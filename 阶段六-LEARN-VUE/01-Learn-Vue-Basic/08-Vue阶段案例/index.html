@@ -1,113 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-  #app{
-    position: relative;
-    justify-content: center;
-    align-items: center;
-  }
-    #my-app{
+    #app {
+      position: relative;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #my-app {
       margin: auto;
     }
-    table{
+
+    table {
       /* 边框合并 */
       border-collapse: collapse;
       text-align: center;
 
     }
-    td,th{
+
+    td,
+    th {
       border: 1px solid #aaa;
-      padding:8px 16px;
+      padding: 8px 16px;
     }
-    .box{
+
+    .box {
       margin: 15px 0;
       font-weight: 700;
     }
-    .active{
+
+    .active {
       background-color: aqua;
     }
   </style>
 </head>
+
 <body>
   <div id="app"></div>
   <template id="my-app">
     <template v-if="this.books.length>0">
-<table>
-  <thead>
-    <tr>
-      <th>序号</th>
-      <th>书籍名称</th>
-      <th>出版日期</th>
-      <th>价格</th>
-      <th>购买数量</th>
-      <th>操作</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="(item,index) in books" :class="{active:index===currentIndex}" @click="liClick(index)">
-      <td>{{index+1}}</td>
-      <td>{{item.name}}</td>
-      <td>{{item.date}}</td>
-      <td>{{formatPrice(item.price)}}</td>
-      <td><button :disabled="item.count<=1" @click="sub(item,index)">-</button>{{item.count}}
-        <button @click="add(item,index)">+</button></td>
-      <td><button @click="removeBook">移除</button></td>
-    </tr>
-  </tbody>
-</table>
- <h2>总价:{{formatPrice(getTotalPrice)}}</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>序号</th>
+            <th>书籍名称</th>
+            <th>出版日期</th>
+            <th>价格</th>
+            <th>购买数量</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item,index) in books" :class="{active:index===currentIndex}" @click="liClick(index)">
+            <td>{{index+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.date}}</td>
+            <td>{{formatPrice(item.price)}}</td>
+            <td><button :disabled="item.count<=1" @click="sub(item,index)">-</button>{{item.count}}
+              <button @click="add(item,index)">+</button>
+            </td>
+            <td><button @click="removeBook">移除</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>总价:{{formatPrice(getTotalPrice)}}</h2>
     </template>
-<template v-else>
-  <h3>购物车为空! 请添加书籍</h3>
-</template>
+    <template v-else>
+      <h3>购物车为空! 请添加书籍</h3>
+    </template>
   </template>
   <script src="../JS/vue.js"></script>
   <script src="./data/data.js"></script>
   <script>
-    const App={
-      template:'#my-app',
-      data(){
+    const App = {
+      template: '#my-app',
+      data() {
         return {
-         books:books,
-         currentIndex:-1,
+          books: books,
+          currentIndex: -1,
         }
       },
-      computed:{
-     getTotalPrice(){
-      // let price=0;
-      // for( const item of this.books){
-      //  price+=item.price*item.count;
-      //   }
-      //   return price;
-      return this.books.reduce((pre,current)=>{
-        return pre+current.count*current.price;
-      },0)
-     }
+      computed: {
+        getTotalPrice() {
+          // let price=0;
+          // for( const item of this.books){
+          //  price+=item.price*item.count;
+          //   }
+          //   return price;
+          return this.books.reduce((pre, current) => {
+            return pre + current.count * current.price;
+          }, 0)
+        }
       },
-      methods:{
-        add(item){
-         item.count++;
+      methods: {
+        add(item) {
+          item.count++;
         },
-        sub(item){
-         item.count--;
+        sub(item) {
+          item.count--;
         },
-        formatPrice(price){
-        return "¥"+price
+        formatPrice(price) {
+          return "¥" + price
         },
-        removeBook(index){
-          this.books.splice(index,1)
+        removeBook(index) {
+          this.books.splice(index, 1)
         },
-        liClick(index){
-          this.currentIndex=index;
+        liClick(index) {
+          this.currentIndex = index;
         }
       }
     }
     Vue.createApp(App).mount("#app")
   </script>
 </body>
+
 </html>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{name}}{{age}}
+    我叫{{ name }},今年{{ age }}身高{{ height }}
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
     const height = inject("height", 1.88)
     console.log(name.value);
     return {
-      name, age
+      name, age, height
     }
   }
 }

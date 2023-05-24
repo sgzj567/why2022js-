@@ -15,17 +15,17 @@
     // createElement创建元素
     const h2El = document.createElement("h2")
     h2El.textContent = "我是标题"
-    // h2El.append("box")
-    // 插入元素 append是加到后面的
+
+    // 插入元素 append是后面的加到它里面的后面
     // box.append(h2El)
-    // 加到后面 prepend
+    // 加到后面 加到它里面的 prepend
     // box.prepend(h2El)
     // 插入到自己节点前
-    // box.before(h2El)
+    box.before(h2El)
     // 插入到自己节点后面
     // box.after(h2El)
     // 替换
-    box.replaceWith(h2El, "abc")
+    // box.replaceWith(h2El, "abc")
   </script>
 </body>
 

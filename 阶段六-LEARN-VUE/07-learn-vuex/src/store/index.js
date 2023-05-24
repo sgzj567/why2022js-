@@ -31,7 +31,7 @@ const store = createStore({
     // 在getters属性中是可以返回一个函数的
     getFriendById(state) {
       return (id) => state.friends.find(item => item.id === id)
-    }
+    },
   },
   mutations: {
     increment(state) {
@@ -52,6 +52,7 @@ const store = createStore({
       state.recommend = recommend
     }
   },
+  // actions不能直接修改state的状态,需要提交mutations,actions可以包含异步操作
   actions: {
     incrementAction(context) {
       // console.log(context.commit);//用于提交mutations

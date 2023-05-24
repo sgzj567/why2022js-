@@ -10,7 +10,7 @@
 
 <body>
   <script>
-    // 进程:计算机已经运行的程序
+    // 进程:计算机已经运行的程序,一个页面就是一个进程
     // 线程:操作系统能够运行运算的最小调度单位，通常他被包括在进程中
     // 浏览器是多线程的 JavaScript是单线程的 js中的SetTimeOut是在浏览器中执行的
     // 浏览器首先执行宏任务，也就是我们script（仅仅执行一次）
@@ -46,7 +46,7 @@
     });
 
     console.log(2);
-// queueMicroTask直接将任务加入到微任务当中
+    // queueMicroTask直接将任务加入到微任务当中
     queueMicrotask(() => {
       console.log("queueMicrotask1")
     });

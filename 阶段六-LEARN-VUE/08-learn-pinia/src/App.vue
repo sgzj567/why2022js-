@@ -6,8 +6,10 @@
 </template>
 
 <script setup>
-import Home from './views/Home.vue';
+// import Home from './views/Home.vue';
+import Home from './views/02-Pinia的核心State.vue'
 </script>
 
 <style scoped>
+
 </style>

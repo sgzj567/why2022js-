@@ -7,12 +7,15 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 const router = useRouter()
 function ClickBtn() {
   router.back()
 }
+const route = useRoute()
+console.log(route.query.name);
 </script>
 
 <style scoped>
+
 </style>

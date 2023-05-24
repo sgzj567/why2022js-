@@ -34,7 +34,7 @@ function spanBtn() {
 function btnClick() {
   router.push({
     path: "/about",
-    // 可以传参数
+    // 可以传参数 相当于get传参会拼接到url后面
     query: { name: "kobe", age: 17 }
   })
 }

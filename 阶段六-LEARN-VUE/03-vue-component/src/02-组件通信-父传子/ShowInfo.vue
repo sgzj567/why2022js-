@@ -5,7 +5,7 @@
     <h2>身高:{{ height }}</h2>
     <h2>信息:{{ showMessage }}</h2>
   </div>
-
+  <h2>朋友{{ friends.message }}</h2>
 </template>
 
 <script>
@@ -57,4 +57,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

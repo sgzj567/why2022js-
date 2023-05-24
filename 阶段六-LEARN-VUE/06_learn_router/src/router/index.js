@@ -11,12 +11,13 @@ const router = createRouter({
   // history: createWebHistory(),
   history: createWebHashHistory(),
   routes: [
-    // 设置默认路径
+    // 设置默认路径  重定向
     {
       path: "/", redirect: "/home"
     },
     {
       path: "/login",
+      // 路由懒加载
       component: () => import("../views/Login.vue")
     },
     {
@@ -26,6 +27,7 @@ const router = createRouter({
     {
       name: "home",
       path: "/home", component: () => import("../views/Home.vue"),
+      // 自定义属性
       meta: {
         name: "John",
         age: 18,
@@ -52,7 +54,7 @@ const router = createRouter({
       path: "/about", component: () => import("../views/About.vue")
     },
     {
-      // 动态路由 组件不变 内容变
+      // 动态路由以:开始 组件不变 内容变
       path: "/user/:id", component: () => import("../views/User.vue")
     },
     {
@@ -62,7 +64,7 @@ const router = createRouter({
   ]
 })
 // 动态添加路由
-let isAdmin = true
+let isAdmin = false
 if (isAdmin) {
   router.addRoute({
     path: "/admin",
@@ -93,5 +95,11 @@ router.beforeEach((to, from) => {
   if (!token && to.path === "/order")
     return "/login"
 })
-// 添加路由 添加一个相同的name
+// 添加路由 添加一个相同的name 等于删除一个
+// router.addRoute({
+//   path: '/Nav',
+//   name: 'about',
+//   component: () => import('../views')
+// })
+// router.removeRoute("about")
 export default router

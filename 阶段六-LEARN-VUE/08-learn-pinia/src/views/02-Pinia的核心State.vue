@@ -17,6 +17,7 @@ const useStore = useUser()
 const { name, level, age } = storeToRefs(useStore)
 
 function changeInfo() {
+  // 改变state
   // useStore.name = "kobe"
   // useStore.age = 28
   // useStore.level = 111
@@ -34,4 +35,5 @@ function resetInfo() {
 </script>
 
 <style scoped>
+
 </style>

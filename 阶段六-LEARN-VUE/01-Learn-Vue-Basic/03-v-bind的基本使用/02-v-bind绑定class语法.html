@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    .active{
+    .active {
       color: aqua;
     }
   </style>
 </head>
+
 <body>
   <div id="app"></div>
   <template id="my-app">
     <div :class="{active: isActive}">{{message}}</div>
     <!-- 也可以有多个键值对 -->
-    <div :class="{active:isActive,title:true}">"哈哈哈"</div>
+    <div :class="{active:isActive}">"哈哈哈"</div>
     <!-- 也可以写成对象形式 -->
-<div :class="classObj">你好</div>
+    <div :class="classObj">你好</div>
     <button @click="toggle">切换</button>
   </template>
   <script src="../JS/vue.js"></script>
   <script>
-    const App={
-      template:'#my-app',
-      data(){
+    const App = {
+      template: '#my-app',
+      data() {
         return {
-          message:"Hello World", 
-          isActive:true,
-          classObj:{
-            active:true,
-            title:true,
+          message: "Hello World",
+          isActive: true,
+          classObj: {
+            active: true,
+            title: true,
           }
         }
       },
-      methods:{
-        toggle(){
-          this.isActive=!this.isActive;
+      methods: {
+        toggle() {
+          this.isActive = !this.isActive;
         }
       }
     }
     Vue.createApp(App).mount("#app")
   </script>
 </body>
+
 </html>

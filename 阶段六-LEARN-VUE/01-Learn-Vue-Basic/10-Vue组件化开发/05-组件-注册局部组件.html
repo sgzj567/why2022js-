@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    .product{
+    .product {
       background-color: antiquewhite;
     }
   </style>
 </head>
+
 <body>
   <div id="app">
     <home-nav></home-nav>
@@ -18,12 +20,12 @@
   </div>
   <!-- products组件 -->
   <template id="products">
- <div class="product">
-  <h2>{{products}}</h2>
-  <p>{{picture}}</p>
-  <p>{{price}}</p>
-  
-</div>
+    <div class="product">
+      <h2>{{products}}</h2>
+      <p>{{picture}}</p>
+      <p>{{price}}</p>
+
+    </div>
   </template>
   <!-- nav组件 -->
   <template id="nav">
@@ -35,40 +37,41 @@
   </template>
   <script src="../JS/vue.js"></script>
   <script>
-    const ProductItem={
-  // 组件模板
-        template:"#products",
-        data(){
-          return {
-            products:"商品信息",
-            picture:"商品图片",
-            price:"商品价格:9.9秒杀"
-          }
+    const ProductItem = {
+      // 组件模板
+      template: "#products",
+      data() {
+        return {
+          products: "商品信息",
+          picture: "商品图片",
+          price: "商品价格:9.9秒杀"
         }
+      }
     }
-    const App={
-      components:{
+    const App = {
+      components: {
         // 组件名字
         ProductItem,
-        
+
         // 组件二
-        HomeNav:{
-          template:"#nav",
+        HomeNav: {
+          template: "#nav",
           // 局部组件
-          components:{
-          ProductItem,
+          components: {
+            ProductItem,
           },
-          data(){
+          data() {
             return {
-              nav:"我是导航栏",
+              nav: "我是导航栏",
             }
           }
         }
       }
     }
-    const app=Vue.createApp(App)
+    const app = Vue.createApp(App)
 
     app.mount("#app")
   </script>
 </body>
+
 </html>

@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <div id="app"></div>
   <template id="my-app">
     <h2>{{message}}</h2>
     <h2>{{counter}}</h2>
-    <!-- 加了v-once他的子组件就不渲染了 -->
+    <!-- 加了v-once他以及他的子组件就不渲染了 被当做静态内容 -->
     <h2 v-once>{{counter}}</h2>
     <button @click="add">+</button>
   </template>
   <script src="../JS/vue.js"></script>
   <script>
-    const App={
-      template:'#my-app',
-      data(){
+    const App = {
+      template: '#my-app',
+      data() {
         return {
-       counter:100,
+          counter: 100,
+          message: "h2标签"
         }
       },
-      methods:{
-add(){
-  this.counter++
-}
+      methods: {
+        add() {
+          this.counter++
+        }
       }
     }
     Vue.createApp(App).mount("#app")
   </script>
 </body>
+
 </html>

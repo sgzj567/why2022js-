@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+	</head>
+
+	<body>
+		<script>
+			var a = 100
+
+			function foo() {
+				console.log(a);
+				return
+				var a = 200;
+			}
+			foo(); //undefined
+			// 因为return是在执行时执行的 而var a是在解析阶段执行的
+			// 也就是说明return是在var声明后执行的
+		</script>
+	</body>
+
+</html>

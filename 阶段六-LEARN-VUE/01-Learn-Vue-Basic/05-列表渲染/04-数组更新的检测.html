@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <div id="app"></div>
   <template id="my-app">
@@ -15,23 +17,24 @@
   </template>
   <script src="../JS/vue.js"></script>
   <script>
-    const App={
-      template:'#my-app',
-      data(){
+    const App = {
+      template: '#my-app',
+      data() {
         return {
-          message:"Hello World",
-          infos:["abc","cba","nba"]
+          message: "Hello World",
+          infos: ["abc", "cba", "nba"]
         }
       },
-      methods:{
-        change(){
+      methods: {
+        change() {
           this.infos.push("why")
         }
       }
     }
     Vue.createApp(App).mount("#app")
-    // 数组的更新检测有unshift(在最前面添加一个元素) shift(删除第一个元素) pop push splice sort reverse(就会修改原数组) 
+    // 数组的更新检测有unshift(在最前面添加一个元素) shift(删除第一个元素) pop push splice sort reverse(就会修改原数组)
     // 不修改原数组的是不能更新侦听的的 filter map foreach
   </script>
 </body>
+
 </html>

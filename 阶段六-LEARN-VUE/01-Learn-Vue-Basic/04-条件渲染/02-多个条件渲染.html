@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <div id="app"></div>
   <template id="my-app">
     <!-- v-model双向绑定 -->
     <!-- v-if为false时 其判断内容完全不会渲染或者会被销毁掉 -->
     <input type="text" v-model="score">
-   <h2 v-if="score>=90">优秀</h2>
-   <h2 v-else-if="score>60">良好</h2>
-   <h2 v-else>不及格</h2>
+    <h2 v-if="score>=90">优秀</h2>
+    <h2 v-else-if="score>60">良好</h2>
+    <h2 v-else>不及格</h2>
   </template>
   <script src="../JS/vue.js"></script>
   <script>
-    const App={
-      template:'#my-app',
-      data(){
+    const App = {
+      template: '#my-app',
+      data() {
         return {
-          message:"Hello World",
-          score:90,
+          message: "Hello World",
+          score: 90,
         }
       }
     }
     Vue.createApp(App).mount("#app")
   </script>
 </body>
+
 </html>
